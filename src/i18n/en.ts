@@ -43,7 +43,7 @@ export class En implements Local {
 	ctrl_enter_to_submit = "Ctrl ↩";
 	default_location_for_form_file = "Default location for new form files";
 	default_location_for_form_file_desc = "New form files will be saved in this directory. Supports date variables like {{date:YYYY-MM-DD}}";
-	default_location_for_form_placeholder = "components/form";
+	default_location_for_form_placeholder = "form/forms";
 	default_value = "Default Value";
 	delete = "Delete";
 	description = "Description";
@@ -153,9 +153,9 @@ export class En implements Local {
 	run_script = "Run Script";
 	save = "Save";
 	save_license_to_vault = "Save license information to vault";
-	script_folder_for_components = "Component script loading directory";
-	script_folder_for_components_desc = "Components will load extended scripts from this directory";
-	script_folder_for_components_placeholder = "components/script";
+	script_folder_for_form = "Form script loading directory";
+	script_folder_for_form_desc = "Form will load  scripts from this directory";
+	script_folder_for_form_placeholder = "form/scripts";
 	select_template = "Select Template";
 	selected_status_text = "Selected {0} / {1}";
 	selection_variable_description = "Currently selected text";

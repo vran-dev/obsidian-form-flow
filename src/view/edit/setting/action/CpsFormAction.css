@@ -75,7 +75,7 @@
 	padding: var(--size-4-1) var(--size-4-2);
 }
 
-button.components-CpsFormActinoCodeResetButton {
+button.form-CpsFormActinoCodeResetButton {
 	background-color: transparent;
 	box-shadow: none;
 	outline: none;
@@ -84,7 +84,7 @@ button.components-CpsFormActinoCodeResetButton {
 	color: var(--text-faint);
 }
 
-button.components-CpsFormActinoCodeResetButton:hover {
+button.form-CpsFormActinoCodeResetButton:hover {
 	background-color: var(--background-modifier-hover);
 	color: var(--text-normal);
 	font-weight: 500;

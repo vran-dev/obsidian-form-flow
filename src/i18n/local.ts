@@ -145,9 +145,9 @@ export interface Local {
 	run_extend_function_error: string;
 	run_script: string;
 	save_license_to_vault: string;
-	script_folder_for_components_desc: string;
-	script_folder_for_components_placeholder: string;
-	script_folder_for_components: string;
+	script_folder_for_form_desc: string;
+	script_folder_for_form_placeholder: string;
+	script_folder_for_form: string;
 	select_template: string;
 	selected_status_text: string;
 	selection_variable_description: string;

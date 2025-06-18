@@ -65,12 +65,12 @@ export function GeneralSettingTabItem(props: { plugin: FormPlugin }) {
 
 		// script folder setting
 		new Setting(el)
-			.setName(localInstance.script_folder_for_components)
-			.setDesc(localInstance.script_folder_for_components_desc)
+			.setName(localInstance.script_folder_for_form)
+			.setDesc(localInstance.script_folder_for_form_desc)
 			.addText((cb) => {
 				cb.setValue(settingsValue.scriptFolder);
 				cb.setPlaceholder(
-					localInstance.script_folder_for_components_placeholder
+					localInstance.script_folder_for_form_placeholder
 				);
 				cb.onChange((v) => {
 					setSettingsValue((prev) => {

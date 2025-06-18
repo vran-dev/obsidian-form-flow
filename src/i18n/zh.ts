@@ -43,7 +43,7 @@ export class Zh implements Local {
 	ctrl_enter_to_submit = "Ctrl ↩︎";
 	default_location_for_form_file = "新表单文件默认存放路径";
 	default_location_for_form_file_desc = "新创建的表单文件将会被保存到该目录下，支持 {{date:YYYY-MM-DD}} 日期变量";
-	default_location_for_form_placeholder = "components/form";
+	default_location_for_form_placeholder = "form/forms";
 	default_value = "默认值";
 	delete = "删除";
 	description = "描述";
@@ -153,9 +153,9 @@ export class Zh implements Local {
 	run_script = "运行脚本";
 	save = "保存";
 	save_license_to_vault = "保存密钥信息到库中";
-	script_folder_for_components = "组件脚本加载目录";
-	script_folder_for_components_desc = "Components 将会从该目录下去加载扩展的脚本";
-	script_folder_for_components_placeholder = "components/script";
+	script_folder_for_form = "表单脚本加载目录";
+	script_folder_for_form_desc = "将会从该目录下去加载扩展的脚本";
+	script_folder_for_form_placeholder = "form/scripts";
 	select_template = "选择模板";
 	selected_status_text = "已选择 {0} / {1}";
 	selection_variable_description = "当前选中的文本";

@@ -1,6 +1,7 @@
 import React from "react";
 import { localInstance } from "src/i18n/locals";
 import { Popover, PopoverProps } from "../popover/Popover";
+import './ConfirmPopover.css';
 
 type ConfirmPopoverProps = Omit<
 	PopoverProps,

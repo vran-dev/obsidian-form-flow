@@ -43,7 +43,7 @@ export class ZhTw implements Local {
 	ctrl_enter_to_submit = "Ctrl ↩︎";
 	default_location_for_form_file = "新表單檔案預設存放路徑";
 	default_location_for_form_file_desc = "新創建的表單檔案將會被保存到該目錄下，支持 {{date:YYYY-MM-DD}} 日期變數";
-	default_location_for_form_placeholder = "components/form";
+	default_location_for_form_placeholder = "form/forms";
 	default_value = "預設值";
 	delete = "刪除";
 	description = "描述";
@@ -153,9 +153,9 @@ export class ZhTw implements Local {
 	run_script = "運行腳本";
 	save = "儲存";
 	save_license_to_vault = "保存密鑰資訊到庫中";
-	script_folder_for_components = "組件腳本加載目錄";
-	script_folder_for_components_desc = "Components 將會從該目錄下去加載擴展的腳本";
-	script_folder_for_components_placeholder = "components/script";
+	script_folder_for_form = "表單腳本加載目錄";
+	script_folder_for_form_desc = "將會從該目錄下去加載擴展的腳本";
+	script_folder_for_form_placeholder = "form/scripts";
 	select_template = "選擇模板";
 	selected_status_text = "已選擇 {0} / {1}";
 	selection_variable_description = "目前選中的文字";

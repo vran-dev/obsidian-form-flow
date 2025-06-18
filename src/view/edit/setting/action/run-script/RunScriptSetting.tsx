@@ -68,7 +68,7 @@ export function RunScriptSetting(props: {
 								};
 								props.onChange(newAction);
 							}}
-							className="components-CpsFormActinoCodeResetButton"
+							className="form-CpsFormActinoCodeResetButton"
 						>
 							{localInstance.reset_code}
 						</button>
