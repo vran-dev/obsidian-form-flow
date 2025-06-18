@@ -60,8 +60,7 @@ const context = await esbuild.context({
 	logLevel: "info",
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
-	// outfile: "main.js",
-	outfile: '/Users/vrtia/workspace/obsidian/develop-d/.obsidian/plugins/form/main.js',
+	outfile: "main.js",
 	minify: prod,
 });
 
