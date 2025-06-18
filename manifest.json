@@ -3,7 +3,7 @@
 	"name": "Form Flow",
 	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "missing form component",
+	"description": "Create simple, one-action workflows in Obsidian — with ease.",
 	"author": "vran",
 	"authorUrl": "https://github.com/vran-dev",
 	"fundingUrl": "https://github.com/vran-dev/obsidian-form-flow",
