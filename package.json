@@ -1,7 +1,7 @@
 {
 	"name": "obsidian-flow-form",
 	"version": "0.0.1",
-	"description": "A missing form component for Obsidian.",
+	"description": "Create simple, one-action workflows — with ease.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
