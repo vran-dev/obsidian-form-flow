@@ -1,3 +1,4 @@
+import { getLanguage } from "obsidian";
 import { UpdateFrontmatterFormAction } from "src/model/action/UpdateFrontmatterFormAction";
 import { CreateFileFormAction } from "../model/action/CreateFileFormAction";
 import { IFormAction } from "../model/action/IFormAction";
@@ -51,7 +52,7 @@ function validateAction(action: FormActionImp) {
     }
 
 
-    const lang = window.localStorage.getItem("language");
+    const lang = getLanguage();
     let l;
     switch (lang) {
         case "zh-CN":
