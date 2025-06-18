@@ -1,0 +1,77 @@
+.form--ActionFlow {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.5rem 1rem;
+	margin: 0.5rem 0;
+	background-color: var(--background-secondary);
+	border-radius: 8px;
+	width: 100%;
+}
+
+.form--ActionFlowStartNode .form--ActionFlowNodeContent {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	padding: 0.5rem 1rem;
+	border-radius: 16px;
+	font-weight: 500;
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+}
+
+.form--ActionFlowNodes {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 320px;
+}
+
+.form--ActionFlowNode {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0.5rem;
+}
+
+.form--ActionFlowNodeContent {
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 1rem;
+	width: 100%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form--ActionFlowNodeType {
+	font-weight: 600;
+	font-size: 0.9rem;
+	margin-bottom: 0.25rem;
+	color: var(--text-normal);
+}
+
+.form--ActionFlowNodeTitle {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	word-break: break-word;
+}
+
+.form--ActionFlowArrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 24px;
+	color: var(--text-muted);
+	margin: 0.25rem 0;
+}
+
+.form--ActionFlowEmpty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-muted);
+	font-style: italic;
+	padding: 2rem;
+	text-align: center;
+}

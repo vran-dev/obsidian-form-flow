@@ -1,0 +1,11 @@
+.form--PoupupContainer {
+	max-width: 500px;
+	max-height: 500px;
+	overflow-y: auto;
+	box-shadow: var(--form-shadow);
+	background-color: var(--background-primary);
+	padding: 8px 16px;
+	user-select: text;
+	white-space: pre-wrap;
+	border-radius: var(--radius-m);
+}

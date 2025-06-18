@@ -1,0 +1,8 @@
+.form--CpsFormModal
+	.form--CpsFormDataView
+	.form--CpsFormPreviewBody {
+	flex: 1;
+	overflow-y: auto;
+	max-height: calc(80vh - 128px);
+	padding: 4px 8px;
+}

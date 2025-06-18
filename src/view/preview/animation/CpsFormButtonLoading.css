@@ -1,0 +1,139 @@
+.form--CpsFormButtonLoading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.form--CpsFormButtonLoadingDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--text-on-accent);
+  opacity: 0;
+  animation: dotPulse 1.4s infinite ease-in-out;
+}
+
+.form--CpsFormButtonLoadingDot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.form--CpsFormButtonLoadingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.form--CpsFormButtonLoadingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form--CpsFormButtonLoadingDot:first-child {
+  animation-delay: 0s;
+}
+
+.form--CpsFormButtonLoadingDot:last-child {
+  animation-delay: 0.75s;
+}
+
+.form--CpsFormButtonLoadingLine {
+  flex: 1;
+  height: 2px;
+  margin: 0 6px;
+  background-color: var(--text-on-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.form--CpsFormButtonLoadingLine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    transparent 100%);
+  animation: linePulse 1.5s infinite ease-in-out;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes linePulse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.form--CpsFormButtonLoadingRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--text-on-accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ringPulse 1.5s infinite ease-out;
+}
+
+.form--CpsFormButtonLoadingRing:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.form--CpsFormButtonLoadingRing:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.form--CpsFormButtonLoadingRing:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.form--CpsFormButtonLoadingCore {
+  width: 30%;
+  height: 30%;
+  background-color: var(--text-on-accent);
+  border-radius: 50%;
+  animation: corePulse 1.5s infinite ease-in-out;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}

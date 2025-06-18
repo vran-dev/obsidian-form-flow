@@ -1,0 +1,73 @@
+.form--FormFilePathSuggestTrigger {
+	-webkit-app-region: no-drag;
+	background: var(--background-modifier-form-field);
+	border: var(--input-border-width) solid var(--background-modifier-border);
+	font-family: inherit;
+	padding: var(--size-4-1) var(--size-4-2);
+	font-size: var(--font-ui-small);
+	border-radius: var(--input-radius);
+	outline: none;
+	min-height: var(--input-height);
+	width: 100%;
+	cursor: text;
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+.form--FormFilePathSuggestTrigger:hover {
+	border-color: var(--background-modifier-border-hover);
+	transition: box-shadow 0.15s ease-in-out, border 0.15s ease-in-out;
+}
+
+.form--FormFilePathSuggestContent {
+	display: flex;
+	flex-direction: column;
+	z-index: var(--form--modal-layer);
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-s);
+	padding: 8px 12px;
+	animation: fadeIn 200ms ease-out;
+	overflow-y: auto;
+	min-width: min(var(--radix-popover-content-available-width), 280px);
+	max-width: var(--radix-popover-content-available-width);
+	max-height: min(360px, var(--radix-popover-content-available-height));
+}
+
+input.form--FormFilePathSuggestInput {
+	width: 100%;
+	box-shadow: none;
+	border: none;
+	padding: 8px 8px;
+}
+
+input.form--FormFilePathSuggestInput:focus-visible {
+	box-shadow: none;
+}
+
+.form--FormFilePathSuggestList {
+	flex: 1;
+	overflow-y: auto;
+	width: min(400px, var(--radix-popover-trigger-width));
+	padding: 8px 4px;
+	gap: 4px;
+}
+
+.form--FormFilePathSuggestItem {
+	padding: var(--size-4-1) var(--size-4-2);
+	cursor: pointer;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	border-radius: var(--input-radius);
+	margin-bottom: 4px;
+}
+
+.form--FormFilePathSuggestItem:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.form--FormFilePathSuggestItem[data-highlighted="true"] {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}

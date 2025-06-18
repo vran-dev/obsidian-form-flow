@@ -1,0 +1,30 @@
+.form--ConfirmPopover {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form--ConfirmTitle {
+	margin: 0;
+	font-weight: 600;
+}
+
+.form--ConfirmMessage {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-normal);
+}
+
+.form--ConfirmActions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.form--ConfirmButton:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--CancelButton:hover {
+	background-color: var(--background-modifier-hover);
+}

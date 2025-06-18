@@ -1,0 +1,74 @@
+.form--InteractiveList {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	font-size: var(--font-ui-small);
+}
+
+.form--InteractiveListTitle {
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	line-height: var(--line-height-tight);
+	margin-bottom: 0.5rem;
+}
+
+.form--InteractiveListItems {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form--InteractiveList .form--AddButton {
+	align-self: flex-start;
+}
+
+.form--InteractiveListItem {
+	display: flex;
+	gap: 0.5rem;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	position: relative;
+}
+
+.form--InteractiveListItemDrag {
+	display: flex;
+	align-items: flex-start;
+	padding-top: 4px;
+}
+
+.form--InteractiveListItemContent {
+	flex: 1;
+	display: flex;
+	gap: 0.5rem;
+}
+
+/* 用于支持字段行布局 */
+.form--InteractiveListItemFieldRow {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	width: 100%;
+}
+
+.form--InteractiveListItemFieldLabel {
+	font-size: var(--font-ui-smaller);
+}
+
+.form--InteractiveListItemActions {
+	display: flex;
+	gap: 0.25rem;
+	align-items: flex-start;
+}
+
+/* 支持响应式布局，但不强制应用 */
+@media (min-width: 768px) {
+	.form--InteractiveListItemContent {
+		flex-wrap: nowrap;
+	}
+
+	.form--InteractiveListItemFieldRow {
+		width: auto;
+		flex-direction: row;
+		flex: 1;
+	}
+}

@@ -1,0 +1,67 @@
+button.form--PopoverTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 150px;
+	padding: 2px 8px;
+	background-color: var(--background-secondary);
+	border: none;
+	border-radius: var(--radius-s);
+	color: var(--text-normal);
+	cursor: default;
+	text-align: left;
+	position: relative;
+	height: auto;
+	min-height: 30px;
+	overflow: hidden;
+	padding-right: 28px;
+	width: 100%;
+}
+button.form--PopoverTrigger .lucide {
+	color: var(--text-muted);
+	transition: transform 0.2s ease-in-out;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	flex-shrink: 0;
+}
+
+button.form--PopoverTrigger:hover {
+	box-shadow: var(--input-shadow-hover);
+	background-color: var(--dropdown-background-hover);
+}
+
+/* Focus styles */
+button.form--PopoverTrigger:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+}
+
+.form--PopoverContent {
+	z-index: var(--form--modal-layer);
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-s);
+	padding: 8px 12px;
+	animation: fadeIn 200ms ease-out;
+	overflow-y: auto;
+	min-width: min(var(--radix-popover-content-available-width), 280px);
+	max-width: var(--radix-popover-content-available-width);
+	max-height: min(400px, var(--radix-popover-content-available-height));
+}
+
+.form--PopoverArrow {
+	fill: var(--background-primary);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

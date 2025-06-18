@@ -1,0 +1,12 @@
+body {
+	--form-overlay-layer: 19;
+	--form--modal-layer: 99;
+	--form-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
+		rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+}
+
+.theme-dark {
+	--form-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}

@@ -1,0 +1,23 @@
+.form--DragHandler {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--size-2-1);
+	color: var(--text-muted);
+	border-radius: var(--size-2-2);
+	white-space: nowrap;
+	cursor: grab;
+}
+
+@media (any-hover: hover) {
+	.form--DragHandler:hover {
+		background-color: var(--background-modifier-hover);
+		color: var(--text-normal);
+	}
+}
+
+.form--button:active {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	opacity: 0.8;
+}

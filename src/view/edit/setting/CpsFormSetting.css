@@ -1,0 +1,63 @@
+.form--CpsFormSettingGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+	width: 100%;
+}
+
+.form--CpsFormSettingGroup .form--SettingGroupHeader {
+	display: flex;
+	align-items: center;
+	color: var(--text-muted);
+	gap: 8px;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.form--CpsFormSettingGroup .form--SettingGroupHeader .lucide {
+	height: 18px;
+	width: 18px;
+	color: var(--text-accent);
+}
+
+.form--CpsFormSettingGroup .form--SettingGroupContent {
+	border-radius: var(--radius-m);
+	padding: 8px 16px;
+	position: relative;
+	background-color: var(--color-base-10);
+}
+
+@media (max-width: 768px) {
+	.form--CpsFormSettingGroup .form--SettingGroupContent {
+		padding: 4px 8px;
+	}
+}
+
+.form--CpsFormDescription {
+	font-size: var(--font-ui-small);
+	color: var(--text-faint);
+	white-space: pre-line;
+	line-height: 1.5;
+	user-select: text;
+}
+
+.form--FormFieldLabelDescription {
+	font-size: var(--font-ui-small);
+	color: var(--text-faint);
+	white-space: pre-line;
+	line-height: 1.5;
+	user-select: text;
+	text-decoration: none;
+	flex: 1;
+}
+
+.form--CommandHotkeyLabel {
+	font-size: var(--font-ui-smaller);
+	color: hsl(var(--interactive-accent-hsl), 1);
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--size-4-1) var(--size-4-2);
+	border-radius: var(--radius-m);
+}

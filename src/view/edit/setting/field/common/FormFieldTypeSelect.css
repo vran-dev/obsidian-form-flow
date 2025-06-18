@@ -1,0 +1,65 @@
+button.form--FieldTypeSelectButton {
+	box-shadow: none;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 2px 6px;
+	gap: 4px;
+	height: auto;
+	font-size: var(--font-ui-small);
+	background-color: var(--color-base-20);
+	color: var(--text-muted);
+}
+
+button.form--FieldTypeSelectButton
+	.form--FieldTypeSelectButtonLabel {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* hide label in small device */
+@media (max-width: 600px) {
+	button.form--FieldTypeSelectButton
+		.form--FieldTypeSelectButtonLabel {
+		display: none;
+	}
+}
+
+button.form--FieldTypeSelectButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-accent);
+}
+
+button.form--FieldTypeSelectButton:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+.form--FieldTypeSelectOptions {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 0.5rem;
+	background-color: var(--background-primary);
+	box-shadow: var(--form-shadow);
+	font-size: var(--font-ui-small);
+	z-index: var(--form--modal-layer);
+}
+
+.form--FieldTypeSelectOption {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 4px 8px;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+.form--FieldTypeSelectOption[data-selected] {
+	color: var(--text-accent);
+}
+
+.form--FieldTypeSelectOption:hover {
+	background-color: var(--background-modifier-hover);
+}

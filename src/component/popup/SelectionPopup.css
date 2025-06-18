@@ -1,0 +1,31 @@
+.form--SelectionPopup {
+	z-index: 9999;
+	position: relative;
+	padding: 8px 16px;
+	background-color: var(--background-primary);
+}
+
+.form--SelectionPopupBody {
+	padding: 0px 16px 8px 16px;
+	min-height: 32px;
+}
+
+.form--SelectionPopupContent {
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
+
+button.form--SelectionPopupCopyButton {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.form--SelectionPopup:hover .form--SelectionPopupCopyButton {
+	opacity: 1;
+	/* box-shadow: var(--form-shadow);
+	background-color: var(--background-primary); */
+	transition: opacity 0.2s ease-in-out;
+}

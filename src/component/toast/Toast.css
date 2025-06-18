@@ -1,0 +1,137 @@
+.form--Toast {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	border-radius: var(--radius-m);
+	box-shadow: var(--form-shadow);
+	z-index: 1000;
+	position: fixed;
+	top: calc(var(--safe-area-inset-top) + 1rem);
+	left: 50%;
+	transform: translateX(-50%) translateY(-10px);
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+	min-width: 320px;
+	max-width: 90vw;
+	border: 1px solid var(--background-modifier-border);
+	opacity: 0;
+}
+
+.form--Toast.visible {
+	opacity: 1;
+	transform: translateX(-50%) translateY(0);
+}
+
+/* 对齐样式修复部分 */
+.form--Toast__content {
+	flex: 1;
+	display: flex;
+	align-items: center; /* 确保垂直居中对齐 */
+	gap: 0.75rem;
+}
+
+.form--Toast__iconContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0; /* 防止图标被压缩 */
+	height: 20px; /* 与图标大小保持一致 */
+}
+
+.form--Toast__typeIcon {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	display: block; /* 确保图标作为块元素正常显示 */
+}
+
+.form--Toast__message {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* 垂直居中 */
+	min-height: 20px; /* 至少与图标一样高 */
+}
+
+/* 确保 message 中的 strong 和 p 标签有正确的间距和边距 */
+.form--Toast__message strong {
+	margin: 0;
+	display: block;
+	line-height: 1.4;
+}
+
+.form--Toast__message p {
+	margin: 0.25rem 0 0 0;
+	font-size: 0.9em;
+	color: var(--text-muted);
+	line-height: 1.4;
+	word-break: break-word;
+}
+
+/* 加载图标动画 */
+.form--Toast__spinner {
+	animation: form--Toast__spin 1.5s linear infinite;
+}
+
+@keyframes form--Toast__spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* 状态颜色 */
+.form--Toast.success .form--Toast__typeIcon {
+	color: var(--color-green);
+}
+
+.form--Toast.error .form--Toast__typeIcon {
+	color: var(--color-red);
+}
+
+.form--Toast.info .form--Toast__typeIcon {
+	color: var(--text-accent);
+}
+
+.form--Toast.warning .form--Toast__typeIcon {
+	color: var(--color-orange);
+}
+
+.form--Toast.loading .form--Toast__typeIcon {
+	color: var(--text-accent);
+}
+
+/* 关闭按钮 */
+button.form--Toast__close {
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin-left: 0.5rem;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--radius-s);
+	color: var(--text-muted);
+	transition: background-color 0.2s ease;
+	box-shadow: none;
+}
+
+button.form--Toast__close:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+/* 适配移动端 */
+@media (max-width: 768px) {
+	.form--Toast {
+		min-width: 80%;
+		max-width: 92%;
+		padding: 0.625rem 0.75rem;
+	}
+}

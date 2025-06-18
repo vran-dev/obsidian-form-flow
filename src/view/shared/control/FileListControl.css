@@ -1,0 +1,116 @@
+button.form--FileListControlTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 4px;
+	padding: 4px 6px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	min-height: 30px;
+}
+.form--FileListControlTriggerArrow {
+	width: 20px;
+	min-width: 20px;
+	color: var(--text-faint);
+}
+
+.form--FileListControlTriggerItems {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 4px;
+	flex-grow: 1;
+	overflow: hidden;
+	flex-wrap: wrap;
+}
+
+.form--FileListControlTriggerItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2px;
+	border-radius: var(--radius-s);
+	font-size: var(--font-ui-smaller);
+	padding: 2px;
+	color: var(--text-accent);
+	background-color: hsl(var(--interactive-accent-hsl), 0.15);
+}
+
+.form--FileListControlTriggerItemClose {
+	border-radius: var(--radius-s);
+	padding: 2px 4px;
+	color: var(--text-faint);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.form--FileListControlTriggerItemClose:hover {
+	color: rgba(var(--color-red-rgb), 1);
+	background-color: rgba(var(--color-red-rgb), 0.1);
+}
+
+.form--FileListControlContent {
+	display: flex;
+	flex-direction: column;
+	z-index: var(--form--modal-layer);
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-s);
+	padding: 8px 12px;
+	animation: fadeIn 200ms ease-out;
+	overflow-y: auto;
+	width: max(var(--radix-popover-trigger-width), 280px);
+	max-height: min(360px, var(--radix-popover-content-available-height));
+}
+
+input.form--FileListControlContentInput {
+	width: 100%;
+	box-shadow: none;
+	border: none;
+	padding: 8px 8px;
+}
+
+input.form--FileListControlContentInput:focus-visible {
+	box-shadow: none;
+}
+
+.form--FileListControlContentList {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px 4px;
+	gap: 4px;
+}
+
+.form--FileListControlContentItem {
+	padding: var(--size-4-1) var(--size-4-2);
+	cursor: pointer;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	border-radius: var(--input-radius);
+	margin-bottom: 4px;
+}
+.form--FileListControlContentItem:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.form--FileListControlContentItem[data-highlighted="true"] {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.form--FileListControlContentTip {
+	padding: 4px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.form--FileListControlContentTipInfo {
+	background-color: rgba(var(--color-green-rgb), 0.1);
+	color: rgba(var(--color-green-rgb), 0.85);
+	padding: 4px;
+	border-radius: var(--radius-s);
+}

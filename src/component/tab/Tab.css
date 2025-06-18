@@ -1,0 +1,234 @@
+/* Base Tab Group Layout */
+.form--TabGroup {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	max-height: inherit;
+	border-radius: var(--radius-m);
+	overflow: hidden;
+}
+
+.form--TabGroup[data-orientation="vertical"] {
+	flex-direction: row;
+}
+
+.form--TabList {
+	display: flex;
+	background-color: transparent;
+	color: var(--text-normal);
+	border-bottom: 1px solid var(--background-modifier-border);
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+	scrollbar-width: none; /* Firefox */
+	min-height: 32px; /* Slightly taller for better touch targets */
+}
+
+.form--TabList::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Edge */
+}
+
+.form--TabList[data-orientation="vertical"] {
+	flex-direction: column;
+	min-width: 150px;
+	max-width: 220px;
+	width: 25%;
+	height: 100%;
+	border-bottom: none;
+	border-right: 1px solid var(--background-modifier-border);
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Tab Button Reset and Styling */
+button.form--Tab {
+	all: unset; /* Reset all styles */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 32px;
+	min-height: 32px;
+	padding: 0 var(--size-4-2);
+	cursor: pointer;
+	position: relative;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	transition: color 150ms ease, background-color 150ms ease;
+	user-select: none;
+	white-space: nowrap;
+	font-weight: var(--font-normal);
+	flex-shrink: 0;
+	box-shadow: none;
+	outline: none;
+}
+
+button.form--Tab:focus-visible {
+	box-shadow: none;
+	outline: none;
+}
+
+/* Tab Title Text Styling */
+.form--Tab .form--TabTitle {
+	line-height: 1.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 var(--size-4-1);
+	max-width: 180px;
+}
+
+/* Active Tab Styling */
+.form--Tab[data-state="active"] {
+	color: var(--text-normal);
+	background-color: var(--background-primary);
+	font-weight: var(--font-medium);
+	position: relative;
+}
+
+.form--Tab[data-state="active"]::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-color: var(--text-normal);
+}
+
+/* Tab Hover States */
+.form--Tab:hover {
+	color: var(--text-normal);
+	background-color: var(--background-modifier-hover);
+}
+
+.form--Tab:focus-visible {
+	box-shadow: inset 0 0 0 2px var(--background-modifier-border-focus);
+	outline: none;
+}
+
+/* Active Tab in Vertical Orientation */
+.form--TabList[data-orientation="vertical"] .form--Tab {
+	justify-content: flex-start;
+	padding: var(--size-4-1) var(--size-4-3);
+	height: auto;
+	min-height: 36px;
+	border-left: 3px solid transparent;
+}
+
+.form--TabList[data-orientation="vertical"]
+	.form--Tab[data-state="active"] {
+	border-left: 3px solid var(--interactive-accent);
+}
+
+.form--TabList[data-orientation="vertical"]
+	.form--Tab[data-state="active"]::after {
+	display: none;
+}
+
+/* Tab Content Panel Container */
+.form--TabPanels {
+	flex: 1;
+	padding: var(--size-4-3);
+	border-radius: 0 0 var(--radius-m) var(--radius-m);
+	background-color: var(--background-primary);
+	overflow: auto;
+	width: 100%;
+}
+
+.form--TabGroup[data-orientation="vertical"] .form--TabPanels {
+	margin-top: 0;
+	border-radius: 0 var(--radius-m) var(--radius-m) 0;
+	height: 100%;
+}
+
+/* Individual Tab Panel */
+.form--TabPanel {
+	outline: none;
+	animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0.8;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Resize Bar for Vertical Tabs */
+.form--TabList[data-orientation="vertical"] .form--TabResizeBar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4px;
+	height: 100%;
+	opacity: 0;
+	background-color: var(--interactive-accent);
+	cursor: ew-resize;
+	transition: opacity 150ms ease;
+	z-index: 10;
+}
+
+.form--TabList[data-orientation="vertical"]
+	.form--TabResizeBar:hover,
+.form--TabList[data-orientation="vertical"]
+	.form--TabResizeBar:active {
+	opacity: 0.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.form--TabGroup[data-orientation="vertical"] {
+		flex-direction: column;
+	}
+
+	.form--TabList[data-orientation="vertical"] {
+		flex-direction: row;
+		min-width: 100%;
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+		border-right: none;
+		border-bottom: 1px solid var(--background-modifier-border);
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.form--TabList[data-orientation="vertical"] .form--Tab {
+		border-left: none;
+		border-bottom: 3px solid transparent;
+		padding: var(--size-4-2) var(--size-4-3);
+	}
+
+	.form--TabList[data-orientation="vertical"]
+		.form--Tab[data-state="active"] {
+		border-left: none;
+		border-bottom: 3px solid var(--interactive-accent);
+	}
+
+	.form--TabList[data-orientation="vertical"]
+		.form--TabResizeBar {
+		display: none;
+	}
+
+	.form--TabGroup[data-orientation="vertical"] .form--TabPanels {
+		border-radius: 0 0 var(--radius-m) var(--radius-m);
+	}
+
+	.form--Tab .form--TabTitle {
+		max-width: 140px;
+	}
+}
+
+/* Touch device enhancements */
+@media (pointer: coarse) {
+	.form--Tab {
+		padding: var(--size-4-2) var(--size-4-3);
+		min-height: 44px; /* Better touch target */
+	}
+
+	.form--TabList {
+		min-height: 44px;
+	}
+}

@@ -1,0 +1,54 @@
+.form--FormInternalVariables {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--radius-m);
+	box-shadow: var(--form-shadow);
+	padding: 8px;
+	background-color: var(--background-primary);
+	gap: 0.5rem;
+	z-index: var(--form--modal-layer);
+}
+
+.form--FormInternalVariable {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 2px 4px;
+	border-radius: var(--radius-m);
+}
+.form--FormInternalVariable[data-highlighted],
+.form--FormInternalVariable:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--FormInternalVariableName {
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+	font-weight: 500;
+}
+
+.form--FormInternalVariableDescription {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+}
+
+/* simplify button */
+button.form--FormInternalVariablesButton {
+	background-color: transparent;
+	box-shadow: none;
+	border: 1px solid var(--background-modifier-border);
+	height: 28px;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+button.form--FormInternalVariablesButton:hover {
+	color: var(--text-accent);
+	border-color: var(--interactive-accent);
+	background-color: var(--background-primary);
+}
+
+button.form--FormInternalVariablesButton:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+}
