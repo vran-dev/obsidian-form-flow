@@ -1,3 +1,5 @@
+English | [中文](https://github.com/vran-dev/obsidian-form-flow/blob/master/README_zh.md)
+
 ## What is the Form Tool?
 
 Still struggling with messy notes, repetitive tasks, or complex tools that require coding? Our visual form builder is here to save the day! It helps you effortlessly collect information, automate workflows, and boost productivity — no coding required. With a simple drag-and-drop interface as intuitive as managing a to-do list, it's powerful enough to replace plugins like Templater and QuickAdd, making your workflow smoother than ever.
