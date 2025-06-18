@@ -1,3 +1,5 @@
+中文 | [English](https://github.com/vran-dev/obsidian-form-flow/blob/master/README.md)
+
 ## 什么是表单？
 
 还在为杂乱的笔记、重复的任务或需要编程的复杂工具而苦恼？我们的可视化表单工具是你的救星！它能帮你轻松收集信息、自动化流程、提升效率——完全不需要写代码。拖拽式界面简单到像整理待办事项，却强大到能取代 Templater、QuickAdd 等插件，让你的工作更省心！
