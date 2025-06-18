@@ -1,6 +1,6 @@
 ---
-name: Question
-about: Question Guide
+name: Question / 问题咨询
+about: Question Guide / 问题引导
 title: ''
 labels: ''
 assignees: ''
