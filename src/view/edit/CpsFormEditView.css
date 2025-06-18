@@ -1,0 +1,71 @@
+.form--CpsFormEditView {
+	--form--setting-control-background-color: var(--background-primary);
+	--form--setting-control-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+		rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	--form--setting-control-border: none;
+}
+
+.form--CpsFormEditView button.form--AddButton {
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+	outline: none;
+	color: var(--text-muted);
+	padding: 4px 8px;
+	border-radius: var(--radius-m);
+	border: 1px dashed var(--background-modifier-border);
+	transition: all 0.2s ease;
+}
+
+.form--CpsFormEditView button.form--AddButton:hover {
+	background-color: var(--color-base-20);
+	color: var(--text-normal);
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.form--CpsFormEditView button.form--AddButton:focus-visible {
+	background-color: var(--color-base-30);
+	box-shadow: 0 0 0 2px var(--color-accent);
+	color: var(--text-accent);
+}
+
+.form--CpsFormEditView button.form--AddButton:active {
+	background-color: var(--color-base-30);
+}
+
+.form--CpsFormEditView button.clickable-icon,
+button.form--Btn {
+	background-color: transparent;
+	box-shadow: none;
+	outline: none;
+	height: 24px;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	padding: 4px 8px;
+	cursor: pointer;
+	gap: 4px;
+}
+
+.form--CpsFormEditView button.clickable-icon .lucide,
+button.form--Btn .lucide {
+	height: 14px;
+	width: 14px;
+}
+
+.form--CpsFormEditView button.clickable-icon[data-type="danger"],
+button.form--Btn[data-type="danger"] {
+	color: var(--color-base-50);
+}
+
+.form--CpsFormEditView button.clickable-icon[data-type="danger"]:hover,
+button.form--Btn[data-type="danger"]:hover {
+	background-color: rgba(var(--color-red-rgb), 0.1);
+	color: rgba(var(--color-red-rgb), 0.85);
+}
+
+.form--CpsFormEditView button.clickable-icon:hover,
+button.form--Btn:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}

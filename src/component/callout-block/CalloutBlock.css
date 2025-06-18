@@ -1,0 +1,29 @@
+.form--CalloutBlock {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-3);
+	padding: var(--size-4-4) var(--size-4-4);
+	border-radius: var(--radius-m);
+	width: 100%;
+	color: var(--text-muted);
+	position: relative;
+}
+
+.form--CalloutBlock.callout {
+	border: 1px solid rgba(var(--callout-color), 0.35);
+}
+
+.form--CalloutTitle {
+	display: flex;
+	gap: var(--size-4-1);
+	align-items: center;
+	width: 100%;
+}
+
+.form--CalloutBlockContent {}
+
+.form--CalloutBlockCloseButton {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}

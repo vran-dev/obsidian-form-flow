@@ -1,0 +1,36 @@
+.form--ToggleContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--size-4-1);
+	padding: var(--size-2-1) var(--size-4-1);
+	font-size: var(--font-ui-small);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.form--ToggleItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: var(--radius-s);
+	padding: var(--size-2-1) var(--size-4-2);
+	color: var(--text-faint);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.form--ToggleItem.form--ToggleItem_active {
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+	color: hsl(var(--interactive-accent-hsl), 1);
+}
+
+@media (any-hover: hover) {
+	.form--ToggleItem:hover {
+		background-color: var(--background-modifier-hover);
+	}
+
+	.form--ToggleItem.form--ToggleItem_active:hover {
+		background-color: var(--background-modifier-active-hover);
+	}
+}

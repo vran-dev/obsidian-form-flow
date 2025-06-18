@@ -1,0 +1,99 @@
+/* 字段设置面板主容器 */
+.form--CpsFormFieldSettingContent {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-primary);
+	width: 100%;
+	padding: var(--size-4-2) var(--size-4-2);
+	gap: 8px;
+}
+
+.form--CpsFormFieldSettingContentHeader {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+}
+
+.form--CpsFormFieldSettingContentModeGroup {
+	display: inline-flex;
+	gap: var(--size-4-1);
+	border-radius: var(--radius-s);
+	background-color: var(--background-secondary);
+	padding: var(--size-4-1);
+	/* box-shadow: var(--input-shadow); */
+	border: 1px solid var(--background-modifier-border);
+}
+
+button.form--CpsFormFieldSettingContentModeItem {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--size-2-1) var(--size-2-3);
+	border-radius: var(--radius-s);
+	color: var(--text-muted);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+button.form--CpsFormFieldSettingContentModeItem:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+button.form--CpsFormFieldSettingContentModeItem[data-state="on"] {
+	color: var(--text-accent);
+	background-color: hsl(var(--interactive-accent-hsl), 0.15);
+}
+
+.form--CpsFormFieldSettingContentModeItem svg {
+	width: 14px;
+	height: 14px;
+}
+
+.form--CpsFormFieldSettingControlPreview {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: var(--background-primary);
+}
+
+button.form--VisibilityConditionButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--size-2-1) var(--size-2-3);
+	border-radius: var(--radius-s);
+	color: var(--text-faint);
+	font-size: var(--font-ui-small);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	box-shadow: none;
+	transition: all 0.2s ease;
+	gap: 4px;
+}
+
+button.form--VisibilityConditionButton[data-has-condition="true"] {
+	color: var(--text-accent);
+}
+
+button.form--VisibilityConditionButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.form--CpsFormFieldSettingError {
+	background-color: rgba(var(--color-red-rgb), 0.1);
+	color: rgba(var(--color-red-rgb), 0.85);
+	padding: 4px 8px;
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	user-select: text;
+}

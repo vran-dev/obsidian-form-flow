@@ -1,0 +1,6 @@
+.form--FilterRule button.form--Select2Trigger {
+	background-color: transparent;
+}
+.form--FilterRule button.form--Select2Trigger:hover {
+	background-color: var(--background-modifier-hover);
+}

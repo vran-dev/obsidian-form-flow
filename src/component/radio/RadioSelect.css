@@ -1,0 +1,32 @@
+.form--RadioSelect {
+	display: flex;
+	gap: 1rem;
+	font-size: var(--font-ui-small);
+	flex-wrap: wrap;
+}
+.form--RadioSelect .form--RadioSelectOption input[type="radio"] {
+	margin: 0;
+}
+
+.form--RadioSelectOption {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	padding: 2px 4px;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+}
+
+.form--RadioSelectOption:has(input:focus-visible) {
+	outline: 2px solid hsl(var(--interactive-accent-hsl), 1);
+	outline-offset: 2px;
+	background-color: hsl(var(--interactive-accent-hsl), 0.2);
+}
+
+.form--RadioSelectOption:hover {
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+}
+
+.form--RadioSelectOption input:checked + span {
+	font-weight: 500;
+}

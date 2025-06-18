@@ -1,0 +1,236 @@
+.form--ListBoxContainer {
+	position: relative;
+	width: 100%;
+}
+
+.form--ListBox {
+	width: 100%;
+	font-size: var(--font-ui-small);
+}
+
+.form--ListBoxButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 150px;
+	padding: 2px 8px;
+	background-color: var(--background-secondary);
+	border: none;
+	border-radius: var(--radius-s);
+	color: var(--text-normal);
+	cursor: default;
+	text-align: left;
+	position: relative;
+	height: auto;
+	min-height: 30px;
+	overflow: hidden;
+	padding-right: 28px;
+	width: 100%;
+}
+.form--ListBoxButton .lucide {
+	color: var(--text-muted);
+	transition: transform 0.2s ease-in-out;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	flex-shrink: 0;
+}
+
+.form--ListBoxButton:hover {
+	box-shadow: var(--input-shadow-hover);
+	background-color: var(--dropdown-background-hover);
+}
+
+/* Focus styles */
+.form--ListBoxButton:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+}
+
+.form--ListBoxOptionsHeader {
+	display: flex;
+	align-items: center;
+	padding: var(--size-4-2);
+	background-color: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	color: var(--text-muted);
+	gap: 4px;
+}
+
+button.form--ListBoxOptionsHeaderButton {
+	all: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: none;
+	border: none;
+	padding: var(--size-2-2) var(--size-2-2);
+	border-radius: var(--radius-s);
+}
+
+button.form--ListBoxOptionsHeaderButton:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--ListBoxOptionsHeaderLabel {
+	font-size: var(--font-ui-small);
+	color: var(--text-faint);
+}
+
+.form--ListBoxOptions {
+	position: absolute;
+	z-index: var(--form--modal-layer);
+	margin-top: 4px;
+	max-height: 300px;
+	min-width: 160px;
+	width: var(--radix-dropdown-menu-trigger-width);
+	overflow-y: auto;
+	border-radius: var(--radius-s);
+	box-shadow: var(--shadow-s);
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+}
+
+.form--ListBoxOption {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	cursor: pointer;
+	color: var(--text-normal);
+	outline: none; /* Remove default outline */
+}
+
+.form--ListBoxOption:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--ListBoxOption[data-selected="true"] {
+	background-color: var(--background-modifier-hover-hover);
+}
+
+.form--ListBoxOption[data-highlighted] {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	font-weight: 500;
+}
+
+.form--ListBoxOptionContent {
+	display: flex;
+	align-items: center;
+}
+
+.form--ListBoxOptionIcon {
+	display: inline-flex;
+	align-items: center;
+	margin-right: 8px;
+	color: var(--text-muted);
+}
+
+.form--ListBoxOption[data-selected="true"],
+.form--ListBoxOption[data-selected="true"]
+	.form--ListBoxOptionIcon {
+	color: var(--interactive-accent);
+}
+
+.form--ListBoxSelections {
+	display: flex;
+	flex-wrap: wrap; /* Allow tags to wrap to next line if needed */
+	gap: 4px;
+	max-width: calc(100% - 24px);
+	align-items: center;
+	padding: 4px 0; /* Add vertical padding to accommodate wrapped tags */
+	overflow: visible; /* Don't clip content */
+}
+
+.form--ListBoxTag {
+	display: inline-flex;
+	padding: 2px 6px;
+	font-size: var(--font-ui-smaller);
+	background-color: var(--color-base-20);
+	color: hsl(var(--interactive-accent-hsl), 1);
+	border-radius: var(--radius-s);
+	white-space: nowrap;
+	max-width: 120px; /* Increase max width for tags */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+	flex-shrink: 0; /* Prevent tags from shrinking */
+	margin: 1px; /* Add small margin between tags */
+}
+
+.form--ListBoxMoreCount {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1px 6px;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+.form--ListBoxPlaceholder {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+/* Replace the bulk actions styles with the toggle button style */
+
+/* Remove the old bulk actions section */
+.form--ListBoxBulkActions {
+	display: none;
+}
+
+/* Update selection summary to include the toggle button */
+.form--ListBoxSelectionSummary {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px 8px;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	background-color: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+button.form--ListBoxToggleAll {
+	background: none;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	padding: 4px;
+	margin: 0;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--interactive-accent);
+	border-radius: var(--radius-s);
+}
+
+button.form--ListBoxToggleAll:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+/* Make the toggle button keyboard accessible */
+.form--ListBoxToggleAll:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+}
+
+/* Visual indication of disabled state */
+.form--ListBox[disabled] .form--ListBoxButton,
+.form--ListBox[disabled] .form--ListBoxButton:hover {
+	opacity: 0.6;
+	cursor: not-allowed;
+	background-color: var(--background-modifier-form-field);
+}
+
+/* Always show the selection summary regardless of selection state */
+.form--ListBoxSelectionSummary {
+	display: flex;
+}

@@ -1,0 +1,136 @@
+.form--DialogRoot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	inset-inline-start: 0;
+	width: 100%;
+	z-index: var(--form-overlay-layer);
+}
+
+.form--DialogOverlay {
+	background-color: rgba(40, 40, 40, 0.65);
+	position: fixed;
+	inset: 0;
+	backdrop-filter: blur(2px);
+}
+
+.form--DialogContent {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--radius-l);
+	background-color: var(--background-primary);
+	box-shadow: var(--shadow-l);
+	border: var(--prompt-border-width) solid var(--prompt-border-color);
+	z-index: 1;
+	position: absolute;
+	top: var(--form--DialogContent-top, 120px);
+	min-width: min(300px, 80vw);
+	min-height: var(--form--DialogContent-minHeight, 120px);
+	width: var(--form--DialogContent-width, 700px);
+	max-width: var(--form--DialogContent-maxWidth, 80vw);
+	max-height: var(--form--DialogContent-maxHeight, 85vh);
+	overflow: hidden;
+	z-index: var(--form-overlay-layer);
+	margin: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0)
+		env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+}
+
+.is-mobile .form--DialogRoot {
+	align-items: flex-start;
+}
+
+.is-mobile .form--DialogContent {
+	--DialogContent-top: calc(var(--safe-area-inset-top) + var(--header-height)) +
+		36px;
+	height: calc(var(--viewport-height) - var(--DialogContent-top));
+	--form--DialogContent-width: 100%;
+	--form--DialogContent-maxWidth: 100%;
+	--form--DialogContent-top: 0px;
+	--form--DialogContent-maxHeight: 95vh;
+	top: 0px;
+	border-radius: var(--radius-l) var(--radius-l) 0px 0px;
+}
+
+.form--DialogPanelChildren {
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: var(--size-4-4);
+	position: relative;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+}
+
+.form--DialogTitle {
+	margin: 0;
+	padding: var(--size-4-2) var(--size-4-4) var(--size-4-1) var(--size-4-4);
+	font-size: var(--font-ui-medium);
+	color: var(--text-normal);
+	font-weight: 500;
+	flex-shrink: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-right: 44px;
+	min-height: 36px;
+}
+
+.form--DialogDescription {
+	padding: 0 var(--size-4-4) var(--size-4-2);
+	margin: 0;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	flex-shrink: 0;
+	max-height: 4.5em;
+	overflow-y: auto;
+	line-height: 1.5;
+}
+
+.form--DialogPanelChildren::-webkit-scrollbar {
+	width: 6px;
+}
+
+.form--DialogPanelChildren::-webkit-scrollbar-track {
+	background: var(--scrollbar-bg, transparent);
+}
+
+.form--DialogPanelChildren::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-bg, rgba(0, 0, 0, 0.2));
+	border-radius: 3px;
+}
+
+button.form--DialogCloseButton {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: var(--size-4-1);
+	cursor: pointer;
+	border-radius: var(--radius-m);
+	width: 28px;
+	height: 28px;
+	box-shadow: none;
+	background-color: transparent;
+	border: none;
+	color: var(--text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	transition: all 120ms ease;
+}
+
+button.form--DialogCloseButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-accent);
+	transform: scale(1.05);
+}
+
+button.form--DialogCloseButton:active {
+	transform: scale(0.95);
+	background-color: var(--background-modifier-active);
+}

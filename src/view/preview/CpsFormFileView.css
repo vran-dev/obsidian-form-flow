@@ -1,0 +1,30 @@
+.form--CpsFormFileView {
+	max-width: 700px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	padding: 8px 16px;
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	.form--CpsFormFileView {
+		width: 100%;
+		max-width: 100%;
+		padding: 4px 8px;
+	}
+}
+
+.form--CpsFormFileViewHeader {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	color: var(--text-muted);
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+button.form--CpsFormFileViewModeButton {
+	justify-self: flex-end;
+	gap: 4px;
+}

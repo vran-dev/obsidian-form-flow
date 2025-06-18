@@ -1,0 +1,43 @@
+.form--ExtensionTagSelector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
+}
+
+.form--ExtensionTag {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: var(--background-modifier-border);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.form--ExtensionTag:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.form--ExtensionTag.active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.form--ExtensionTagCount {
+    margin-left: 6px;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1px 6px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.form--ExtensionTag.active .form--ExtensionTagCount {
+    background-color: rgba(255, 255, 255, 0.2);
+}

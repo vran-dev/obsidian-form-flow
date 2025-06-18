@@ -1,0 +1,27 @@
+.form--CpsFormPreview {
+}
+
+.form--CpsFormPreviewBody {
+	margin-bottom: 1rem;
+}
+
+.form--CpsFormPreviewFooter {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.6rem;
+	margin-bottom: 0.5rem;
+}
+
+.form--CpsFormSubmitButton {
+	min-width: 120px;
+}
+
+.form--CpsFormSubmitButtonKey {
+	opacity: 0.8;
+	margin-left: 8px;
+}
+
+button.form--CpsFormSubmitButton .form--loadingSpinner {
+	color: var(--text-on-accent);
+}

@@ -1,0 +1,52 @@
+.form--FilterDropdownMenuContent {
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--form-shadow);
+	padding: 8px;
+	animation-duration: 0.2s;
+	animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: transform, opacity;
+	border: 1px solid var(--background-modifier-border);
+	z-index: var(--form-overlay-layer);
+	overflow-y: auto;
+	min-width: min(var(--radix-dropdown-menu-content-available-width), 200px);
+	max-width: var(--radix-dropdown-menu--content-available-width);
+	max-height: min(400px, var(--radix-dropdown-menu-content-available-height));
+}
+
+.form--FilterDropdownMenuItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 12px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	user-select: none;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-normal);
+	outline: none;
+}
+
+.form--FilterDropdownMenuItem:focus,
+.form--FilterDropdownMenuItem:hover,
+.form--FilterDropdownMenuItem[data-highlighted] {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--FilterDropdownMenuItem:active {
+	background-color: var(--background-modifier-active);
+}
+
+.form--FilterDropdownMenuItemIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	color: var(--text-muted);
+	width: 16px;
+	height: 16px;
+}
+
+.form--FilterDropdownMenuArrow {
+	fill: var(--background-primary);
+}

@@ -1,0 +1,17 @@
+.form--DateFieldDefaultValueControl {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+	.form--DateFieldDefaultValueControl {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		align-items: initial;
+		width: auto;
+		flex-grow: 0 !important;
+	}
+}

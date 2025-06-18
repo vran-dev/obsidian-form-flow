@@ -1,0 +1,70 @@
+.form--CpsFormFieldsSetting {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.form--CpsFormFieldSetting {
+	display: flex;
+	flex-direction: column;
+	/* overflow: hidden; */
+	position: relative;
+	flex-wrap: wrap;
+	border-radius: var(--radius-m);
+	background-color: var(--form--setting-control-background-color);
+	box-shadow: var(--form--setting-control-box-shadow);
+	border: var(--form--setting-control-border);
+	padding: 4px 2px;
+}
+
+@media (max-width: 768px) {
+	.form--CpsFormFieldSetting {
+		flex-direction: column;
+		padding: 4px 6px;
+	}
+	.form--CpsFormFieldSetting .form--CpsFormFieldSettingControl {
+		justify-content: flex-start;
+	}
+	.form--CpsFormFieldSetting
+		.form--CpsFormFieldSettingControl
+		> *:first-child {
+		flex-grow: 1;
+	}
+
+	.form--CpsFormFieldSetting
+		.form--CpsFormFieldSettingControl
+		> input[type="checkbox"] {
+		flex-grow: 0;
+	}
+}
+
+.form--CpsFormFieldSettingControl {
+	display: flex;
+	gap: 0.5rem;
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+input[type="text"].form--CpsFormFieldSettingLabelInlineInput {
+	box-shadow: none;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	min-width: 48px;
+	text-overflow: ellipsis;
+	flex: 1;
+}
+
+input[type="text"].form--CpsFormFieldSettingLabelInlineInput:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+input[type="text"].form--CpsFormFieldSettingLabelInlineInput:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+.form--CpsFormFieldSettingLabelRequired {
+	color: var(--text-error);
+}

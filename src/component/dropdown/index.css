@@ -1,0 +1,71 @@
+button.form--DropdownLabel {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	user-select: none;
+	box-shadow: none;
+	border-radius: var(--radius-s);
+	background-color: transparent;
+}
+
+button.form--DropdownLabel:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--DropdownLabelText {
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+}
+
+.form--DropdownMenus {
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--form-shadow);
+	padding: 8px;
+	animation-duration: 0.2s;
+	animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: transform, opacity;
+	border: 1px solid var(--background-modifier-border);
+	z-index: var(--form-overlay-layer);
+	overflow-y: auto;
+	min-width: min(var(--radix-popover-content-available-width), 280px);
+	max-width: var(--radix-popover-content-available-width);
+	max-height: min(400px, var(--radix-dropdown-menu-content-available-height));
+}
+
+.form--DropdownMenuItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	user-select: none;
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+	outline: none;
+}
+
+.form--DropdownMenuItem:focus,
+.form--DropdownMenuItem:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--DropdownMenuItem:active {
+	background-color: var(--background-modifier-active);
+}
+
+.form--DropdownMenuItemIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	color: var(--text-muted);
+	width: 16px;
+	height: 16px;
+}
+
+.form--DropdownMenuArrow {
+	fill: var(--background-primary);
+}

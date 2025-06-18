@@ -1,0 +1,97 @@
+button.form--Select2Trigger {
+	height: var(--input-height);
+	font-size: var(--font-ui-small);
+	font-family: inherit;
+	font-weight: var(--input-font-weight);
+	color: var(--text-normal);
+	line-height: var(--line-height-tight);
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	box-shadow: var(--input-shadow);
+	border-radius: var(--input-radius);
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: var(--dropdown-background);
+	background-repeat: no-repeat, repeat;
+	background-position: var(--dropdown-background-position);
+	background-size: var(--dropdown-background-size);
+	background-blend-mode: hard-light;
+	justify-content: space-between;
+	align-items: center;
+}
+
+button.form--Select2Trigger:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+button.form--Select2Trigger:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+.form--Select2TriggerIcon {
+	display: inline-flex;
+	align-items: center;
+	color: var(--text-muted);
+	margin-left: 16px;
+}
+
+.form--Select2Content {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 0.5rem;
+	background-color: var(--background-primary);
+	box-shadow: var(--form-shadow);
+	font-size: var(--font-ui-small);
+	z-index: var(--form--modal-layer);
+	width: max(var(--radix-select-trigger-width), 220px);
+	height: min(var(--radix-select-content-available-height), 300px);
+	overflow-y: auto;
+	border-radius: var(--radius-m);
+}
+
+.form--Select2Item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0px 8px;
+	line-height: 1;
+	height: 24px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	font-size: var(--font-ui-smaller);
+}
+
+.form--Select2Item[data-highlighted],
+.form--Select2Item:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--Select2ScrollButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 24px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	color: var(--text-muted);
+}
+
+.form--Select2ScrollButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+.form--Select2ScrollButton .lucide {
+	width: 16px;
+	height: 16px;
+}
+
+.form--Select2ItemIndicator {
+	display: flex;
+	align-items: center;
+	color: var(--text-muted);
+}

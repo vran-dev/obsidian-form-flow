@@ -1,0 +1,49 @@
+.form--FilterRoot {
+	padding: 4px 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	overflow: auto;
+}
+
+.form--FilterRootContent {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding-bottom: 8px;
+}
+
+.form--FilterRootAdd {
+	position: relative;
+}
+
+.form--FilterRootFooter {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+button.form--UndoClearFilterButton,
+button.form--ClearFilterButton {
+	width: 100%;
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 4px;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+button.form--ClearFilterButton:hover {
+	background-color: rgba(var(--color-red-rgb), 0.1);
+	color: rgba(var(--color-red-rgb), 0.85);
+}
+
+button.form--UndoClearFilterButton:hover {
+	background-color: rgba(var(--color-green-rgb), 0.1);
+	color: rgba(var(--color-green-rgb), 0.85);
+}

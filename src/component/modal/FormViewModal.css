@@ -1,0 +1,52 @@
+:not(.is-mobile) .form--CpsFormModal .modal {
+	top: 80px;
+	position: absolute;
+}
+
+.is-mobile .form--CpsFormModal.modal-container {
+	display: flex;
+	align-items: flex-end;
+}
+
+.is-mobile .form--CpsFormModal .modal {
+	--cpsform-modal-top: calc(var(--safe-area-inset-top) + var(--header-height)) +
+		36px;
+	height: calc(var(--viewport-height) - var(--cpsform-modal-top));
+}
+
+.form--CpsFormModal .form--CpsFormPreviewFooter {
+	margin-bottom: 0px;
+}
+
+.form--CpsFormModalHeader {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1.05rem;
+	font-weight: 500;
+	color: var(--text-muted);
+	margin-bottom: 8px;
+}
+
+.form--CpsFormModalHeader:hover {
+	cursor: pointer;
+	color: var(--interactive-accent);
+}
+
+.form--CpsFormModalContent {
+	display: flex;
+	flex-direction: column;
+}
+
+.form--CpsFormModalContent.form--CpsFormFileView {
+	border-color: transparent;
+	max-width: 100%;
+}
+
+.form--CpsFormModalContent.form--CpsFormFileView
+	.form--CpsFormPreviewBody {
+	flex: 1;
+	overflow-y: auto;
+	max-height: calc(80vh - 96px);
+	padding: 4px 8px;
+}

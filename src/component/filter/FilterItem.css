@@ -1,0 +1,51 @@
+.form--Filter {
+	display: flex;
+	gap: 8px;
+}
+.form--FilterRelation {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	line-height: 1.5;
+	vertical-align: middle;
+	height: 32px;
+	padding: 2px 4px;
+	font-size: var(--font-ui-smaller);
+	white-space: nowrap;
+}
+
+.form--FilterRelation .form--Select2Trigger {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 2px 4px;
+	cursor: pointer;
+	font-size: var(--font-ui-smaller);
+}
+
+.form--FilterRelation .form--Select2TriggerIcon {
+	margin-left: 4px;
+}
+
+button.form--FilterRelationButton {
+	height: 24px;
+	border: 1px solid var(--background-modifier-border);
+}
+.form--FilterContent {
+	flex: 1;
+}
+
+.form--FilterRule {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.form--FilterGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: var(--color-base-10);
+	padding: 4px 8px;
+	border-radius: var(--radius-s);
+	border: 1px solid var(--background-modifier-border);
+}

@@ -1,0 +1,194 @@
+.form--MultipleCombobox {
+	position: relative;
+	width: 100%;
+	min-width: 180px;
+	font-size: var(--font-ui-small);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	background-color: var(--background-primary);
+	cursor: pointer;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.form--MultipleComboboxChevron {
+	flex-shrink: 0;
+	color: var(--text-muted);
+	margin-left: 4px;
+	transition: transform 200ms ease;
+}
+
+.form--MultipleComboboxChevron-open {
+	transform: rotate(180deg);
+}
+
+.form--MultipleComboboxContent {
+	width: max(var(--radix-popover-trigger-width), 300px);
+	max-height: var(--combobox-max-height, 400px);
+	overflow: hidden;
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-s);
+	animation-duration: 200ms;
+	z-index: var(--form--modal-layer);
+}
+/* trigger */
+.form--MultipleComboboxTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 6px;
+	width: 100%;
+	min-height: var(--input-height);
+	color: var(--text-color);
+	background-color: var(--interactive-normal);
+	box-shadow: var(--input-shadow);
+	border: none;
+	border-radius: var(--radius-s);
+}
+
+.form--MultipleComboboxTrigger:hover {
+	box-shadow: var(--input-shadow-hover);
+	background-color: var(--dropdown-background-hover);
+}
+
+.form--MultipleComboboxTrigger:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+/* Header in popover */
+.form--MultipleComboboxHeader {
+	border-bottom: 1px solid var(--background-modifier-border);
+	background-color: var(--color-base-10);
+}
+
+.form--MultipleComboboxChips {
+	padding: 0px 4px;
+	min-height: var(--input-height);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px;
+}
+
+.form--MultipleComboboxChip {
+	font-size: var(--font-ui-smaller);
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+	color: hsl(var(--interactive-accent-hsl), 1);
+	padding: 0px 4px;
+	border-radius: var(--radius-m);
+	display: inline-flex;
+	align-items: center;
+	height: 24px;
+	user-select: none;
+}
+
+button.form--MultipleComboboxChipButton {
+	all: unset;
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+	padding: 0px;
+	width: 16px;
+	height: 16px;
+	margin-left: 2px;
+	color: var(--text-faint);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+}
+
+button.form--MultipleComboboxChipButton:hover {
+	background-color: rgba(var(--color-red-rgb), 0.1);
+	color: rgba(var(--color-red-rgb), 0.85);
+	border-radius: 4px;
+}
+
+input.form--MultipleComboboxInput {
+	all: unset;
+	background-color: transparent;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	padding: 2px 4px;
+	flex: 1;
+	min-width: 40px;
+	min-height: 34px;
+}
+
+input.form--MultipleComboboxInput:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+/* options */
+.form--MultipleComboboxOptions {
+	max-height: 300px;
+	overflow-y: auto;
+	padding: 4px;
+}
+
+.form--MultipleComboboxOption {
+	display: flex;
+	flex-direction: column;
+	padding: 6px 8px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	user-select: none;
+}
+
+.form--MultipleComboboxOption:hover,
+.form--MultipleComboboxOption[data-active="true"] {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--MultipleComboboxOptionLabel {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--text-normal);
+}
+
+.form--MultipleComboboxOptionCheckbox {
+	color: var(--interactive-accent);
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+.form--MultipleComboboxOptionIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 2px;
+	color: var(--text-muted);
+}
+
+/* ---------------------------------------- */
+/* Base styles for the combobox container */
+
+/* Trigger button styling */
+
+.form--MultipleComboboxPlaceholder {
+	color: var(--text-faint);
+	padding-left: 4px;
+}
+
+/* No results message */
+.form--MultipleComboboxNoResults {
+	padding: 4px 12px;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.form--MultipleComboboxCreatePrompt {
+	font-size: var(--font-ui-smaller);
+	color: var(--interactive-accent);
+	font-style: italic;
+	display: inline-block;
+	margin-top: 4px;
+}

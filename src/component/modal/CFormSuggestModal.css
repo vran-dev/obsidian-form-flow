@@ -1,0 +1,34 @@
+.form--CpsFormSuggestionItem {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form--CpsFormSuggestionItemMenus {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.form--CpsFormSuggestionItemMenu {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	padding: 2px 4px;
+}
+
+@media (any-hover: hover) {
+	.form--CpsFormSuggestionItemMenu {
+		opacity: 0;
+	}
+	.form--CpsFormSuggestionItemMenu:hover {
+		cursor: pointer;
+		color: var(--text-on-accent);
+		background-color: var(--interactive-accent);
+	}
+}
+
+.form--CpsFormSuggestionItem.is-selected
+	.form--CpsFormSuggestionItemMenu {
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+}

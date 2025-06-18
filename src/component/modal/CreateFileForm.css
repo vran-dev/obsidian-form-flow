@@ -1,0 +1,66 @@
+.is-mobile .form--CreateFileFormModal .modal {
+	top: calc(
+		var(--safe-area-inset-top) + var(--header-height) + var(--size-4-2)
+	);
+	bottom: unset;
+	height: 100vh;
+}
+
+.form--CreateFileForm {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 0.5rem;
+}
+
+.form--CreateFileFormItem {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form--CreateFileFormItemLabel {
+	width: 100%;
+	flex: 1;
+	height: 30px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.form--CreateFileFormItemControl {
+	width: 100%;
+}
+
+.form--CreateFileFormItemControl > input {
+	width: 100%;
+}
+
+.form--CreateFileFormFooter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 1rem;
+}
+
+.form--CreateFileFormFilePath {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+}
+
+button.form--TextButton {
+	background-color: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+
+button.form--TextButton:hover {
+	color: var(--text-accent);
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+}
+
+button.form--TextButton:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}

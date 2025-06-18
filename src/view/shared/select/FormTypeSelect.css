@@ -1,0 +1,79 @@
+button.form--FormTypeSelectButton {
+	--button-background-color: var(--color-base-20);
+	box-shadow: none;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 3px 6px;
+	gap: 4px;
+	height: auto;
+	font-size: var(--font-ui-small);
+	background-color: var(--select-button-background-color, --color-base-20);
+	color: var(--select-button-text-color, --text-muted);
+}
+
+button.form--FormTypeSelectButton .form--FormTypeSelectButtonLabel {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+button.form--FormTypeSelectButton .lucide,
+.form--FormTypeSelectOption .lucide {
+	width: 16px;
+	height: 16px;
+}
+
+/* hide label in small device */
+@media (max-width: 600px) {
+	button.form--FormTypeSelectButton
+		.form--FormTypeSelectButtonLabel {
+		display: none;
+	}
+}
+
+button.form--FormTypeSelectButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-accent);
+}
+
+button.form--FormTypeSelectButton:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+.form--FormTypeSelectOptions {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 0.5rem;
+	background-color: var(--background-primary);
+	box-shadow: var(--form-shadow);
+	font-size: var(--font-ui-small);
+	z-index: var(--form--modal-layer);
+	width: max(var(--radix-popover-trigger-width), 220px);
+	height: min(var(--radix-popover-content-available-height), 300px);
+	overflow-y: auto;
+	border-radius: var(--radius-m);
+}
+
+.form--FormTypeSelectOption {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 4px 8px;
+	border-radius: var(--radius-m);
+	cursor: pointer;
+}
+
+.form--FormTypeSelectOption[data-highlighted] {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--FormTypeSelectOption[data-selected="true"] {
+	color: var(--text-accent);
+}
+
+.form--FormTypeSelectOption:hover {
+	background-color: var(--background-modifier-hover);
+}

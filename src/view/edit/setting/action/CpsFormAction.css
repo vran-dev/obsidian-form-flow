@@ -1,0 +1,100 @@
+.form--CpsFormActionsSetting {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+	width: 100%;
+}
+
+.form--CpsFormActionSetting {
+	border-radius: var(--radius-m);
+	width: 100%;
+	position: relative;
+	background-color: var(--form--setting-control-background-color);
+	box-shadow: var(--form--setting-control-box-shadow);
+	border: var(--form--setting-control-border);
+}
+
+.form--CpsFormActionSetting[data-is-valid="false"] {
+	border: 1px solid rgba(var(--color-red-rgb), 0.8);
+}
+
+@media (any-hover: hover) {
+	.form--CpsFormActionSetting:hover {
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	}
+}
+
+.form--CpsFormActionHeader {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: var(--size-4-2) var(--size-4-3);
+	border-bottom: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	gap: 4px;
+}
+
+.form--CpsFormActionErrorTips {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	padding: var(--size-4-2) var(--size-4-3);
+	background-color: rgba(var(--color-red-rgb), 0.1);
+	color: rgba(var(--color-red-rgb), 0.85);
+	font-size: var(--font-ui-smaller);
+}
+
+.form--CpsFormActionHeaderType {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+	color: hsl(var(--interactive-accent-hsl), 1);
+	padding: 2px 6px;
+	border-radius: var(--radius-m);
+	font-size: var(--font-ui-smaller);
+	white-space: nowrap;
+}
+
+.form--CpsFormActionHeaderTitle {
+	flex-grow: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-inline-start: 8px;
+}
+
+.form--CpsFormActionHeaderControl {
+	display: flex;
+	gap: var(--size-4-1);
+}
+
+.form--CpsFormActionContent {
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+button.form-CpsFormActinoCodeResetButton {
+	background-color: transparent;
+	box-shadow: none;
+	outline: none;
+	height: 24px;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+}
+
+button.form-CpsFormActinoCodeResetButton:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	font-weight: 500;
+	border-radius: var(--radius-m);
+	cursor: pointer;
+}
+
+.form--CpsFormActionCondition {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: var(--size-4-1) var(--size-4-2);
+}

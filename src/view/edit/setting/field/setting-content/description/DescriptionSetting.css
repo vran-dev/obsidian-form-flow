@@ -1,0 +1,27 @@
+.form--CpsFormFieldSettingDescription {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+@media (any-hover: hover) {
+	.form--CpsFormFieldSettingDescription:hover {
+		background-color: var(--background-modifier-hover);
+	}
+}
+
+.form--CpsFormFieldSettingDescription input[type="text"] {
+	all: unset;
+	width: 100%;
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+	line-height: var(--line-height-tight);
+	padding: 4px 12px;
+	flex-grow: 1;
+	border-radius: var(--radius-m);
+}
+
+.form--CpsFormFieldSettingDescription input[type="text"]:focus {
+	outline: none;
+	background-color: var(--color-base-10);
+}

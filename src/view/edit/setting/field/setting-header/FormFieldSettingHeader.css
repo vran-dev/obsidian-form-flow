@@ -1,0 +1,92 @@
+.form--CpsFormFieldSettingHeader {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: var(--size-4-1) var(--size-4-2);
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	gap: 4px;
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid var(--color-base-20);
+	border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+
+.form--CpsFormFieldSettingHeaderControl {
+	display: flex;
+}
+
+.form--CpsFormFieldSettingHeaderControl
+	.form--FormTypeSelectButton {
+	color: var(--text-faint);
+}
+
+.form--CpsFormFieldSettingHeader .form--DragHandler {
+	height: 30px;
+}
+
+.form--CpsFormFieldSettingPopover {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 0.5rem;
+	background-color: var(--background-primary);
+	box-shadow: var(--form-shadow);
+	font-size: var(--font-ui-small);
+	z-index: var(--form--modal-layer);
+	border-radius: var(--radius-m);
+	position: relative;
+	min-width: min(var(--radix-popover-content-available-width), 280px);
+	max-width: var(--radix-popover-content-available-width);
+}
+.form--CpsFormFieldSettingPopoverTitle {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	font-weight: 500;
+	padding-right: 36px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 8px 0px;
+}
+
+button.form--CpsFormFieldSettingPopoverClose {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 0px;
+}
+
+.form--CpsFormFieldSettingPopover .form--CpsFormItemInfoName {
+	font-size: var(--font-ui-smaller);
+}
+
+.form--CpsFormFieldSettingPopover .form--CpsFormItemInfoName {
+	font-size: var(--font-ui-smaller);
+}
+
+.form--CpsFormFieldSettingPopover .form--FormTypeSelectButton {
+	background-color: var(--interactive-normal);
+	box-shadow: var(--input-shadow);
+	outline: none;
+	cursor: pointer;
+	gap: 4px;
+	width: auto;
+	height: var(--input-height);
+	justify-content: space-between;
+}
+
+.form--CpsFormFieldSettingPopover
+	button.form--FormTypeSelectButton
+	.form--FormTypeSelectButtonLabel {
+	display: flex;
+	flex: 1;
+}

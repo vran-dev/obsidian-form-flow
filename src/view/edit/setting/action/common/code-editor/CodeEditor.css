@@ -1,0 +1,176 @@
+.form--codeEditorContainer {
+	position: relative;
+	width: 100%;
+	border-radius: 6px;
+	overflow: hidden;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+}
+
+.form--codeEditor {
+	height: 100%;
+	width: 100%;
+	font-family: "Menlo", "Monaco", "Courier New", monospace;
+	font-size: 14px;
+}
+
+.form--codeEditor .cm-editor {
+	height: 100%;
+	outline: none !important;
+}
+
+.form--codeEditor .cm-content {
+	padding: 10px 0;
+}
+
+.form--codeEditor .cm-scroller {
+	overflow: auto;
+}
+.form--codeEditor .cm-gutters {
+	background-color: var(--background-primary);
+	border-right: 1px solid var(--background-modifier-border);
+}
+.form--codeEditor .cm-lineNumbers .cm-gutterElement {
+	padding: 0 3px 0 5px;
+	background-color: transparent;
+	color: var(--text-faint);
+}
+
+.cm-gutter .cm-activeLineGutter {
+	background-color: transparent;
+}
+
+.form--codeEditor .cm-matchingBracket {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+	.form--codeEditor {
+		font-size: 12px;
+	}
+}
+
+/* highlight */
+.form--codeEditor {
+	--editor-background: var(--background-secondary);
+	--editor-text: var(--text-normal);
+	--editor-keyword: var(--color-red);
+	--editor-string: var(--color-green);
+	--editor-comment: var(--color-base-30);
+	--editor-variable: var(--color-yellow);
+	--editor-number: var(--color-cyan);
+	--editor-property: var(--color-blue);
+	--editor-atom: var(--color-blue);
+	--editor-def: var(--color-purple);
+	--editor-function: var(--color-green);
+	--editor-selection: rgba(0, 0, 0, 0.1);
+	--editor-active-line: rgba(0, 0, 0, 0.05);
+}
+
+/* 暗色主题变量覆盖 */
+.theme-dark .form--codeEditor {
+	--editor-selection: rgba(255, 255, 255, 0.2);
+	--editor-active-line: rgba(255, 255, 255, 0.1);
+}
+
+/* CodeMirror 6 语法高亮 */
+/* 关键字 */
+.form--codeEditor .ͼb,
+.form--codeEditor .ͼc {
+	color: var(--editor-keyword);
+}
+
+/* 操作符 */
+.form--codeEditor .ͼd {
+	color: var(--editor-keyword);
+}
+
+/* 字符串 */
+.form--codeEditor .ͼe {
+	color: var(--editor-string);
+}
+
+/* 注释 */
+.form--codeEditor .ͼa {
+	color: var(--editor-comment);
+}
+
+/* 其他 */
+.ͼ5 {
+	color: var(--editor-text);
+}
+
+/* 变量 */
+.form--codeEditor .ͼm,
+.form--codeEditor .ͼn {
+	color: var(--editor-variable);
+}
+
+/* 数字 */
+.form--codeEditor .ͼf {
+	/* number */
+	color: var(--editor-number);
+}
+
+/* 属性 */
+.form--codeEditor .ͼl {
+	/* propertyName */
+	color: var(--editor-property);
+}
+
+/* 原子 */
+.form--codeEditor .ͼi {
+	/* atom */
+	color: var(--editor-atom);
+}
+
+/* 定义 */
+.form--codeEditor .ͼg {
+	/* typeName */
+	color: var(--editor-def);
+}
+
+/* 函数 */
+.form--codeEditor .ͼk {
+	/* function */
+	color: var(--editor-function);
+}
+
+/* 括号和分隔符 */
+.form--codeEditor .ͼh,            /* paren */
+.form--codeEditor .ͼj {
+	/* bracket */
+	color: var(--editor-text);
+}
+
+/* 选择和当前行高亮 */
+.form--codeEditor .cm-selectionBackground,
+.form--codeEditor .cm-selectionBackground {
+	background-color: var(--editor-selection) !important;
+}
+
+.form--codeEditor .cm-activeLine {
+	background-color: var(--editor-active-line) !important;
+}
+
+/* 更明确的活动行标记，确保可见性 */
+.form--codeEditor .cm-line.cm-activeLine {
+	background-color: var(--editor-active-line) !important;
+	caret-color: auto !important;
+}
+
+/* 匹配括号高亮 */
+.form--codeEditor .cm-matchingBracket {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+.form--codeEditor .ͼ2 .cm-tooltip {
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	border-color: var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	padding: var(--size-4-1);
+}

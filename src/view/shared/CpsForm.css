@@ -1,0 +1,22 @@
+.form--CpsForm {
+	display: flex;
+	flex-direction: column;
+}
+
+.form--CpsForm[data-layout="vertical"] {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+input[type="time"] {
+	-webkit-app-region: no-drag;
+	background: var(--background-modifier-form-field);
+	border: var(--input-border-width) solid var(--background-modifier-border);
+	color: var(--text-normal);
+	font-family: inherit;
+	padding: var(--size-4-1) var(--size-4-2);
+	font-size: var(--font-ui-small);
+	border-radius: var(--input-radius);
+	outline: none;
+}

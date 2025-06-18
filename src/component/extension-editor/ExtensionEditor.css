@@ -1,0 +1,192 @@
+.form--ExtensionEditor {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	overflow: hidden;
+	height: 100%;
+	background-color: var(--background-primary);
+}
+
+.form--ExtensionEditorHeader {
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.form--ExtensionEditorHeaderLabel {
+	margin-bottom: 8px;
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.form--ExtensionEditorHeaderInput {
+	display: flex;
+	align-items: center;
+}
+
+.form--ExtensionEditorHeaderInput input {
+	flex: 1;
+	padding: 8px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background-color: var(--background-primary-alt);
+	color: var(--text-normal);
+}
+
+.form--ExtensionEditorHeaderInput input:focus {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.2);
+}
+
+.form--ExtensionEditorBody {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+  max-height: 400px;
+  height: 400px;
+}
+
+.form--ExtensionEditorContent {
+  display: flex;
+	flex-direction: row;
+	flex: 1;
+	overflow: hidden;
+}
+
+.form--ExtensionEditorFunctionList {
+	width: 200px;
+	overflow-y: auto;
+	border-right: 1px solid var(--background-modifier-border);
+	max-height: 100%;
+}
+
+.form--ExtensionEditorFunctionItem {
+	padding: 8px 12px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--background-modifier-border-subtle);
+}
+
+.form--ExtensionEditorFunctionItem:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--ExtensionEditorFunctionItem.active {
+	background-color: var(--background-modifier-hover);
+	border-left: 2px solid var(--interactive-accent);
+}
+
+.form--ExtensionEditorFunctionName {
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.form--ExtensionEditorFunctionTag {
+	display: inline-flex;
+	align-items: center;
+	font-size: 10px;
+	padding: 1px 4px;
+	border-radius: 3px;
+	background-color: var(--background-primary-alt);
+	color: var(--text-muted);
+	margin-left: 6px;
+	white-space: nowrap;
+}
+
+.form--ExtensionEditorFunctionDetail {
+	flex: 1;
+	padding: 16px;
+	overflow-y: auto;
+	max-height: 100%;
+	user-select: text;
+}
+
+.form--ExtensionEditorFunctionDetailHeader {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.form--ExtensionEditorFunctionDetailTitle {
+	font-size: 16px;
+	font-weight: 600;
+	margin-right: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.form--ExtensionEditorFunctionDetailPath {
+	font-size: 12px;
+	color: var(--text-muted);
+	margin-top: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.form--ExtensionEditorFunctionDetailContent {
+	color: var(--text-normal);
+	position: relative;
+}
+
+.form--ExtensionEditorFunctionDetailContent pre[class*="language-"] {
+	position: relative;
+}
+
+.form--ExtensionEditorFunctionDetailContent button.copy-code-button {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	background-color: transparent;
+	box-shadow: initial;
+}
+
+.form--ExtensionEditorFunctionDetailContent
+	button.copy-code-button:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--ExtensionEditorEmptyState {
+	padding: 8px 16px;
+}
+
+.form--ExtensionEditorEmptyAction {
+	margin-top: 16px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.form--ExtensionEditorEmptyAction button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	background-color: hsl(var(--interactive-accent-hsl), 0.1);
+	color: hsl(var(--interactive-accent-hsl), 1);
+	border: 1px solid hsl(var(--interactive-accent-hsl), 1);
+}
+
+.form--ExtensionEditorEmptyAction button .lucide {
+	color: hsl(var(--interactive-accent-hsl), 1);
+}
+
+.form--ExtensionEditorEmptyAction button.form--button:hover {
+	background-color: hsl(var(--interactive-accent-hsl), 1);
+	color: var(--text-on-accent);
+}
+
+.form--ExtensionEditorEmptyAction
+	button.form--button:hover
+	.lucide {
+	color: var(--text-on-accent);
+}
