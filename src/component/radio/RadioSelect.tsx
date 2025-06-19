@@ -49,7 +49,7 @@ function Option(props: {
 	const optionValue = option.value || option.label;
 	const isChecked = value === optionValue;
 	return (
-		<label key={option.value} className="form--RadioSelectOption">
+		<label key={option.value} className="form--RadioSelectOption" data-checked={isChecked === true}>
 			<input
 				type="radio"
 				name={name}
