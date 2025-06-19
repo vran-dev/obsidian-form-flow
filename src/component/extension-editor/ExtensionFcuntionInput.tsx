@@ -14,18 +14,14 @@ export default function ExtensionFcuntionInput(props: {
 	const extensionDetailRef = useRef<HTMLDivElement>(null);
 	const obComponentRef = useRef(new Component());
 
-	// 渲染扩展函数的描述（Markdown）
 	useEffect(() => {
 		if (!extensionDetailRef.current) return;
 
-		extensionDetailRef.current.innerHTML = "";
-
-		// 获取描述内容
+		extensionDetailRef.current.empty();
 		let description = "";
 		if (typeof extension.description === "string") {
 			description = extension.description;
 		} else if (extension.description) {
-			// 优先使用中文描述，如果没有则使用默认或英文
 			description =
 				extension.description.zh ||
 				extension.description.default ||
@@ -43,7 +39,7 @@ export default function ExtensionFcuntionInput(props: {
 
 		return () => {
 			if (extensionDetailRef.current) {
-				extensionDetailRef.current.innerHTML = "";
+				extensionDetailRef.current.empty();
 			}
 			obComponentRef.current.unload();
 		};

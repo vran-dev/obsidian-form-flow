@@ -27,6 +27,11 @@ export class Files {
             normalizePath(filePath),
             data
         );
-        return app.vault.getAbstractFileByPath(filePath) as TFile;
+        const res = app.vault.getAbstractFileByPath(filePath)
+        if (res instanceof TFile) {
+            return res;
+        } else {
+            throw new Error(`Failed to create file: ${filePath}`);
+        }
     }
 }

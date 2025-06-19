@@ -13,9 +13,9 @@ export function openFilePathDirectly(
         | "current"
         | "none"
 ) {
-    const tFile = app.vault.getAbstractFileByPath(filePath) as TFile;
-    if (tFile) {
-        openFile(app, null, tFile, {
+    const f = app.vault.getAbstractFileByPath(filePath);
+    if (f instanceof TFile) {
+        openFile(app, null, f, {
             openType: openType,
         });
     }
