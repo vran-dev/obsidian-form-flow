@@ -71,7 +71,7 @@ export class FormScriptService {
         const createFileEventRef = app.vault.on("create", async (file: TFile) => {
             if (this.isExtensionFile(file)) {
                 console.info("script extension created " + file.path)
-                const extension = await this.formScriptLoader.load(app, file as TFile);
+                const extension = await this.formScriptLoader.load(app, file);
                 if (extension) {
                     this.formScripts.set(file.path, extension);
                 }
@@ -89,7 +89,7 @@ export class FormScriptService {
         // modify file
         const modifyFileEventRef = app.vault.on("modify", async (file: TFile) => {
             if (this.isExtensionFile(file)) {
-                const extension = await this.formScriptLoader.load(app, file as TFile);
+                const extension = await this.formScriptLoader.load(app, file);
                 console.info("script extension modified " + file.path, extension)
                 if (extension) {
                     this.formScripts.set(file.path, extension);
@@ -102,7 +102,7 @@ export class FormScriptService {
             if (this.isExtensionFile(file)) {
                 console.info("script extension renamed " + oldPath + " to " + file.path)
                 this.formScripts.delete(oldPath);
-                const extension = await this.formScriptLoader.load(app, file as TFile);
+                const extension = await this.formScriptLoader.load(app, file);
                 if (extension) {
                     this.formScripts.set(file.path, extension);
                 }
