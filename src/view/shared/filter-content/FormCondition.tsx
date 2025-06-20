@@ -1,6 +1,6 @@
 import { Select2 } from "src/component/select2/Select";
 import useFormConfig from "src/hooks/useFormConfig";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { OperatorType } from "src/model/filter/OperatorType";
 import { useFormField } from "../../edit/setting/field/hooks/FormFieldContext";
 import { ConditionOperator } from "./ConditionOperator";

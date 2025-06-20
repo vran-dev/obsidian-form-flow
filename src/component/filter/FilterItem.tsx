@@ -6,7 +6,7 @@ import { FilterAddDropdown } from "./menu/FilterAddDropdown";
 import { FilterMenuDropdown } from "./menu/FilterMenuDropdown";
 import { FilterRelationDropdown } from "./menu/FilterRelationDropdown";
 import { localInstance } from "src/i18n/locals";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { RelationType, OperatorType } from "src/model/filter/OperatorType";
 
 export interface FilternProps {

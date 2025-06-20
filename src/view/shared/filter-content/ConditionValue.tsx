@@ -2,7 +2,7 @@ import useFormConfig from "src/hooks/useFormConfig";
 import { localInstance } from "src/i18n/locals";
 import { FormFieldType } from "src/model/enums/FormFieldType";
 import { ISelectField } from "src/model/field/ISelectField";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { OperatorType } from "src/model/filter/OperatorType";
 import { CpsFormFieldControl } from "../control/CpsFormFieldControl";
 import SelectControl from "../control/SelectControl";
