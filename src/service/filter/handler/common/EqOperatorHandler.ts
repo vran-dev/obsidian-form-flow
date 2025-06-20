@@ -1,4 +1,4 @@
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { OperatorType } from "src/model/filter/OperatorType";
 import { OperatorHandleContext, OperatorHandler } from "../OperatorHandler";
 

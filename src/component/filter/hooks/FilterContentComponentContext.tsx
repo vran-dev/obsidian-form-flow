@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 
 export type FilterContentComponent = React.FC<{
 	filter: Filter;

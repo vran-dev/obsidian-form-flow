@@ -1,4 +1,4 @@
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { EqOperatorHandler } from "./common/EqOperatorHandler";
 import { HasValueOperatorHandler } from "./common/HasValueOperatorHandler";
 import { NotEqOperatorHandler } from "./common/NotEqOperatorHandler";

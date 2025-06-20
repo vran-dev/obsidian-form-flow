@@ -1,7 +1,7 @@
 import { Trash2, Undo } from "lucide-react";
 import { useState } from "react";
 import { localInstance } from "src/i18n/locals";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { RelationType } from "src/model/filter/OperatorType";
 import { v4 } from "uuid";
 import { FilterItem } from "./FilterItem";
@@ -23,12 +23,12 @@ export function FilterRoot(props: FilterComponentProps) {
 	const [undo, setUndo] = useState<Filter | null>(null);
 
 	const removeChild = (id: string) => {
-		const newConditions = filter.conditions.filter((c) => c.id !== id);
+		const newConditions = filter.conditions.filter((c: Filter) => c.id !== id);
 		onFilterChange({ ...filter, conditions: newConditions });
 	};
 
 	const duplicateChild = (id: string) => {
-		const condition = filter.conditions.find((c) => c.id === id);
+		const condition = filter.conditions.find((c: Filter) => c.id === id);
 		if (condition) {
 			const newCondition = { ...condition, id: v4() };
 			const newConditions = [...filter.conditions, newCondition];
@@ -37,7 +37,7 @@ export function FilterRoot(props: FilterComponentProps) {
 	};
 
 	const saveChild = (child: Filter) => {
-		const newConditions = filter.conditions.map((c) => {
+		const newConditions = filter.conditions.map((c: Filter) => {
 			if (c.id === child.id) {
 				return child;
 			}
@@ -60,7 +60,7 @@ export function FilterRoot(props: FilterComponentProps) {
 		<FilterContentComponentContext.Provider value={filterContentComponent}>
 			<div className="form--FilterRoot">
 				<div className="form--FilterRootContent">
-					{filter.conditions.map((condition, index) => {
+					{filter.conditions.map((condition: Filter, index: number) => {
 						return (
 							<FilterItem
 								key={condition.id}

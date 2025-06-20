@@ -1,4 +1,4 @@
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 
 export interface OperatorHandler {
 

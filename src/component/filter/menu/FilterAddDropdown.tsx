@@ -2,7 +2,7 @@ import { ChevronDown, CopyPlusIcon, Plus } from "lucide-react";
 import { v4 } from "uuid";
 import { DropdownMenuItem, FilterDropdown } from "./FilterDropdown";
 import { localInstance } from "src/i18n/locals";
-import { Filter } from "src/model/filter/filter";
+import { Filter } from "src/model/filter/Filter";
 import { OperatorType } from "src/model/filter/OperatorType";
 
 export function FilterAddDropdown(props: {

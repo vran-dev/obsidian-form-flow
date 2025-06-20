@@ -1,5 +1,5 @@
 import { FormActionType } from "../enums/FormActionType";
-import { Filter } from "../filter/filter";
+import { Filter } from "../filter/Filter";
 
 export interface IFormAction {
   id: string;
