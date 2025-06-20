@@ -77,17 +77,7 @@ body:
           options:
               - label: "✅ 已测试表单功能正常 | Form functionality tested"
                 required: true
-<<<<<<< ours
               - label: "✅ 文件已上传完毕 | All files uploaded"
-||||||| ancestor
-              - label: "✅ 已包含必要的说明文档 | Necessary documentation included"
-                required: true
-              - label: "✅ 文件已准备完毕，将在创建讨论后上传 | Files ready, will upload after creating discussion"
-=======
-              - label: "✅ 已包含必要的使用说明 | Usage instructions included"
-                required: true
-              - label: "✅ 文件已上传完毕 | All files uploaded"
->>>>>>> theirs
                 required: true
               - label: "✅ 同意以开源方式分享 | Agree to share as open source"
                 required: true
