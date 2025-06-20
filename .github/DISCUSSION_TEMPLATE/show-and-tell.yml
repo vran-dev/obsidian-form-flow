@@ -83,9 +83,9 @@ body:
           label: "使用说明 | Usage Instructions"
           description: "提供详细的使用说明和配置示例 | Provide detailed usage instructions and configuration examples"
           value: |
-              ### 使用方法 | How to Use
+              #### 使用方法 | How to Use
 
-              ### 配置示例 | Configuration Example
+              #### 配置示例 | Configuration Example
               ```
               [可选的表单配置示例]
               [Optional form configuration example]
