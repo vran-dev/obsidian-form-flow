@@ -28,28 +28,6 @@ body:
       validations:
           required: true
 
-    - type: textarea
-      id: obsidian-version
-      attributes:
-          label: "Obsidian 兼容版本 | Obsidian Compatible Version"
-          description: "请输入支持的Obsidian最低版本"
-          placeholder: "v1.8.0+"
-          value: "v1.8.0+"
-          render: markdown
-      validations:
-          required: true
-
-    - type: textarea
-      id: formflow-version
-      attributes:
-          label: "Form Flow 兼容版本 | Form Flow Compatible Version"
-          description: "请输入支持的Form Flow最低版本"
-          placeholder: "v0.0.2+"
-          value: "v0.0.2+"
-          render: markdown
-      validations:
-          required: true
-
     - type: markdown
       attributes:
           value: |
@@ -66,14 +44,11 @@ body:
     - type: textarea
       id: file-list
       attributes:
-          label: "文件清单 | File List"
-          description: "列出您将要上传的文件 | List the files you will upload"
-          value: |
-              [这里上传zip文件](attachment.zip)
-              包含文件 | Included files:
-              - `FormName.cform` (主表单文件 | Main form file)
-              - `ScriptName.js` (表单脚本 | Form script)
-              - `README.md` (可选，使用说明 | Optional, instructions)
+          label: "附件 | Attachments"
+          description: "上传 cform 文件，如果有 js 脚本，也可以上传至 zip 包中 | Upload cform file, if there is a js script, you can also upload it to the zip package"
+          placeholder: |
+              💡 请在此处上传 zip文件 | Upload zip file here
+              [attachment.zip](attachment.zip)
       validations:
           required: true
 
@@ -81,15 +56,9 @@ body:
       id: usage-instructions
       attributes:
           label: "使用说明 | Usage Instructions"
-          description: "提供详细的使用说明和配置示例 | Provide detailed usage instructions and configuration examples"
-          value: |
-              #### 使用方法 | How to Use
-
-              #### 配置示例 | Configuration Example
-              ```
-              [可选的表单配置示例]
-              [Optional form configuration example]
-              ```
+          description: "如何使用？ | How to use?"
+          placeholder: |
+              标题等级需使用 h4 及以下 | Heading level should be h4 or lower
       validations:
           required: true
 
@@ -101,9 +70,9 @@ body:
           options:
               - label: "✅ 已测试表单功能正常 | Form functionality tested"
                 required: true
-              - label: "✅ 已包含必要的说明文档 | Necessary documentation included"
+              - label: "✅ 已包含必要的使用说明 | Usage instructions included"
                 required: true
-              - label: "✅ 文件已准备完毕，将在创建讨论后上传 | Files ready, will upload after creating discussion"
+              - label: "✅ 文件已上传完毕 | All files uploaded"
                 required: true
               - label: "✅ 同意以开源方式分享 | Agree to share as open source"
                 required: true
@@ -118,8 +87,6 @@ body:
               - 请确保上传的文件安全无害 | Please ensure uploaded files are safe
               - 建议在标题中使用 `[Form Flow Share]` 前缀 | Recommend using `[Form Flow Share]` prefix in title
               - 分享的表单将遵循社区开源协议 | Shared forms will follow community open source license
-              - **重要**：创建讨论后，请将您的表单包文件拖拽到讨论内容中
-              - **Important**: After creating the discussion, please drag your form package files into the discussion content
 
               ### 标题格式建议 | Suggested Title Format
               `[Form Flow Share] 表单名称 | Form Name`
