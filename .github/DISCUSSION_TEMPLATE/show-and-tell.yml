@@ -1,100 +1,20 @@
-title: "[Form Flow Share] Your Form Flow Name"
-labels: ["Show and Tell"]
+title: "[Share] title"
+labels: [ "Show and Tell" ]
 body:
-    - type: markdown
-      attributes:
-          value: |
-              # Form Flow 表单分享 | Form Flow Share
-              
-              我们希望这个模板能够：
-              - 为分享者提供简单的描述框架，而非严格限制
-              - 简化分享流程，让更多人愿意参与
-              - 帮助构建清晰的表单说明，便于社区成员理解和使用
-              
-              We hope this template can:
-              - Provide a simple descriptive framework for sharers, not strict restrictions
-              - Simplify the sharing process to encourage more participation
-              - Help build clear form descriptions for community members to understand and use
+- type: textarea
+  id: "form-description"
+  attributes:
+    label: "Content"
+    render: markdown
+    value: |
+      ## What is this? （这个是什么？）
 
-    - type: textarea
-      id: form-description
-      attributes:
-          label: "表单说明 | Form Description"
-          description: "简要描述表单的功能和适用场景 | Brief description of form's purpose and use cases"
-          placeholder: |
-              请描述表单的功能和适用场景，例如：
-              - 快速插入Obsidian Callout块
-              - 支持多种Callout类型选择
-              - 自动生成格式化内容
+      ## How to use it? （如何使用？）
 
-              Please describe the form's functionality and use cases, for example:
-              - Quickly insert Obsidian Callout blocks
-              - Support multiple Callout type selection
-              - Auto-generate formatted content
-          render: markdown
-      validations:
-          required: true
+      ## Attachments （附件）
 
-    - type: markdown
-      attributes:
-          value: |
-              ## 📎 文件上传说明 | File Upload Instructions
+      > Please attach any relevant files, such as `.cform` file, `.js` scripts.
+      > (请附上相关文件，例如 `.cform` 文件，`.js` 脚本等)
 
-              请在下方`文件清单`编辑中，将在指定位置上传替换您的表单包文件。
-              Please upload your form package file into the specified position in the `File List` edit area.
-
-              **推荐文件命名格式 | Recommended file naming format:**
-              - 主文件：`FormName.cform`
-              - 脚本文件：`ScriptName.js`
-              - 打包文件：`FormName.zip`
-
-    - type: textarea
-      id: file-list
-      attributes:
-          label: "附件 | Attachments"
-          description: "上传 cform 文件，如果有 js 脚本，也可以上传至 zip 包中 | Upload cform file, if there is a js script, you can also upload it to the zip package"
-          placeholder: |
-              💡 请在此处上传 zip文件 | Upload zip file here
-              [attachment.zip](attachment.zip)
-      validations:
-          required: true
-
-    - type: textarea
-      id: usage-instructions
-      attributes:
-          label: "使用说明 | Usage Instructions"
-          description: "如何使用？ | How to use?"
-          placeholder: |
-              标题等级需使用 h4 及以下 | Heading level should be h4 or lower
-      validations:
-          required: true
-
-    - type: checkboxes
-      id: checklist
-      attributes:
-          label: "分享检查清单 | Share Checklist"
-          description: "请确认以下项目 | Please confirm the following items"
-          options:
-              - label: "✅ 已测试表单功能正常 | Form functionality tested"
-                required: true
-              - label: "✅ 文件已上传完毕 | All files uploaded"
-                required: true
-              - label: "✅ 同意以开源方式分享 | Agree to share as open source"
-                required: true
-
-    - type: markdown
-      attributes:
-          value: |
-              ---
-
-              ## 📝 提交须知 | Submission Notes
-
-              - 请确保上传的文件安全无害 | Please ensure uploaded files are safe
-              - 建议在标题中使用 `[Form Flow Share]` 前缀 | Recommend using `[Form Flow Share]` prefix in title
-              - 分享的表单将遵循社区开源协议 | Shared forms will follow community open source license
-
-              ### 标题格式建议 | Suggested Title Format
-              `[Form Flow Share] 表单名称 | Form Name`
-
-              感谢您为Form Flow社区做出的贡献！🎉
-              Thank you for contributing to the Form Flow community! 🎉
+  validations:
+    required: true
