@@ -53,6 +53,7 @@ export function CpsFormFieldControl(props: {
 				id={field.id}
 				data-name={field.label}
 				type="number"
+				step={"any"}
 				value={actualValue}
 				required={field.required}
 				onChange={(e) => onValueChange(e.target.value)}
