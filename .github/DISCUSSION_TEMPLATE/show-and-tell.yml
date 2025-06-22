@@ -1,0 +1,20 @@
+title: "[Share] title"
+labels: [ "Show and Tell" ]
+body:
+- type: markdown
+  id: "form-description"
+  attributes:
+    label: "Content"
+    render: markdown
+    value: |
+      ## What is this? （这个是什么？）
+
+      ## How to use it? （如何使用？）
+
+      ## Attachments （附件）
+
+      > Please attach any relevant files, such as `.cform` file, `.js` scripts.
+      > (请附上相关文件，例如 `.cform` 文件，`.js` 脚本等)
+
+  validations:
+    required: true
