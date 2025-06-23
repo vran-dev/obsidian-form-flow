@@ -1,5 +1,6 @@
 import { ListBox } from "src/component/list-box/ListBox";
 import { localInstance } from "src/i18n/locals";
+import { FormFieldType } from "src/model/enums/FormFieldType";
 import { IFormField } from "src/model/field/IFormField";
 import { ISelectField } from "src/model/field/ISelectField";
 
@@ -20,8 +21,8 @@ export default function (props: {
 		};
 	});
 	const hasMatchValue = userOptions.some((v) => v.value === value);
-
-	if (f.multiple) {
+	const isRadio = field.type === FormFieldType.RADIO;
+	if (f.multiple && !isRadio) {
 		return (
 			<ListBox
 				value={value}
