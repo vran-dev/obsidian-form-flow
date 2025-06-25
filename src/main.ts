@@ -6,9 +6,12 @@ import { applicationCommandService } from './service/command/ApplicationCommandS
 import { applicationFileViewService } from './service/file-view/ApplicationFileViewService';
 import { PluginSettingTab } from './settings/PluginSettingTab';
 import './style/base.css'
+import { FormFlowApi } from './api/FormFlowApi';
 
 export default class FormPlugin extends Plugin {
 	settings: PluginSettings = DEFAULT_SETTINGS;
+
+	api: FormFlowApi = new FormFlowApi(this.app);
 
 	async onload() {
 		await this.loadSettings();
