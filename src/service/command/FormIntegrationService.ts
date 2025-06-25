@@ -86,7 +86,7 @@ export class FormIntegrationService {
         const settings = this.plugin.settings || {};
         const newSettings = {
             ...settings,
-            fileEntrypoints: {
+            formIntegrations: {
                 ...settings.formIntegrations,
                 [filePath]: {
                     ...settings.formIntegrations[filePath],
