@@ -1,0 +1,5 @@
+{
+    "label": "提交动作",
+    "position": 3,
+    "description": "表单提交后执行的动作配置"
+}

@@ -1,0 +1,74 @@
+{
+    "hero.title": {
+        "message": "Make Obsidian More Productive, More Simple"
+    },
+    "hero.subtitle": {
+        "message": "Simplicity meets power, Revolutionizing your Obsidian experience"
+    },
+    "hero.getStarted": {
+        "message": "Get Started"
+    },
+    "hero.viewSource": {
+        "message": "View Source"
+    },
+    "hero.demo.quickCapture.title": {
+        "message": "Capture"
+    },
+    "hero.demo.quickCapture.description": {
+        "message": "Capture your thoughts instantly with a single click."
+    },
+    "hero.demo.journalTemplate.title": {
+        "message": "Journal"
+    },
+    "hero.demo.journalTemplate.description": {
+        "message": "Create daily journal entries with structured templates."
+    },
+    "hero.demo.projectSetup.title": {
+        "message": "Project"
+    },
+    "hero.demo.projectSetup.description": {
+        "message": "Set up project structures and templates with one click."
+    },
+    "hero.demo.aiPoweredNote.title": {
+        "message": "AI"
+    },
+    "hero.demo.aiPoweredNote.description": {
+        "message": "Generate AI-powered notes and summaries effortlessly."
+    },
+    "features.title": {
+        "message": "Simplicity meets power"
+    },
+    "features.subtitle": {
+        "message": "Create powerful workflows with a simple, visual form builder — fully yours."
+    },
+    "features.noCode.title": {
+        "message": "No-Code"
+    },
+    "features.noCode.description": {
+        "message": "no coding required, no technical skills needed, no hassle, use visual form builder to create your own workflows"
+    },
+    "features.efficiency.title": {
+        "message": "Do more with less"
+    },
+    "features.efficiency.description": {
+        "message": "One-Action to create structured notes, completed projects, capture ideas, Turn thoughts into action — faster"
+    },
+    "features.thinkBeyond.title": {
+        "message": "Think beyond"
+    },
+    "features.thinkBeyond.description": {
+        "message": "Script mode for advanced users, build complex workflows, automate tasks, and integrate with other tools, all it depends on your imagination."
+    },
+    "features.openSource.title": {
+        "message": "Open source"
+    },
+    "features.openSource.description": {
+        "message": "fully open source, you can contribute, fork, and customize it to your needs"
+    },
+    "features.community.title": {
+        "message": "On giants' shoulders"
+    },
+    "features.community.description": {
+        "message": "Join a growing community of users and developers, share your workflows, and get inspired by others"
+    }
+}
