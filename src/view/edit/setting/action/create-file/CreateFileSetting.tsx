@@ -34,7 +34,7 @@ export function CreateFileSetting(props: {
 				/>
 			</CpsFormItem>
 			<FilePathFormItem
-				label={localInstance.target_file}
+				label={localInstance.file_path}
 				value={targetFilePath}
 				onChange={(value) => {
 					const newAction = {
