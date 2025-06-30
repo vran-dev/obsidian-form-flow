@@ -47,6 +47,17 @@ export function InsertTextSetting(props: {
 				<></>
 			) : (
 				<>
+					<FilePathFormItem
+						label={""}
+						value={targetFilePath}
+						onChange={(value) => {
+							const newAction = {
+								...action,
+								filePath: value,
+							};
+							props.onChange(newAction);
+						}}
+					/>
 					<CpsFormItem
 						label={localInstance.open_file_after_submitted}
 					>
@@ -61,17 +72,6 @@ export function InsertTextSetting(props: {
 							}}
 						/>
 					</CpsFormItem>
-					<FilePathFormItem
-						label={localInstance.target_file}
-						value={targetFilePath}
-						onChange={(value) => {
-							const newAction = {
-								...action,
-								filePath: value,
-							};
-							props.onChange(newAction);
-						}}
-					/>
 				</>
 			)}
 			{showFileTemplateSuggeest && (
