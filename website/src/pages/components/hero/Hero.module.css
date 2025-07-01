@@ -1,0 +1,318 @@
+/* Hero Section - Raycast Inspired Clean Design */
+.hero {
+	color: var(--text-primary);
+	padding: 6rem 0 4rem;
+	position: relative;
+	overflow: hidden;
+	min-height: 95vh;
+	display: flex;
+	align-items: center;
+}
+
+.heroBackground {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.heroGradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: radial-gradient(
+		ellipse 80% 50% at 50% 40%,
+		rgba(99, 102, 241, 0.15) 0%,
+		transparent 60%
+	);
+	animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+.heroContent {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.heroText {
+	max-width: 100%;
+}
+
+.heroTitle {
+	font-size: clamp(2.5rem, 5vw, 3.5rem);
+	font-weight: 700;
+	line-height: 1.1;
+	margin-bottom: 1.5rem;
+	background: var(--background-gradient-inverse);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	letter-spacing: -0.03em;
+}
+
+.heroSubtitle {
+	font-size: var(--font-lg);
+	font-weight: var(--font-normal);
+	color: var(--text-secondary);
+	margin-bottom: var(--space-lg);
+	line-height: 1.6;
+	max-width: 90%;
+}
+
+.heroButtons {
+	display: flex;
+	gap: var(--space-md);
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.primaryButton {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-sm);
+	background: var(--accent-color);
+	color: var(--text-primary);
+	border: 1px solid var(--border-color-default);
+	padding: var(--space-md) var(--space-lg);
+	border-radius: var(--radius-sm);
+	font-weight: var(--font-bold);
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+	background: var(--accent-hover);
+	transform: translateY(-1px);
+	border-color: var(--border-color-hover);
+}
+
+.secondaryButton {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-sm);
+	background: var(--background-secondary);
+	color: var(--text-secondary);
+	border: 1px solid var(--border-color-default);
+	padding: var(--space-md) var(--space-lg);
+	border-radius: var(--radius-sm);
+	font-weight: var(--font-semibold);
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+	background: var(--background-hover);
+	border-color: var(--border-color-hover);
+	transform: translateY(-1px);
+}
+
+.heroDemo {
+	position: relative;
+}
+
+.demoContainer {
+	background: rgba(var(--color-black-rgb), 0.05);
+	border: 1px solid var(--border-color-default);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.demoHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-md) var(--space-lg);
+	background: rgba(var(--color-white-rgb), 0.01);
+	border-bottom: 1px solid var(--border-color-default);
+}
+
+.demoControls {
+	display: flex;
+	gap: var(--space-sm);
+}
+
+.demoControl {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.demoControl:nth-child(1) {
+	background: #ff5f56;
+}
+.demoControl:nth-child(2) {
+	background: #ffbd2e;
+}
+.demoControl:nth-child(3) {
+	background: #27ca3f;
+}
+
+.demoTitle {
+	font-size: var(--font-sm);
+	font-weight: var(--font-semibold);
+	color: var(--text-secondary);
+}
+
+.demoContent {
+	padding: 0;
+}
+
+.demoTabs {
+	display: flex;
+	gap: var(--space-xs);
+}
+
+.demoTab {
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	padding: var(--space-xs) var(--space-sm);
+	color: var(--text-secondary);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-size: var(--font-md);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-sm);
+	border: 1px solid transparent;
+}
+
+.demoTab:hover {
+	color: var(--text-primary);
+	background-color: var(--background-hover);
+}
+
+.demoTab.active {
+	color: var(--text-primary);
+	background-color: var(--background-active);
+	border-color: var(--border-color-active)	;
+}
+
+.demoDescription {
+	padding: var(--space-sm);
+	color: var(--text-secondary);
+	font-size: var(--font-md);
+	line-height: 1.6;
+	margin-bottom: var(--space-sm);
+}
+
+.demoForm {
+	padding: var(--space-md) var(--space-lg);
+}
+
+.formField {
+	margin-bottom: var(--space-md);
+}
+
+.fieldLabel {
+	display: block;
+	font-size: var(--font-sm);
+	font-weight: var(--font-semibold);
+	color: var(--text-secondary);
+	margin-bottom: var(--space-xs);
+}
+
+.fieldInput {
+	width: 100%;
+	padding: var(--space-sm) var(--space-sm);
+	color: var(--text-secondary);
+	background: var(--background-tertiary);
+	border: 1px solid var(--border-color-default);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-sm);
+	transition: all 0.2s ease;
+}
+
+.fieldInput:focus {
+	outline: none;
+	border-color: var(--border-color-active);
+	background: var(--background-active);
+}
+
+.radioGroup {
+	display: flex;
+	gap: 1rem;
+}
+
+.radioLabel {
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	cursor: pointer;
+	font-size: var(--font-sm);
+}
+
+.radioText {
+	color: var(--text-secondary);
+	text-transform: capitalize;
+}
+
+.formActions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+button.formButton {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-sm);
+	background: var(--background-secondary);
+	color: var(--text-primary);
+	border: 1px solid var(--border-color-default);
+	padding: var(--space-sm) var(--space-md);
+	border-radius: var(--radius-sm);
+	font-weight: var(--font-bold);
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+button.formButton:hover {
+	background: var(--accent-hover);
+	transform: translateY(-1px);
+}
+
+@media screen and (max-width: 768px) {
+	.heroContent {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.heroTitle {
+		font-size: 2rem;
+	}
+
+	.heroSubtitle {
+		max-width: 100%;
+	}
+
+	.heroButtons {
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.demoContainer {
+		margin-top: var(--space-lg);
+	}
+	
+}

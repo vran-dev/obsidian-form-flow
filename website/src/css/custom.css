@@ -1,0 +1,229 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+	--base-unit: 1rem;
+	--space-xs: calc(var(--base-unit) / 4);
+	--space-sm: calc(var(--base-unit) / 2);
+	--space-md: var(--base-unit);
+	--space-lg: calc(var(--base-unit) * 2);
+
+	--radius-xs: calc(var(--base-unit) / 4);
+	--radius-sm: calc(var(--base-unit) / 2);
+	--radius-md: var(--base-unit);
+	--radius-lg: calc(var(--base-unit) * 2);
+
+	--color-red-rgb: 220, 62, 66;
+	--color-green-rgb: 34, 197, 94;
+	--color-blue-rgb: 5, 136, 240;
+	--color-black-rgb: 35, 35, 35;
+	--color-white-rgb: 241, 241, 241;
+	--color-gray-rgb: 128, 128, 128;
+	--color-purple-rgb: 131, 71, 185;
+	--color-pink-rgb: 207, 56, 151;
+	--color-yellow-rgb: 255, 220, 0;
+
+	--font-xs: calc(var(--base-unit) * 0.625);
+	--font-sm: calc(var(--base-unit) * 0.875);
+	--font-md: var(--base-unit);
+	--font-lg: calc(var(--base-unit) * 1.25);
+	--font-xl: calc(var(--base-unit) * 1.5);
+	--font-2xl: calc(var(--base-unit) * 2);
+	--font-3xl: calc(var(--base-unit) * 2.5);
+	--font-4xl: calc(var(--base-unit) * 3);
+
+	--font-normal: 400;
+	--font-semibold: 600;
+	--font-bold: 700;
+
+	--text-primary: rgba(var(--color-white-rgb), 1);
+	--text-secondary: rgba(var(--color-white-rgb), 0.75);
+	--text-tertiary: rgba(var(--color-white-rgb), 0.5);
+
+	--background-gradient: linear-gradient(
+		180deg,
+		#0f0f0f 0%,
+		#1a1a1a 50%,
+		#0f0f0f 100%
+	);
+	--background-gradient-inverse: linear-gradient(
+		135deg,
+		#ffffff 0%,
+		#e2e8f0 50%,
+		#cbd5e1 100%
+	);
+
+	--background-primary: rgba(var(--color-black-rgb), 1);
+	--background-secondary: rgba(var(--color-black-rgb), 0.75);
+	--background-tertiary: rgba(var(--color-black-rgb), 0.5);
+	--background-hover: rgba(var(--color-gray-rgb), 0.1);
+	--background-active: rgba(var(--color-gray-rgb), 0.2);
+
+	--border-color-default: rgba(var(--color-gray-rgb), 0.35);
+	--border-color-hover: rgba(var(--color-gray-rgb), 0.5);
+	--border-color-active: rgba(var(--color-gray-rgb), 0.7);
+
+	--accent-color: rgba(var(--color-blue-rgb), 0.9);
+	--accent-hover: rgba(var(--color-blue-rgb), 1);
+}
+
+[data-theme="light"] {
+	/* 文本颜色 - 反转暗色主题的逻辑 */
+	--text-primary: rgba(var(--color-black-rgb), 1);
+	--text-secondary: rgba(var(--color-black-rgb), 0.75);
+	--text-tertiary: rgba(var(--color-black-rgb), 0.5);
+
+	/* 背景颜色 - 使用白色系 */
+	--background-gradient: linear-gradient(
+		180deg,
+		#fafafa 0%,
+		#ffffff 50%,
+		#f5f5f5 100%
+	);
+	--background-gradient-inverse: linear-gradient(
+		135deg,
+		#0f0f0f 0%,
+		#1a1a1a 50%,
+		#0f0f0f 100%
+	);
+
+	--background-primary: rgba(var(--color-white-rgb), 1);
+	--background-secondary: rgba(var(--color-white-rgb), 0.75);
+	--background-tertiary: rgba(var(--color-white-rgb), 0.5);
+	--background-hover: rgba(var(--color-gray-rgb), 0.08);
+	--background-active: rgba(var(--color-gray-rgb), 0.15);
+
+	/* 边框颜色 - 调整透明度适配浅色背景 */
+	--border-color-default: rgba(var(--color-gray-rgb), 0.25);
+	--border-color-hover: rgba(var(--color-gray-rgb), 0.4);
+	--border-color-active: rgba(var(--color-gray-rgb), 0.6);
+
+	/* 强调色保持一致但调整透明度 */
+	--accent-color: rgba(var(--color-blue-rgb), 0.8);
+	--accent-hover: rgba(var(--color-blue-rgb), 0.9);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-feature-settings: "kern" 1, "liga" 1;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--ifm-heading-margin-top: 1rem;
+	--ifm-heading-margin-bottom: 1rem;
+}
+
+.markdown {
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.markdown h1 {
+	font-size: 2rem;
+	margin-top: var(--ifm-heading-margin-top);
+	margin-bottom: var(--ifm-heading-margin-bottom);
+}
+.markdown h2 {
+	font-size: 1.5rem;
+	margin-top: var(--ifm-heading-margin-top);
+	margin-bottom: var(--ifm-heading-margin-bottom);
+}
+.markdown h3 {
+	font-size: 1.25rem;
+	margin-top: var(--ifm-heading-margin-top);
+	margin-bottom: var(--ifm-heading-margin-bottom);
+}
+.markdown h4 {
+	font-size: 1.1rem;
+	margin-top: var(--ifm-heading-margin-top);
+	margin-bottom: var(--ifm-heading-margin-bottom);
+}
+
+code {
+	font-size: 0.85em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+.navbar {
+	backdrop-filter: blur(20px);
+	color: var(--text-primary);
+	background: var(--background-primary);
+	border-bottom: 1px solid var(--border-color-default);
+}
+
+[data-theme="light"] .navbar {
+	--text-primary: rgba(var(--color-black-rgb), 1);
+	--text-secondary: rgba(var(--color-black-rgb), 0.75);
+	--background-primary: rgba(var(--color-white-rgb), 1);
+	--border-color-default: 1px solid rgba(var(--color-black-rgb), 1);
+}
+
+.navbar__link {
+	color: var(--text-primary);
+	transition: color var(--transition-fast);
+}
+
+.navbar__link:hover {
+	color: var(--text-secondary);
+	text-decoration: underline;
+}
+
+.navbar__brand {
+	color: var(--text-primary);
+	transform: scale(1.05);
+}
+
+.navbar-sidebar {
+	height: 100vh;
+}
+
+/* Footer Enhancements */
+.footer {
+	background-color: transparent;
+	border-top: 1px solid var(--border-color-default);
+}
+
+*:focus-visible {
+	outline: 2px solid var(--text-primary);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.navbar__logo img {
+	max-width: 100%;
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: var(--radius-sm);
+	background: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: var(--radius-sm);
+	background: var(--text-tertiary);
+}
+
+.markdown > header > h1 {
+	display: none;
+}

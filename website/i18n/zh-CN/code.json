@@ -1,0 +1,74 @@
+{
+    "hero.title": {
+        "message": "让 Obsidian 更具生产力，更简单"
+    },
+    "hero.subtitle": {
+        "message": "简单与强大并存，改变你的 Obsidian 的玩法"
+    },
+    "hero.getStarted": {
+        "message": "立即开始"
+    },
+    "hero.viewSource": {
+        "message": "查看源码"
+    },
+    "hero.demo.quickCapture.title": {
+        "message": "闪念"
+    },
+    "hero.demo.quickCapture.description": {
+        "message": "一键瞬间捕获你的灵感思绪"
+    },
+    "hero.demo.journalTemplate.title": {
+        "message": "日记"
+    },
+    "hero.demo.journalTemplate.description": {
+        "message": "用结构化模板创建精美的每日日记"
+    },
+    "hero.demo.projectSetup.title": {
+        "message": "项目"
+    },
+    "hero.demo.projectSetup.description": {
+        "message": "一键搭建完整的项目架构和模板"
+    },
+    "hero.demo.aiPoweredNote.title": {
+        "message": "AI"
+    },
+    "hero.demo.aiPoweredNote.description": {
+        "message": "轻松生成 AI 驱动的智能笔记和摘要"
+    },
+    "features.title": {
+        "message": "简单与强大并存"
+    },
+    "features.subtitle": {
+        "message": "用简洁直观的可视化表单构建器，创造属于你的强大工作流"
+    },
+    "features.noCode.title": {
+        "message": "零代码"
+    },
+    "features.noCode.description": {
+        "message": "无需编程，无需技术门槛，无需烦恼——用可视化表单构建器轻松创建专属工作流"
+    },
+    "features.efficiency.title": {
+        "message": "更多的生产力"
+    },
+    "features.efficiency.description": {
+        "message": "一键创建结构化笔记、完整项目、捕获灵感——让思维瞬间转化为行动"
+    },
+    "features.thinkBeyond.title": {
+        "message": "突破想象"
+    },
+    "features.thinkBeyond.description": {
+        "message": "为高级用户提供脚本模式，构建复杂工作流，自动化任务，集成第三方工具——一切皆有可能"
+    },
+    "features.openSource.title": {
+        "message": "开源自由"
+    },
+    "features.openSource.description": {
+        "message": "完全开源，你可以贡献代码、自由定制，打造完全符合需求的个性化版本"
+    },
+    "features.community.title": {
+        "message": "站在巨人肩膀上"
+    },
+    "features.community.description": {
+        "message": "加入蓬勃发展的用户和开发者社区，分享你的工作流，从他人的创意中获得灵感"
+    }
+}
