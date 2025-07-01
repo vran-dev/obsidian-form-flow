@@ -11,8 +11,8 @@ const config: Config = {
   future: {
     v4: true,
   },
-  url: 'https://vran-dev.github.com',
-  baseUrl: '/obsidian-form-flow/',
+  url: 'https://form.cc1234.cc',
+  baseUrl: '/',
   trailingSlash: false,
 
   organizationName: 'vran-dev',
