@@ -30,7 +30,12 @@ export default class UpdateFrontmatterActionService implements IActionService {
             if (Array.isArray(property.value)) {
                 value = [];
                 for (const item of property.value) {
-                    value.push(await engien.process(item, context.state, app));
+                    const res = await engien.process(item, context.state, app);
+                    if (Array.isArray(res)) {
+                        value.push(...res);
+                    } else {
+                        value.push(res);
+                    }
                 }
             } else {
                 value = await engien.process(property.value, context.state, app);
