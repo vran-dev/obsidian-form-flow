@@ -10,17 +10,28 @@ export class FormTemplateProcessEngine {
             return "";
         }
 
+        // if exactly matches {{@variableName}}, return the value directly
+        const pureVariableMatch = text.match(/^{{\@([^}]+)}}$/);
+        if (pureVariableMatch) {
+            const variableName = pureVariableMatch[1];
+            const value = state.values[variableName];
+            if (value !== undefined && value !== null) {
+                return value;
+            }
+            return "";
+        }
+
         let res = text;
         res = TemplateParser.compile(res, state);
 
-        // 处理 {{selection}}
+        // handle {{selection}}
         const selectionVariable = "{{selection}}";
         if (res.includes(selectionVariable)) {
             const selectedText = getEditorSelection(app);
             res = res.replace(selectionVariable, selectedText);
         }
 
-        // 处理 {{clipboard}}
+        // handle {{clipboard}}
         const clipboardVariable = "{{clipboard}}";
         if (res.includes(clipboardVariable)) {
             const clipboardText = await navigator.clipboard.readText();
