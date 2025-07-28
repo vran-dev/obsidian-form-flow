@@ -18,7 +18,7 @@ export class FormFlowApi {
         }
     }
 	
-    async directlySubmitForm(filePath: string): Promise<void> {
+    async submitFormFile(filePath: string): Promise<void> {
         const formService = new FormService();
         const file = this.app.vault.getAbstractFileByPath(filePath);
         if (file instanceof TFile) {
