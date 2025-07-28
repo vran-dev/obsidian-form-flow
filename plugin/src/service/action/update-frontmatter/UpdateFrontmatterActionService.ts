@@ -47,7 +47,7 @@ export default class UpdateFrontmatterActionService implements IActionService {
         }
         const filePath = await getFilePathFromAction(action, context);
         const file = await createFileFromActionIfNotExists(filePath, action, context);
-        app.fileManager.processFrontMatter(file, (frontmatter) => {
+        await app.fileManager.processFrontMatter(file, (frontmatter) => {
             for (const property of formatted) {
                 frontmatter[property.name] = convertFrontmatterValue(app, property.name, property.value);
             }
