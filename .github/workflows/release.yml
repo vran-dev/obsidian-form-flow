@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - "*"
+
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,19 +23,25 @@ jobs:
         with:
           node-version: "23.x"
           cache: 'npm'
+          cache-dependency-path: 'plugin/package-lock.json'
 
       - name: Build plugin
         run: |
+          cd plugin
           npm install
           npm run build
 
       - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          draft: false
+          generate_release_notes: true
+          discussion_category_name: "Announcements"
+          files: |
+            plugin/main.js
+            plugin/manifest.json
+            plugin/styles.css
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          tag="${GITHUB_REF#refs/tags/}"
-          
-          gh release create "$tag" \
-            --title="$tag" \
-            --draft \
-            main.js manifest.json styles.css
