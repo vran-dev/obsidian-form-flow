@@ -85,12 +85,6 @@ export function FilterRoot(props: FilterComponentProps) {
 					<button
 						className="form--ClearFilterButton"
 						data-type="danger"
-						style={{
-							width: "100%",
-							gap: "0.5rem",
-							justifyContent: "flex-start",
-							fontSize: "var(--font-ui-small)",
-						}}
 						onClick={(e) => {
 							e.preventDefault();
 							if (

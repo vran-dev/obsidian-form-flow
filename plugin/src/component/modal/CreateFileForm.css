@@ -27,6 +27,13 @@
 	color: var(--text-muted);
 }
 
+.form--CreateFileFormItemLabel .tag {
+	padding: var(--size-4-1);
+	background-color: var(--background-primary-alt);
+	color: var(--color-red);
+	margin-right: var(--size-4-1);
+}
+
 .form--CreateFileFormItemControl {
 	width: 100%;
 }

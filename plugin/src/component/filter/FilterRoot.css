@@ -36,6 +36,7 @@ button.form--ClearFilterButton {
 	gap: 4px;
 	color: var(--text-muted);
 	cursor: pointer;
+	font-size: var(--font-ui-small);
 }
 
 button.form--ClearFilterButton:hover {
