@@ -90,10 +90,10 @@ export default class extends SuggestModal<TFile> {
 
 	getItems(): TFile[] {
 		return this.app.vault
-			.getAllLoadedFiles()
+			.getFiles()
 			.filter(
-				(f) => f instanceof TFile && f.extension === "cform"
-			) as TFile[];
+				(f) => f.extension === "cform"
+			);
 	}
 
 	getItemText(item: string): string {

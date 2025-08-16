@@ -7,11 +7,10 @@ export default class extends AbstractInputSuggest<TFolder> {
 
     protected getSuggestions(query: string): TFolder[] | Promise<TFolder[]> {
         return this.app.vault
-            .getAllLoadedFiles()
-            .filter((f) => f instanceof TFolder)
+            .getAllFolders()
             .filter((f) =>
                 f.path.toLowerCase().includes((query || "").toLowerCase())
-            ) as TFolder[];
+            );
     }
     renderSuggestion(value: TFolder, el: HTMLElement): void {
         el.setText(value.path);

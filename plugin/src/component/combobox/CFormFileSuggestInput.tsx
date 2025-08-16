@@ -1,4 +1,3 @@
-import { TFile, TFolder } from "obsidian";
 import { useMemo } from "react";
 import { useObsidianApp } from "src/context/obsidianAppContext";
 import ComboboxSuggestion from "./ComboboxSuggestion";
@@ -10,15 +9,7 @@ export default function (props: {
 	const app = useObsidianApp();
 	const { value, onChange } = props;
 	const items = useMemo(() => {
-		const cformFiles = app.vault.getAllLoadedFiles().filter((f) => {
-			if (f instanceof TFolder) {
-				return false;
-			}
-			if (f instanceof TFile) {
-				return f.extension === "cform";
-			}
-			return false;
-		});
+		const cformFiles = app.vault.getFiles().filter((f) => f.extension === "cform");
 		const options = cformFiles.map((f) => {
 			return {
 				value: f.path,
