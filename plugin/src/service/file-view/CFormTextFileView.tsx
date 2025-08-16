@@ -46,7 +46,7 @@ export class CFormTextFileView extends TextFileView {
 				this.root.unmount();
 			}
 			if (!this.file) {
-				console.info("file not loaded...");
+				// console.info("file not loaded...");
 				return;
 			}
 			if (data === "{}" || data === "") {
