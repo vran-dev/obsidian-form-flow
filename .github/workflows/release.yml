@@ -41,7 +41,7 @@ jobs:
           discussion_category_name: "Announcements"
           files: |
             plugin/main.js
-            plugin/manifest.json
+            manifest.json
             plugin/styles.css
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
