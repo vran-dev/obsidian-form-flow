@@ -1,5 +1,4 @@
 import { Folder } from "lucide-react";
-import { TFolder } from "obsidian";
 import { useMemo } from "react";
 import { useObsidianApp } from "src/context/obsidianAppContext";
 import ComboboxSuggestion from "./ComboboxSuggestion";
@@ -13,9 +12,7 @@ export default function (props: {
 	const { value, onChange } = props;
 
 	const items = useMemo(() => {
-		const folders = app.vault
-			.getAllLoadedFiles()
-			.filter((file) => file instanceof TFolder);
+		const folders = app.vault.getAllFolders();
 
 		const options = folders.map((f) => {
 			return {

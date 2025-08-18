@@ -77,16 +77,7 @@ export function CreateFileForm(props: Props) {
 			<div className="form--CreateFileFormItem">
 				<div className="form--CreateFileFormItemLabel">
 					{isConflict && (
-						<span
-							className="tag"
-							style={{
-								padding: "var(--size-4-1)",
-								backgroundColor:
-									"var(--background-primary-alt)",
-								color: "var(--color-red)",
-								marginRight: "var(--size-4-1)",
-							}}
-						>
+						<span className="tag">
 							{localInstance.file_name_conflict}
 						</span>
 					)}

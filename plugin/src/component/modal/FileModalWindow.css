@@ -1,3 +1,7 @@
+.form--FileModalContainerWindow {
+	z-index: var(--form-overlay-layer);
+}
+
 .form--FileModalWindow.modal {
 	max-width: calc(min(80vw, 960px));
 	height: 90vh;

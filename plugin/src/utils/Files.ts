@@ -23,12 +23,10 @@ export class Files {
             await app.vault.createFolder(normlizedFolder);
         }
 
-        await app.vault.adapter.write(
-            normalizePath(filePath),
-            data
-        );
+        
         const res = app.vault.getAbstractFileByPath(filePath)
         if (res instanceof TFile) {
+            await app.vault.modify(res, data);
             return res;
         } else {
             throw new Error(`Failed to create file: ${filePath}`);

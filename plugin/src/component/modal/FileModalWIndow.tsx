@@ -54,7 +54,7 @@ class FileModal extends Modal {
 	}
 
 	init() {
-		this.containerEl.style.zIndex = "var(--form-overlay-layer)";
+		this.containerEl.addClass("form--FileModalContainerWindow");
 		this.scope = new Scope(this.app.scope);
 		this.addFullScreenButton();
 		this.listenFileDelete();

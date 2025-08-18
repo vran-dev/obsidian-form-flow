@@ -8,9 +8,9 @@ export async function createFileByText(
     template: string
 ): Promise<TFile> {
     const parent = newFilePath.substring(0, newFilePath.lastIndexOf("/"));
-    const isExists = await app.vault.adapter.exists(parent);
+    const isExists = await app.vault.exists(parent);
     if (!isExists) {
-        await app.vault.adapter.mkdir(parent);
+        await app.vault.createFolder(parent);
     }
 
     const normalizedNewFilePath = normalizePath(newFilePath);
