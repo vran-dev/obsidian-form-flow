@@ -2,7 +2,7 @@ import { localInstance } from "src/i18n/locals";
 import FormPlugin from "src/main";
 import { FormService } from "../FormService";
 import CFormSuggestModal from "src/component/modal/CFormSuggestModal";
-import { normalizePath } from "obsidian";
+import { normalizePath, Notice } from "obsidian";
 import { FormConfig } from "src/model/FormConfig";
 import { DEFAULT_SETTINGS } from "src/settings/PluginSettings";
 import { openFilePathDirectly } from "src/utils/openFilePathDirectly";
@@ -53,10 +53,15 @@ export class ApplicationCommandService {
             defaultTargetFolder: targetFolder,
             fileType: "cform",
             onSubmit: async (fileName, targetFolder) => {
-                const formConfig = new FormConfig(v4())
-                const json = JSON.stringify(formConfig, null, 2);
-                const file = await Files.createFile(app, fileName, targetFolder, json);
-                await openFilePathDirectly(app, file.path, "modal");
+                try {
+                    const formConfig = new FormConfig(v4())
+                    const json = JSON.stringify(formConfig, null, 2);
+                    const file = await Files.createFile(app, fileName, targetFolder, json);
+                    await openFilePathDirectly(app, file.path, "modal");
+                } catch (error) {
+                    console.error("Error creating form file:", error);
+                    new Notice("create file " + fileName + " failed", 5000);
+                }
                 modal.close();
             }
         })
