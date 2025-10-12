@@ -57,5 +57,17 @@ export function getFieldDefaultValue(
         return curr.defaultValue ?? false;
     }
 
+    if (curr.type === FormFieldType.FILE_LIST) {
+        const defaultValue = curr.defaultValue;
+        if (Array.isArray(defaultValue)) {
+            return defaultValue;
+        }
+        return defaultValue ? [defaultValue] : [];
+    }
+
+    if (curr.type === FormFieldType.FOLDER_PATH) {
+        return curr.defaultValue || "";
+    }
+
     return curr.defaultValue;
 }

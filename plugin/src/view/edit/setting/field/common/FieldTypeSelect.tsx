@@ -5,6 +5,7 @@ import {
 	Clock,
 	File,
 	FileCode,
+	Folder,
 	Hash,
 	Key,
 	LetterText,
@@ -90,6 +91,11 @@ export const fieldTypeOptions = [
 		icon: <File size={14} />,
 		value: FormFieldType.FILE_LIST,
 		label: localInstance.file_path,
+	},
+	{
+		icon: <Folder size={14} />,
+		value: FormFieldType.FOLDER_PATH,
+		label: localInstance.folder_path,
 	},
 	{
 		icon: <FileCode size={14} />,

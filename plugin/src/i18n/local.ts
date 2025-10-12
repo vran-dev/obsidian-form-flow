@@ -62,6 +62,8 @@ export interface Local {
 	file_not_found: string;
 	file_path_required: string;
 	file_path: string;
+	folder_path: string;
+	folder_path_required: string;
 	fold: string;
 	folder: string;
 	form_action_setting: string;
