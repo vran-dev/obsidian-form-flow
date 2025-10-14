@@ -13,4 +13,5 @@ export enum FormFieldType {
 	SELECT = "select",
 	PROPERTY_VALUE_SUGGESTION = "property_value_suggestion",
 	FILE_LIST = "file_list",
+	FOLDER_PATH = "folder_path",
 }

@@ -67,6 +67,8 @@ export class Zh implements Local {
 	file_not_found = "文件未找到";
 	file_path = "文件路径";
 	file_path_required = "文件路径不能为空";
+	folder_path = "文件夹路径";
+	folder_path_required = "文件夹路径不能为空";
 	fold = "折叠";
 	folder = "文件目录";
 	form = "表单";

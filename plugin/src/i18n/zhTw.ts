@@ -67,6 +67,8 @@ export class ZhTw implements Local {
 	file_not_found = "檔案未找到";
 	file_path = "檔案路徑";
 	file_path_required = "檔案路徑不能為空";
+	folder_path = "資料夾路徑";
+	folder_path_required = "資料夾路徑不能為空";
 	fold = "摺疊";
 	folder = "資料夾";
 	form = "表單";

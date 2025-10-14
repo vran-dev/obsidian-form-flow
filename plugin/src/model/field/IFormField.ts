@@ -11,6 +11,7 @@ import { ITextAreaField } from "./ITextAreaField";
 import { ITextField } from "./ITextField";
 import { IToggleField } from "./IToggleField";
 import { IFileListField } from "./IFileListField";
+import { IFolderPathField } from "./IFolderPathField";
 import { Filter } from "../filter/Filter";
 
 export interface IFormField {
@@ -39,3 +40,4 @@ export type FormField =
     | ISelectField
     | IPropertyValueField
     | IFileListField
+    | IFolderPathField

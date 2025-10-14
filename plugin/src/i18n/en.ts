@@ -67,6 +67,8 @@ export class En implements Local {
 	file_not_found = "File not found";
 	file_path = "File path";
 	file_path_required = "File path is required";
+	folder_path = "Folder path";
+	folder_path_required = "Folder path is required";
 	fold = "Fold";
 	folder = "Folder";
 	form = "Form";
