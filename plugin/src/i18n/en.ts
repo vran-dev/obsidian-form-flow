@@ -62,6 +62,10 @@ export class En implements Local {
 	field_type = "Field type";
 	file_already_exists = "File already exists, {0}";
 	file_basename = "File name";
+	file_conflict_resolution = "File conflict resolution";
+	file_conflict_resolution_skip = "Skip creation";
+	file_conflict_resolution_auto_rename = "Auto rename";
+	file_conflict_resolution_overwrite = "Overwrite";
 	file_name_cannot_be_empty = "File name cannot be empty";
 	file_name_conflict = "File name conflict";
 	file_not_found = "File not found";

@@ -57,6 +57,10 @@ export interface Local {
 	field_type: string;
 	file_already_exists: string;
 	file_basename: string;
+	file_conflict_resolution: string;
+	file_conflict_resolution_skip: string;
+	file_conflict_resolution_auto_rename: string;
+	file_conflict_resolution_overwrite: string;
 	file_name_cannot_be_empty: string;
 	file_name_conflict: string;
 	file_not_found: string;
