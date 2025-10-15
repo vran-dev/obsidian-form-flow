@@ -1,5 +1,6 @@
 import { FormActionType } from "../enums/FormActionType";
 import { OpenPageInType } from "../enums/OpenPageInType";
+import { FileConflictResolution } from "../enums/FileConflictResolution";
 import { FileBaseFormAction } from "./FileBaseFormAction";
 
 export interface CreateFileFormAction extends FileBaseFormAction {
@@ -8,6 +9,7 @@ export interface CreateFileFormAction extends FileBaseFormAction {
     contentTemplateSource: ContentTemplateSource;
     content: string;
     templateFile: string;
+    conflictResolution?: FileConflictResolution;
 }
 
 export enum ContentTemplateSource {

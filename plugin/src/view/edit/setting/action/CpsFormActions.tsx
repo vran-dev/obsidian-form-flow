@@ -1,6 +1,7 @@
 import { localInstance } from "src/i18n/locals";
 import { IFormAction } from "src/model/action/IFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
+import { FileConflictResolution } from "src/model/enums/FileConflictResolution";
 import { FormConfig } from "src/model/FormConfig";
 import { getActionsCompatible } from "src/utils/getActionsCompatible";
 import { v4 } from "uuid";
@@ -31,6 +32,7 @@ export function CpsFormActions(props: {
 			type: FormActionType.CREATE_FILE,
 			targetFolder: "",
 			fileName: "",
+			conflictResolution: FileConflictResolution.SKIP,
 			id: v4(),
 		};
 		const newActions = [...actions, newAction];

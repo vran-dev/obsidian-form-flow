@@ -4,6 +4,7 @@ import { ContentTemplateSource, CreateFileFormAction } from "src/model/action/Cr
 import { IFormAction } from "src/model/action/IFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
 import { OpenPageInType } from "src/model/enums/OpenPageInType";
+import { FileConflictResolution } from "src/model/enums/FileConflictResolution";
 import { createFileByText } from "src/utils/createFileByText";
 import { openFilePathDirectly } from "src/utils/openFilePathDirectly";
 import { FormTemplateProcessEngine } from "../../engine/FormTemplateProcessEngine";
@@ -43,8 +44,11 @@ export default class CreateFileActionService implements IActionService {
         }
 
         const filePath = await getFilePathFromAction(formAction, context);
-        const file = await createFileByText(app, filePath, formContent);
-        openFilePathDirectly(app, filePath, formAction.openPageIn || OpenPageInType.none);
+        const conflictResolution = formAction.conflictResolution || FileConflictResolution.SKIP;
+        const file = await createFileByText(app, filePath, formContent, conflictResolution);
+        
+        // Open the actual created file (which might have a different path due to auto-renaming)
+        openFilePathDirectly(app, file.path, formAction.openPageIn || OpenPageInType.none);
 
         // do next
         await chain.next(context);

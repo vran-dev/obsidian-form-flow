@@ -10,6 +10,7 @@ import CpsFormItem from "src/view/shared/CpsFormItem";
 import { FilePathFormItem } from "../common/FilePathFormItem";
 import OpenPageTypeSelect from "../common/OpenPageTypeSelect";
 import TextAreaContentSetting from "../common/TextAreaContentSetting";
+import FileConflictResolutionSelect from "../common/FileConflictResolutionSelect";
 import ContentTemplateSourceSelect from "./ContentTemplateSourceSelect";
 
 export function CreateFileSetting(props: {
@@ -33,6 +34,20 @@ export function CreateFileSetting(props: {
 					}}
 				/>
 			</CpsFormItem>
+
+			<CpsFormItem label={localInstance.file_conflict_resolution}>
+				<FileConflictResolutionSelect
+					value={action.conflictResolution}
+					onChange={(value) => {
+						const newAction = {
+							...action,
+							conflictResolution: value,
+						};
+						props.onChange(newAction);
+					}}
+				/>
+			</CpsFormItem>
+
 			<FilePathFormItem
 				label={localInstance.file_path}
 				value={targetFilePath}
