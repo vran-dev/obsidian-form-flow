@@ -13,7 +13,8 @@ export default class extends Modal {
 		public app: App,
 		public fields: IFormField[],
 		public onSubmit: (value: Record<string, any>) => void,
-		public onCancel?: () => void
+		public onCancel?: () => void,
+		public silentMode?: boolean
 	) {
 		super(app);
 	}
@@ -39,6 +40,7 @@ export default class extends Modal {
 							this.isCancel = false;
 							this.close();
 						}}
+						silentMode={this.silentMode}
 					/>
 				</ObsidianAppContext.Provider>
 			</StrictMode>

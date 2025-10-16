@@ -19,10 +19,11 @@ type Props = {
 	fields: IFormField[];
 	onSubmit: (values: FormIdValues) => Promise<void>;
 	afterSubmit?: (values: FormIdValues) => void;
+	silentMode?: boolean;
 } & Omit<HTMLAttributes<HTMLDivElement>, "defaultValue">;
 
 export function CpsFormRenderView(props: Props) {
-	const { fields, onSubmit, afterSubmit, className, ...rest } = props;
+	const { fields, onSubmit, afterSubmit, silentMode = false, className, ...rest } = props;
 	const [formIdValues, setFormIdValues] = useState<FormIdValues>(
 		resolveDefaultFormIdValues(fields)
 	);
@@ -59,11 +60,15 @@ export function CpsFormRenderView(props: Props) {
 				error: true,
 				errorMessage: e?.message || localInstance.unknown_error,
 			});
-			ToastManager.error(e.message || localInstance.unknown_error, 3000);
+			if (!silentMode) {
+				ToastManager.error(e.message || localInstance.unknown_error, 3000);
+			}
 			return;
 		}
 		afterSubmit?.(formIdValues);
-		ToastManager.success(localInstance.submit_success);
+		if (!silentMode) {
+			ToastManager.success(localInstance.submit_success);
+		}
 		setFormIdValues(resolveDefaultFormIdValues(fields));
 	};
 

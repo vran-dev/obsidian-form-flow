@@ -12,6 +12,8 @@ export class Zh implements Local {
 	at_cursor = "当前光标处";
 	auto_submit = "自动提交";
 	auto_submit_description = "通过命令打开表单时自动提交，不显示表单界面";
+	silent_mode = "静默模式";
+	silent_mode_description = "启用后不会显示提交成功或失败的弹窗通知";
 	basic_setting = "基本设置";
 	bottom_below_title = "指定标题下最后一行";
 	brief_description = "简要描述";
