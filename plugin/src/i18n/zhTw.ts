@@ -148,6 +148,7 @@ export class ZhTw implements Local {
 	register_as_command = "註冊為命令";
 	register_as_command_description = "註冊為命令後可以設置快捷鍵打開表單";
 	remove_value = "刪除值";
+	remark = "備註";
 	required = "必填";
 	reset_and_restart = "重置並重啟";
 	reset_code = "重置代碼";

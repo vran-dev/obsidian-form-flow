@@ -148,6 +148,7 @@ export class Zh implements Local {
 	register_as_command = "注册为命令";
 	register_as_command_description = "注册为命令后可以设置快捷键打开表单";
 	remove_value = "删除值";
+	remark = "备注";
 	required = "必填";
 	reset_and_restart = "重置并重启";
 	reset_code = "重置代码";
