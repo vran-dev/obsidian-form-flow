@@ -62,7 +62,7 @@ export class Zh implements Local {
 	field_type = "字段类型";
 	file_already_exists = "文件已存在, {0}";
 	file_basename = "文件名";
-	file_conflict_resolution = "文件冲突处理";
+	file_conflict_resolution = "当文件已存在时";
 	file_conflict_resolution_skip = "跳过创建";
 	file_conflict_resolution_auto_rename = "自动重命名";
 	file_conflict_resolution_overwrite = "覆盖文件";

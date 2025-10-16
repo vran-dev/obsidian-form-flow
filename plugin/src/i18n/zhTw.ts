@@ -62,7 +62,7 @@ export class ZhTw implements Local {
 	field_type = "欄位類型";
 	file_already_exists = "檔案已存在, {0}";
 	file_basename = "檔名";
-	file_conflict_resolution = "檔案衝突處理";
+	file_conflict_resolution = "當檔案已存在時";
 	file_conflict_resolution_skip = "跳過創建";
 	file_conflict_resolution_auto_rename = "自動重新命名";
 	file_conflict_resolution_overwrite = "覆蓋檔案";
