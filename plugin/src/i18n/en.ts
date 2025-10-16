@@ -12,6 +12,8 @@ export class En implements Local {
 	at_cursor = "At cursor";
 	auto_submit = "Auto submit";
 	auto_submit_description = "Automatically submit the form without showing the UI when opened via command";
+	silent_mode = "Silent mode";
+	silent_mode_description = "When enabled, no success or error toast notifications will be displayed";
 	basic_setting = "Basic settings";
 	bottom_below_title = "Bottom below title";
 	brief_description = "Brief description";

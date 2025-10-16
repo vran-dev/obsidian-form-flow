@@ -10,6 +10,8 @@ export interface Local {
 	at_cursor: string;
 	auto_submit_description: string;
 	auto_submit: string;
+	silent_mode: string;
+	silent_mode_description: string;
 	basic_setting: string;
 	bottom_below_title: string;
 	brief_description: string;

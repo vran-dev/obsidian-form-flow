@@ -12,6 +12,8 @@ export class ZhTw implements Local {
 	at_cursor = "當前游標處";
 	auto_submit = "自動提交";
 	auto_submit_description = "通過命令打開表單時自動提交，不顯示表單界面";
+	silent_mode = "靜默模式";
+	silent_mode_description = "啟用後不會顯示提交成功或失敗的彈窗通知";
 	basic_setting = "基本設定";
 	bottom_below_title = "指定標題下最後一行";
 	brief_description = "簡要描述";

@@ -31,6 +31,7 @@ export default function (props: Props) {
 			afterSubmit={(state) => {
 				viewOptions.afterSubmit?.(state);
 			}}
+			silentMode={formConfig.silentMode}
 		/>
 	);
 }

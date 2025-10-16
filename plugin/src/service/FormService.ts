@@ -43,14 +43,19 @@ export class FormService {
                 app: app,
             };
             const promise = this.submit(formIdValues, formConfig, context);
-            showPromiseToast(promise, {
-                loadingMessage: localInstance.handling,
-                successMessage: localInstance.submit_success,
-                successDuration: 3000
-            });
+            
+            if (!formConfig.silentMode) {
+                showPromiseToast(promise, {
+                    loadingMessage: localInstance.handling,
+                    successMessage: localInstance.submit_success,
+                    successDuration: 3000
+                });
+            }
             return promise;
         } catch (e) {
-            ToastManager.error(e.message || localInstance.unknown_error, 5000);
+            if (!formConfig.silentMode) {
+                ToastManager.error(e.message || localInstance.unknown_error, 5000);
+            }
         }
     }
 

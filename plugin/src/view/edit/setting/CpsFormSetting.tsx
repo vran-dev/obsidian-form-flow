@@ -175,6 +175,21 @@ export default function (props: {
 										}}
 									/>
 								</CpsFormItem>
+								<CpsFormItem label={localInstance.silent_mode}>
+									<span className="form--FormFieldLabelDescription">
+										{localInstance.silent_mode_description}
+									</span>
+									<ToggleControl
+										value={formConfig.silentMode === true}
+										onValueChange={(v) => {
+											const newConfig = {
+												...formConfig,
+												silentMode: v,
+											};
+											onChange(newConfig);
+										}}
+									/>
+								</CpsFormItem>
 							</CpsFormSettingGroup>
 						</CpsForm>
 					),
