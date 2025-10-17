@@ -22,7 +22,7 @@ export async function createFileByText(
     if (existingFile != null) {
         switch (conflictResolution) {
             case FileConflictResolution.SKIP:
-                new Notice(localInstance.file_already_exists.format(newFilePath));
+                // new Notice(localInstance.file_already_exists.format(newFilePath));
                 return Promise.resolve(existingFile as TFile);
                 
             case FileConflictResolution.AUTO_RENAME:
