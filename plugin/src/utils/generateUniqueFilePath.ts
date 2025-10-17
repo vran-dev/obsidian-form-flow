@@ -11,29 +11,11 @@ export function generateUniqueFilePath(app: App, originalPath: string): string {
         return normalizedPath;
     }
     
-    // Extract directory, filename and extension
-    const lastSlashIndex = normalizedPath.lastIndexOf("/");
-    const directory = lastSlashIndex >= 0 ? normalizedPath.substring(0, lastSlashIndex) : "";
-    const fullFileName = lastSlashIndex >= 0 ? normalizedPath.substring(lastSlashIndex + 1) : normalizedPath;
+    // Extract the extension from the original path
+    const lastDotIndex = normalizedPath.lastIndexOf(".");
+    const pathWithoutExtension = lastDotIndex >= 0 ? normalizedPath.substring(0, lastDotIndex) : normalizedPath;
+    const extension = lastDotIndex >= 0 ? normalizedPath.substring(lastDotIndex + 1) : "";
     
-    const lastDotIndex = fullFileName.lastIndexOf(".");
-    const fileName = lastDotIndex >= 0 ? fullFileName.substring(0, lastDotIndex) : fullFileName;
-    const extension = lastDotIndex >= 0 ? fullFileName.substring(lastDotIndex) : "";
-    
-    // Use the same pattern as generateSequenceName: try numbered suffixes
-    let uniqueName = fileName;
-    for (let suffix = 1; suffix < 10000; suffix++) {
-        const testFileName = uniqueName + extension;
-        const testPath = directory ? `${directory}/${testFileName}` : testFileName;
-        const testNormalizedPath = normalizePath(testPath);
-        
-        if (!app.vault.getAbstractFileByPath(testNormalizedPath)) {
-            return testNormalizedPath;
-        }
-        
-        uniqueName = fileName + " " + suffix;
-    }
-    
-    // Fallback (should never reach here)
-    return normalizedPath;
+    // Use Obsidian's getAvailablePath API to generate unique path
+    return app.vault.getAvailablePath(pathWithoutExtension, extension);
 }
