@@ -76,7 +76,7 @@ export default function (props: {
 					{result.validationMessages[0] || ""}
 				</span>
 			)}
-			<CpsFormAcionHeader
+			<CpsFormActionHeader
 				title={title}
 				value={value}
 				open={open}
@@ -135,7 +135,7 @@ export default function (props: {
 	);
 }
 
-function CpsFormAcionHeader(props: {
+function CpsFormActionHeader(props: {
 	title: React.ReactNode;
 	value: IFormAction;
 	open: boolean;
