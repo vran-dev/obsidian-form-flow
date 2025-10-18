@@ -28,7 +28,7 @@ export function RunScriptSetting(props: {
 	const action = value as RunScriptFormAction;
 	return (
 		<>
-			{action.scriptSource === ScriptSourceType.INLINE && (
+			{/* {action.scriptSource === ScriptSourceType.INLINE && (
 				<CpsFormItem label={localInstance.title}>
 					<input
 						type="text"
@@ -43,7 +43,7 @@ export function RunScriptSetting(props: {
 						}}
 					/>
 				</CpsFormItem>
-			)}
+			)} */}
 			<CpsFormItem label={localInstance.source}>
 				<ScriptSourceSelect
 					value={action.scriptSource || ScriptSourceType.EXTENSION}

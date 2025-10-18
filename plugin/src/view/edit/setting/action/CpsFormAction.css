@@ -98,3 +98,27 @@ button.form-CpsFormActinoCodeResetButton:hover {
 	justify-content: flex-end;
 	padding: var(--size-4-1) var(--size-4-2);
 }
+
+.form--CpsFormActionRemark {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-2);
+	flex: 1;
+}
+
+.form--CpsFormActionRemarkText {
+	flex-grow: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-inline-start: 8px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.form--CpsFormActionBottomSection {
+	display: flex;
+	align-items: center;
+}
