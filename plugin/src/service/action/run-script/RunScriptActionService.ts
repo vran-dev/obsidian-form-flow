@@ -33,7 +33,7 @@ export default class RunScriptActionService implements IActionService {
         }
 
         // do next
-        await chain.next(context);
+        return await chain.next(context);
     }
 
 }

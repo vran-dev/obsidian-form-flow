@@ -51,6 +51,7 @@ input.form--FormFilePathSuggestInput:focus-visible {
 	width: min(400px, var(--radix-popover-trigger-width));
 	padding: 8px 4px;
 	gap: 4px;
+	word-break: break-word;
 }
 
 .form--FormFilePathSuggestItem {

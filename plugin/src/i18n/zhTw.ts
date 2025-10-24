@@ -1,6 +1,10 @@
 import { Local } from "./local";
 
 export class ZhTw implements Local {
+	command = "命令";
+	no_command_selected = "未選擇命令";
+	create = "創建";
+	run_command = "執行命令";
 	action_type = "執行動作";
 	add = "添加";
 	add_action = "添加動作";

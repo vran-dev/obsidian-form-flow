@@ -8,6 +8,7 @@ import { RunScriptSetting } from "./run-script/RunScriptSetting";
 import { SuggestModalSetting } from "./suggest-modal/SuggestModalSetting";
 import { UpdateFrontmatterSetting } from "./update-frontmatter/UpdateFrontmatterSetting";
 import { RemarkSetting } from "./common/RemarkSetting";
+import { RunCommandSetting } from "./run-command/RunCommandSetting";
 
 export default function (props: {
 	value: IFormAction;
@@ -23,6 +24,7 @@ export default function (props: {
 			<UpdateFrontmatterSetting value={value} onChange={onChange} />
 			<RunScriptSetting value={value} onChange={onChange} />
 			<SuggestModalSetting value={value} onChange={onChange} />
+			<RunCommandSetting value={value} onChange={onChange} />
 			<GenerateFormSetting value={value} onChange={onChange} />
 		</CpsForm>
 	);

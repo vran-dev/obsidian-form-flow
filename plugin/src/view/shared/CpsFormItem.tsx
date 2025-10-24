@@ -20,7 +20,7 @@ export default function (
 	} = props;
 	return (
 		<div
-			className="form--CpsFormItem"
+			className={`form--CpsFormItem ${className || ""}`}
 			data-layout={props.layout ?? "horizontal"}
 			{...rest}
 		>
@@ -37,9 +37,7 @@ export default function (
 					</div>
 				)}
 			</div>
-			<div className="form--CpsFormItemControl">
-				{props.children}
-			</div>
+			<div className="form--CpsFormItemControl">{props.children}</div>
 		</div>
 	);
 }

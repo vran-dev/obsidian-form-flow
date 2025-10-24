@@ -1,6 +1,10 @@
 import { Local } from "./local";
 
 export class En implements Local {
+	command = "Command";
+	no_command_selected = "No command selected";
+	create = "Create";
+	run_command = "Run command";
 	action_type = "Action type";
 	add = "Add";
 	add_action = "Add action";

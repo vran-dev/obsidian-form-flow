@@ -73,6 +73,14 @@ export function useActionTitle(value: IFormAction) {
 			title = file + " " + position;
 		}
 
+		if (value.type === FormActionType.RUN_COMMAND) {
+			const runCommandAction = value as any;
+			title =
+				runCommandAction.commandName ||
+				runCommandAction.commandId ||
+				localInstance.no_command_selected;
+		}
+
 		return {
 			type: typeLabel,
 			title: title,
