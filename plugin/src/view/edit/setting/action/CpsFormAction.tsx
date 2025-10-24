@@ -16,6 +16,7 @@ import { IFormAction } from "src/model/action/IFormAction";
 import { Filter, FilterType } from "src/model/filter/Filter";
 import { OperatorType } from "src/model/filter/OperatorType";
 import { FormCondition } from "src/view/shared/filter-content/FormCondition";
+import { createDefaultActionByType } from "src/utils/createDefaultActionByType";
 import { v4 } from "uuid";
 import ActionTypeSelect from "./common/ActionTypeSelect";
 import CpsFormActionDetailSetting from "./CpsFormActionDetailSetting";
@@ -176,10 +177,11 @@ function CpsFormActionHeader(props: {
 				value={value.type}
 				styles={typeStyles}
 				onChange={(type) => {
-					const newAction = {
-						...value,
-						type: type,
-					};
+					const newAction = createDefaultActionByType(type, {
+						id: value.id,
+						condition: value.condition,
+						remark: value.remark,
+					});
 					props.onChange(newAction);
 				}}
 			/>
