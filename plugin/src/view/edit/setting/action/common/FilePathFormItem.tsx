@@ -8,6 +8,7 @@ import { localInstance } from "src/i18n/locals";
 import { openFilePathDirectly } from "src/utils/openFilePathDirectly";
 import { Strings } from "src/utils/Strings";
 import CpsFormItem from "src/view/shared/CpsFormItem";
+import { useTriggerSideOffset } from "src/hooks/useTriggerSideOffset";
 
 export function FilePathFormItem(props: {
 	label: string;
@@ -73,6 +74,7 @@ function MarkdownFileList(props: {
 	const [activeIndex, setActiveIndex] = useState(-1);
 	const contentRef = useRef<HTMLDivElement>(null);
 	const listRef = useRef<HTMLDivElement>(null);
+	const triggerRef = useRef<HTMLSpanElement>(null);
 	const app = useObsidianApp();
 	const items = useMemo(() => {
 		const files = app.vault.getMarkdownFiles();
@@ -137,10 +139,15 @@ function MarkdownFileList(props: {
 		}
 	};
 
+	const sideOffset = useTriggerSideOffset(triggerRef);
+
 	return (
 		<RadixPopover.Root open={open} onOpenChange={setOpen}>
 			<RadixPopover.Trigger asChild>
-				<span className="form--FormFilePathSuggestTrigger">
+				<span
+					className="form--FormFilePathSuggestTrigger"
+					ref={triggerRef}
+				>
 					{value}
 				</span>
 			</RadixPopover.Trigger>
@@ -149,7 +156,7 @@ function MarkdownFileList(props: {
 			>
 				<RadixPopover.Content
 					className="form--FormFilePathSuggestContent"
-					sideOffset={4}
+					sideOffset={-sideOffset}
 					collisionPadding={{
 						left: 16,
 						right: 16,
