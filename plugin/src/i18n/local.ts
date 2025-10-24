@@ -1,4 +1,8 @@
 export interface Local {
+	command: string;
+	no_command_selected: string;
+	create: string;
+	run_command: string;
 	action_type: string;
 	add_action: string;
 	add_condition_group: string;

@@ -27,7 +27,7 @@ export default class InsertTextActionService implements IActionService {
         const file = await this.getFile(formAction, context);
         await this.inserText(file.path, state, formAction, context);
         // do next
-        await chain.next(context);
+        return await chain.next(context);
     }
 
     private async getFile(formAction: InsertTextFormAction, context: ActionContext) {

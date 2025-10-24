@@ -1,0 +1,8 @@
+.form--RunCommandSettingItem .form--AutocompleteTrigger {
+	text-align: right;
+	justify-content: flex-end;
+	width: auto;
+	min-width: 150px;
+	background: var(--background-modifier-form-field);
+	cursor: pointer;
+}

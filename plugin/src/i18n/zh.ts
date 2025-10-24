@@ -1,6 +1,10 @@
 import { Local } from "./local";
 
 export class Zh implements Local {
+	command = "命令";
+	no_command_selected = "未选择命令";
+	create = "创建";
+	run_command = "执行命令";
 	action_type = "执行动作";
 	add = "添加";
 	add_action = "添加动作";

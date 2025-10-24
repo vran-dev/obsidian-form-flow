@@ -10,6 +10,7 @@ import SuggestModalActionService from "./suggest-modal/SuggestModalActionService
 import UpdateFrontmatterActionService from "./update-frontmatter/UpdateFrontmatterActionService";
 import { hasConditions } from "./util/hasConditions";
 import { FilterService } from "../filter/FilterService";
+import { RunCommandActionService } from "./run-command/RunCommandActionService";
 
 export interface IActionService {
 
@@ -34,6 +35,7 @@ export class ActionChain {
         new RunScriptActionService(),
         new SuggestModalActionService(),
         new UpdateFrontmatterActionService(),
+        new RunCommandActionService(),
         new GenerateFormActionService(),
     ]
 

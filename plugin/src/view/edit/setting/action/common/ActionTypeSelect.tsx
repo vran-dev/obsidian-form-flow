@@ -1,4 +1,11 @@
-import { Code, File, FileJson, MessageSquare, Text } from "lucide-react";
+import {
+	Code,
+	File,
+	FileJson,
+	MessageSquare,
+	Text,
+	ZapIcon,
+} from "lucide-react";
 import { localInstance } from "src/i18n/locals";
 import { FormActionType } from "src/model/enums/FormActionType";
 import { FormTypeSelect } from "src/view/shared/select/FormTypeSelect";
@@ -48,6 +55,11 @@ export const formActionTypeOptions = [
 		value: FormActionType.SUGGEST_MODAL,
 		label: localInstance.suggest_modal,
 		icon: <MessageSquare />,
+	},
+	{
+		value: FormActionType.RUN_COMMAND,
+		label: localInstance.run_command,
+		icon: <ZapIcon />,
 	},
 	{
 		value: FormActionType.RUN_SCRIPT,

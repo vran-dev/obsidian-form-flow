@@ -1,0 +1,142 @@
+button.form--AutocompleteTrigger {
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 150px;
+	padding: 4px 8px;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	border-radius: var(--radius-s);
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	cursor: default;
+	text-align: left;
+	position: relative;
+	height: auto;
+	min-height: 30px;
+	overflow: hidden;
+	width: 100%;
+	transform: translateZ(0);
+}
+
+button.form--AutocompleteTrigger:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--AutocompleteContentWrapper {
+	display: flex;
+	position: relative;
+	z-index: 1;
+	background-color: var(--background-primary);
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-s);
+	overflow-y: auto;
+	width: min(var(--radix-popover-content-available-width), 360px);
+	max-height: min(580px, var(--radix-popover-content-available-height));
+	border: 1px solid var(--background-modifier-border);
+	contain: layout style paint;
+	will-change: transform, opacity;
+}
+
+.form--AutocompleteContent {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+}
+
+.form--AutocompleteHeader {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex: 0 0 auto;
+	background-color: var(--background-primary-alt);
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 4px 12px;
+	min-height: 36px;
+	gap: 4px;
+}
+
+.form--AutocompleteHeader input[type="text"] {
+	flex: 1;
+	padding: 0px;
+	background-color: transparent;
+	color: var(--text-normal);
+	border: none;
+	box-shadow: none;
+	outline: none;
+	height: 28px;
+	font-size: var(--font-ui-medium);
+}
+
+.form--AutocompleteOptions {
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	flex: 1 1 auto;
+	padding: 4px 8px;
+	min-height: 0;
+}
+
+.form--AutocompleteOption {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 8px;
+	cursor: pointer;
+	border-radius: var(--radius-m);
+	line-height: var(--line-height-normal);
+}
+.form--AutocompleteOption:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--AutocompleteOption[data-actived="true"] {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--AutocompleteOptionIcon {
+	display: flex;
+	align-items: center;
+	color: var(--text-muted);
+}
+
+.form--AutocompleteOptionIcon .lucide {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+}
+
+.form--AutocompleteOptionLabel {
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+}
+.form--AutocompleteOptionDescription {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+}
+.form--AutocompleteOptionContent {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	word-break: break-all;
+}
+
+.form--AutocompleteNoMatch {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	line-height: var(--line-height-normal);
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.form--AutocompleteNoMatchValue {
+	padding: 2px 6px;
+	font-size: var(--font-ui-small);
+	border-radius: var(--radius-s);
+	color: rgba(var(--color-red-rgb), 1);
+	background-color: rgba(var(--color-red-rgb), 0.18);
+}
