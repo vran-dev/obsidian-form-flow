@@ -209,4 +209,10 @@ export class ZhTw implements Local {
 	update_property = "更新屬性";
 	value = "值";
 	visibility_condition = "顯示條件";
+	wait = "等待";
+	wait_time = "等待時間";
+	wait_unit = "時間單位";
+	milliseconds = "毫秒";
+	seconds = "秒";
+	minutes = "分鐘";
 }

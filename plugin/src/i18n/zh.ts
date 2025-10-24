@@ -209,5 +209,11 @@ export class Zh implements Local {
 	update_property = "更新属性";
 	value = "值";
 	visibility_condition = "显示条件";
+	wait = "等待";
+	wait_time = "等待时间";
+	wait_unit = "时间单位";
+	milliseconds = "毫秒";
+	seconds = "秒";
+	minutes = "分钟";
 }
 
