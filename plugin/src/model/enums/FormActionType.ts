@@ -6,4 +6,5 @@ export enum FormActionType {
     SUGGEST_MODAL = "suggestModal",
     GENERATE_FORM = "generateForm",
     RUN_COMMAND = "runCommand",
+    WAIT = "wait",
 }
