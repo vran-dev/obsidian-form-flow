@@ -1,13 +1,14 @@
+import useSortable from "src/hooks/useSortable";
 import { localInstance } from "src/i18n/locals";
+import { FormActionFactory } from "src/model/action/FormActionFactory";
 import { IFormAction } from "src/model/action/IFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
-import { FileConflictResolution } from "src/model/enums/FileConflictResolution";
 import { FormConfig } from "src/model/FormConfig";
 import { getActionsCompatible } from "src/utils/getActionsCompatible";
 import { v4 } from "uuid";
+import { NewActionGridPopover } from "./common/new-action-grid/NewActionGridPopover";
 import FormVariableQuotePanel from "./common/variable-quoter/FormVariableQuotePanel";
 import CpsFormAction from "./CpsFormAction";
-import useSortable from "src/hooks/useSortable";
 
 export function CpsFormActions(props: {
 	config: FormConfig;
@@ -27,14 +28,8 @@ export function CpsFormActions(props: {
 		},
 	});
 
-	const addAction = () => {
-		const newAction = {
-			type: FormActionType.CREATE_FILE,
-			targetFolder: "",
-			fileName: "",
-			conflictResolution: FileConflictResolution.SKIP,
-			id: v4(),
-		};
+	const addAction = (type: FormActionType) => {
+		const newAction = FormActionFactory.create(type);
 		const newActions = [...actions, newAction];
 		saveAction(newActions);
 	};
@@ -81,9 +76,11 @@ export function CpsFormActions(props: {
 					/>
 				);
 			})}
-			<button className="form--AddButton" onClick={addAction}>
-				+ {localInstance.add_action}
-			</button>
+			<NewActionGridPopover onSelect={addAction}>
+				<button className="form--AddButton">
+					+ {localInstance.add_action}
+				</button>
+			</NewActionGridPopover>
 		</div>
 	);
 }

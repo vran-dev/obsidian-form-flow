@@ -1,6 +1,7 @@
+import { BaseFormAction } from "./BaseFormAction";
 import { IFormAction } from "./IFormAction";
 
-export interface FileBaseFormAction extends IFormAction {
+export abstract class FileBaseFormAction extends BaseFormAction {
 
     filePath: string;
 
@@ -14,4 +15,11 @@ export interface FileBaseFormAction extends IFormAction {
      */
     fileName: string;
 
+    constructor(partial?: Partial<FileBaseFormAction>) {
+        super(partial);
+        this.filePath = "";
+        this.targetFolder = "";
+        this.fileName = "";
+        Object.assign(this, partial);
+    }
 }

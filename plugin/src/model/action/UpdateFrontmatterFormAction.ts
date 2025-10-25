@@ -2,7 +2,7 @@ import { FormActionType } from "../enums/FormActionType";
 import { TargetFileType } from "../enums/TargetFileType";
 import { FileBaseFormAction } from "./FileBaseFormAction";
 
-export interface UpdateFrontmatterFormAction extends FileBaseFormAction {
+export class UpdateFrontmatterFormAction extends FileBaseFormAction {
 
     type: FormActionType.UPDATE_FRONTMATTER;
 
@@ -11,6 +11,15 @@ export interface UpdateFrontmatterFormAction extends FileBaseFormAction {
     propertyUpdates: PropertyUpdate[];
 
     newFileTemplate?: string;
+
+    constructor(partial?: Partial<UpdateFrontmatterFormAction>) {
+        super(partial);
+        this.type = FormActionType.UPDATE_FRONTMATTER;
+        this.targetFileType = TargetFileType.SPECIFIED_FILE;
+        this.propertyUpdates = [];
+        this.newFileTemplate = "";
+        Object.assign(this, partial);
+    }
 }
 
 export interface PropertyUpdate {
