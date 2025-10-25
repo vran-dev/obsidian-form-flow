@@ -12,6 +12,7 @@ export class FormConfig {
     action?: IFormAction;
     actions: IFormAction[];
     autoSubmit: boolean;
+    silentMode: boolean;
 
     constructor(id: string) {
         this.id = id;
@@ -24,5 +25,6 @@ export class FormConfig {
         }
         this.actions = [createFileAction];
         this.autoSubmit = false;
+        this.silentMode = false;
     }
 }
