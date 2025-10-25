@@ -10,7 +10,6 @@ import {
 import { SuggestModalFormAction } from "../model/action/SuggestModalFormAction";
 import { WaitFormAction } from "../model/action/WaitFormAction";
 import { FormActionType } from "../model/enums/FormActionType";
-import { WaitTimeUnit } from "../model/enums/WaitTimeUnit";
 import { TargetFileType } from "../model/enums/TargetFileType";
 import { formActionTypeOptions } from "../view/edit/setting/action/common/ActionTypeSelect";
 import { allFormInsertPositionOptions } from "../view/edit/setting/action/common/InsertPositionSelect";
@@ -77,22 +76,8 @@ export function useActionTitle(value: IFormAction) {
 
 		if (value.type === FormActionType.WAIT) {
 			const waitAction = value as WaitFormAction;
-			const time = waitAction.waitTime || 300;
-			let unitLabel = "";
-			
-			switch (waitAction.unit) {
-				case WaitTimeUnit.MILLISECONDS:
-					unitLabel = localInstance.milliseconds;
-					break;
-				case WaitTimeUnit.SECONDS:
-					unitLabel = localInstance.seconds;
-					break;
-				case WaitTimeUnit.MINUTES:
-					unitLabel = localInstance.minutes;
-					break;
-				default:
-					unitLabel = localInstance.milliseconds;
-			}
+			const time = waitAction.waitTime ?? 300;
+			const unitLabel = localInstance.milliseconds;
 			
 			title = `${time} ${unitLabel}`;
 		}

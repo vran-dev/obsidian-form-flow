@@ -199,8 +199,5 @@ export interface Local {
 	visibility_condition: string;
 	wait: string;
 	wait_time: string;
-	wait_unit: string;
 	milliseconds: string;
-	seconds: string;
-	minutes: string;
 }

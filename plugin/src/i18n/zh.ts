@@ -211,9 +211,6 @@ export class Zh implements Local {
 	visibility_condition = "显示条件";
 	wait = "等待";
 	wait_time = "等待时间";
-	wait_unit = "时间单位";
 	milliseconds = "毫秒";
-	seconds = "秒";
-	minutes = "分钟";
 }
 
