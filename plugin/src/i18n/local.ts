@@ -197,4 +197,7 @@ export interface Local {
 	update_property: string;
 	value: string;
 	visibility_condition: string;
+	wait: string;
+	wait_time: string;
+	milliseconds: string;
 }

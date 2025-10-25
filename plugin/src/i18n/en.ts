@@ -209,4 +209,7 @@ export class En implements Local {
 	update_property = "Update property";
 	value = "Value";
 	visibility_condition = "Visibility condition";
+	wait = "Wait";
+	wait_time = "Wait time";
+	milliseconds = "Milliseconds";
 }

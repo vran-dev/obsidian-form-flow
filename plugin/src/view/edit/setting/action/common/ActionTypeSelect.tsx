@@ -2,6 +2,7 @@ import {
 	Code,
 	File,
 	FileJson,
+	Hourglass,
 	MessageSquare,
 	Text,
 	ZapIcon,
@@ -65,5 +66,10 @@ export const formActionTypeOptions = [
 		value: FormActionType.RUN_SCRIPT,
 		label: localInstance.run_script,
 		icon: <Code />,
+	},
+	{
+		value: FormActionType.WAIT,
+		label: localInstance.wait,
+		icon: <Hourglass />,
 	},
 ];

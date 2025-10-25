@@ -8,6 +8,7 @@ import {
 	ScriptSourceType,
 } from "../model/action/RunScriptFormAction";
 import { SuggestModalFormAction } from "../model/action/SuggestModalFormAction";
+import { WaitFormAction } from "../model/action/WaitFormAction";
 import { FormActionType } from "../model/enums/FormActionType";
 import { TargetFileType } from "../model/enums/TargetFileType";
 import { formActionTypeOptions } from "../view/edit/setting/action/common/ActionTypeSelect";
@@ -71,6 +72,14 @@ export function useActionTitle(value: IFormAction) {
 			}
 
 			title = file + " " + position;
+		}
+
+		if (value.type === FormActionType.WAIT) {
+			const waitAction = value as WaitFormAction;
+			const time = waitAction.waitTime ?? 300;
+			const unitLabel = localInstance.milliseconds;
+			
+			title = `${time} ${unitLabel}`;
 		}
 
 		if (value.type === FormActionType.RUN_COMMAND) {
