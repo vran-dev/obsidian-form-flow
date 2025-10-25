@@ -4,7 +4,7 @@ import { TargetFileType } from "../enums/TargetFileType";
 import { FileBaseFormAction } from "./FileBaseFormAction";
 import { OpenPageInType } from "../enums/OpenPageInType";
 
-export interface InsertTextFormAction extends FileBaseFormAction {
+export class InsertTextFormAction extends FileBaseFormAction {
 
     type: FormActionType.INSERT_TEXT
 
@@ -23,5 +23,16 @@ export interface InsertTextFormAction extends FileBaseFormAction {
 
     content: string;
 
+    constructor(partial?: Partial<InsertTextFormAction>) {
+        super(partial);
+        this.type = FormActionType.INSERT_TEXT;
+        this.openPageIn = OpenPageInType.current;
+        this.newFileTemplate = "";
+        this.targetFileType = TargetFileType.SPECIFIED_FILE;
+        this.position = TextInsertPosition.END_OF_CONTENT;
+        this.heading = "";
+        this.content = "";
+        Object.assign(this, partial);
+    }
 }
 

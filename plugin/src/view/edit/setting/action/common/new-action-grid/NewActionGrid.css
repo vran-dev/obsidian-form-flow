@@ -1,0 +1,177 @@
+.form--NewActionGridContent {
+	background-color: var(--background-primary);
+	font-size: var(--font-ui-small);
+	display: flex;
+	flex-direction: column;
+	min-width: 200px;
+}
+
+.form--NewActionGridHeader {
+	padding: 12px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	background-color: var(--background-secondary);
+}
+
+.form--NewActionGridSearch {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	outline: none;
+	transition: border-color 0.15s ease;
+}
+
+.form--NewActionGridSearch:focus {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+.form--NewActionGridSearch::placeholder {
+	color: var(--text-muted);
+}
+
+.form--NewActionGridBody {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px;
+}
+
+.form--NewActionGridGrid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 8px;
+	padding: 0;
+}
+
+.form--NewActionGridGridItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 8px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	transition: all 0.15s ease;
+	background-color: transparent;
+	border: 1px solid transparent;
+	text-align: center;
+	min-height: 70px;
+	position: relative;
+	outline: none;
+}
+
+.form--NewActionGridGridItem:hover,
+.form--NewActionGridGridItem[data-highlighted] {
+	background-color: var(--background-modifier-hover);
+}
+
+.form--NewActionGridGridItem:active {
+	background-color: var(--background-modifier-active);
+}
+
+.form--NewActionGridGridItemIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	margin-bottom: 6px;
+	color: var(--text-muted);
+	border-radius: var(--radius-s);
+	transition: all 0.15s ease;
+}
+
+.form--NewActionGridGridItem:hover .form--NewActionGridGridItemIcon {
+	color: var(--interactive-accent);
+	transform: scale(1.05);
+}
+
+.form--NewActionGridGridItemIcon .lucide,
+.form--NewActionGridGridItemIcon svg {
+	width: 28px;
+	height: 28px;
+}
+
+.form--NewActionGridGridItemText {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-normal);
+	line-height: 1.2;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.form--NewActionGridGridItem:hover .form--NewActionGridGridItemText {
+	color: var(--text-accent);
+}
+
+.form--NewActionGridEmpty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.form--NewActionGridEmptyText {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	font-style: italic;
+}
+
+/* 滚动条样式 */
+.form--NewActionGridBody::-webkit-scrollbar {
+	width: 6px;
+}
+
+.form--NewActionGridBody::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.form--NewActionGridBody::-webkit-scrollbar-thumb {
+	background-color: var(--background-modifier-border);
+	border-radius: 3px;
+}
+
+.form--NewActionGridBody::-webkit-scrollbar-thumb:hover {
+	background-color: var(--background-modifier-border-hover);
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+	.form--NewActionGridContent {
+		min-width: 280px;
+		max-width: 90vw;
+	}
+
+	.form--NewActionGridGrid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.form--NewActionGridGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.form--NewActionGridGridItem {
+		min-height: 60px;
+		padding: 8px 4px;
+	}
+
+	.form--NewActionGridGridItemIcon {
+		width: 28px;
+		height: 28px;
+		margin-bottom: 4px;
+	}
+
+	.form--NewActionGridGridItemIcon .lucide,
+	.form--NewActionGridGridItemIcon svg {
+		width: 16px;
+		height: 16px;
+	}
+}
