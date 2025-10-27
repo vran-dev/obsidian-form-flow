@@ -1,7 +1,7 @@
-import * as Popover from "@radix-ui/react-popover";
+import { useState } from "react";
+import { Popover } from "src/component/popover/Popover";
 import { FormActionType } from "src/model/enums/FormActionType";
 import { NewActionGrid } from "./NewActionGrid";
-import { useState } from "react";
 import "./NewActionGridPopover.css";
 
 type Props = {
@@ -16,17 +16,9 @@ export function NewActionGridPopover({ children, onSelect }: Props) {
 		setOpen(false);
 	};
 	return (
-		<Popover.Root open={open} onOpenChange={setOpen}>
-			<Popover.Trigger asChild>{children}</Popover.Trigger>
-			<Popover.Portal>
-				<Popover.Content
-					className="popover"
-					sideOffset={5}
-					align="start"
-				>
-					<NewActionGrid onSelect={handleSelect} />
-				</Popover.Content>
-			</Popover.Portal>
-		</Popover.Root>
+		<Popover open={open} onOpenChange={setOpen}>
+			{children}
+			<NewActionGrid onSelect={handleSelect} />
+		</Popover>
 	);
 }
