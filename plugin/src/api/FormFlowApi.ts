@@ -18,15 +18,24 @@ export class FormFlowApi {
         }
     }
 	
-    async submitFormFile(filePath: string): Promise<void> {
+    async submitFormFile(filePath: string, options?: { silent?: boolean }): Promise<void> {
         const formService = new FormService();
         const file = this.app.vault.getAbstractFileByPath(filePath);
         if (file instanceof TFile) {
             const form = await this.app.vault.readJson(file.path) as FormConfig;
-            await formService.submitDirectly(form, this.app);
+            
+            const originalSilentMode = form.silentMode;
+            if (options?.silent !== undefined) {
+                form.silentMode = options.silent;
+            }
+            
+            try {
+                await formService.submitDirectly(form, this.app);
+            } finally {
+                form.silentMode = originalSilentMode;
+            }
         } else {
             new Notice(`Form File not found: ${filePath}`);
         }
     }
-
 }
