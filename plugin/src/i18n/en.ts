@@ -212,4 +212,5 @@ export class En implements Local {
 	wait = "Wait";
 	wait_time = "Wait time";
 	milliseconds = "Milliseconds";
+	write_to_clipboard = "Write to clipboard";
 }

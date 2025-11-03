@@ -200,4 +200,5 @@ export interface Local {
 	wait: string;
 	wait_time: string;
 	milliseconds: string;
+	write_to_clipboard: string;
 }

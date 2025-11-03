@@ -212,5 +212,6 @@ export class Zh implements Local {
 	wait = "等待";
 	wait_time = "等待时间";
 	milliseconds = "毫秒";
+	write_to_clipboard = "写入剪贴板";
 }
 
