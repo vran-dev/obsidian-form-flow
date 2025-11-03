@@ -9,6 +9,7 @@ import RunScriptActionService from "./run-script/RunScriptActionService";
 import SuggestModalActionService from "./suggest-modal/SuggestModalActionService";
 import UpdateFrontmatterActionService from "./update-frontmatter/UpdateFrontmatterActionService";
 import WaitActionService from "./wait/WaitActionService";
+import WriteToClipboardActionService from "./write-to-clipboard/WriteToClipboardActionService";
 import { hasConditions } from "./util/hasConditions";
 import { FilterService } from "../filter/FilterService";
 import { RunCommandActionService } from "./run-command/RunCommandActionService";
@@ -39,6 +40,7 @@ export class ActionChain {
         new RunCommandActionService(),
         new GenerateFormActionService(),
         new WaitActionService(),
+        new WriteToClipboardActionService(),
     ]
 
     constructor(actions: IFormAction[]) {

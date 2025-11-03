@@ -7,6 +7,7 @@ import { RunScriptFormAction } from "./RunScriptFormAction";
 import { SuggestModalFormAction } from "./SuggestModalFormAction";
 import { UpdateFrontmatterFormAction } from "./UpdateFrontmatterFormAction";
 import { WaitFormAction } from "./WaitFormAction";
+import { WriteToClipboardFormAction } from "./WriteToClipboardFormAction";
 
 export class FormActionFactory {
     static create(type: FormActionType, partial?: Partial<IFormAction>): IFormAction {
@@ -45,6 +46,11 @@ export class FormActionFactory {
                 return new WaitFormAction({
                     ...partial,
                     type: FormActionType.WAIT
+                });
+            case FormActionType.WRITE_TO_CLIPBOARD:
+                return new WriteToClipboardFormAction({
+                    ...partial,
+                    type: FormActionType.WRITE_TO_CLIPBOARD
                 });
             default:
                 throw new Error(`Unsupported FormActionType: ${type}`);

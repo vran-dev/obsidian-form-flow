@@ -212,4 +212,5 @@ export class ZhTw implements Local {
 	wait = "等待";
 	wait_time = "等待時間";
 	milliseconds = "毫秒";
+	write_to_clipboard = "寫入剪貼簿";
 }

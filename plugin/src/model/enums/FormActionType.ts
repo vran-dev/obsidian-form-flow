@@ -7,4 +7,5 @@ export enum FormActionType {
     GENERATE_FORM = "generateForm",
     RUN_COMMAND = "runCommand",
     WAIT = "wait",
+    WRITE_TO_CLIPBOARD = "writeToClipboard",
 }

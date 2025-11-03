@@ -6,6 +6,7 @@ import {
 	MessageSquare,
 	Text,
 	ZapIcon,
+	Clipboard,
 } from "lucide-react";
 import { localInstance } from "src/i18n/locals";
 import { FormActionType } from "src/model/enums/FormActionType";
@@ -71,5 +72,10 @@ export const formActionTypeOptions = [
 		value: FormActionType.WAIT,
 		label: localInstance.wait,
 		icon: <Hourglass />,
+	},
+	{
+		value: FormActionType.WRITE_TO_CLIPBOARD,
+		label: localInstance.write_to_clipboard,
+		icon: <Clipboard />,
 	},
 ];
