@@ -21,10 +21,18 @@ export default class extends SuggestModal<TFile> {
 		const isPartialMatch = (item: TFile) =>
 			item.basename.toLowerCase().includes(q);
 
-		const fullmatch = items.filter((item) => isFullMatch(item));
+		// Sort function for alphabetical ascending order with Chinese and English support
+		const sortAscending = (a: TFile, b: TFile): number => {
+			return a.basename.localeCompare(b.basename, ['zh-CN', 'en'], {
+				numeric: true,
+				sensitivity: 'base'
+			});
+		};
+
+		const fullmatch = items.filter((item) => isFullMatch(item)).sort(sortAscending);
 		const suggestions = items.filter(
 			(item) => isPartialMatch(item) && !isFullMatch(item)
-		);
+		).sort(sortAscending);
 
 		this.tabEventHandler = (evt) => {
 			if (evt.key === "Tab") {
