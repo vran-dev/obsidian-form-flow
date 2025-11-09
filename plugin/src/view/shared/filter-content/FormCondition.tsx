@@ -31,9 +31,20 @@ export function FormCondition(props: {
 			<Select2
 				value={filter.property || ""}
 				onChange={(value) => {
+					let initialValue = filter.value ?? "";
+
+					const selectedField = formConfig.fields.find(f => f.id === value);
+					if (selectedField && (
+						selectedField.type === "toggle" || 
+						selectedField.type === "checkbox"
+					)) {
+						initialValue = Boolean(value);
+					}
+
 					const newFilter = {
 						...filter,
 						property: value,
+						value: initialValue,
 					};
 					onChange(newFilter);
 				}}
