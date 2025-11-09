@@ -19,7 +19,7 @@ export function CpsFormFieldControl(props: {
 	autoFocus?: boolean;
 }) {
 	const { value, field, autoFocus } = props;
-	const actualValue = value || "";
+	const actualValue = value ?? "";
 	const onValueChange = props.onValueChange;
 
 	if (field.type === FormFieldType.TEXTAREA) {
@@ -122,7 +122,7 @@ export function CpsFormFieldControl(props: {
 		return (
 			<ToggleControl
 				id={field.id}
-				value={actualValue}
+				value={Boolean(actualValue)}
 				required={field.required}
 				onValueChange={onValueChange}
 				autoFocus={autoFocus}
