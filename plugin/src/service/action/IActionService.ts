@@ -10,6 +10,7 @@ import SuggestModalActionService from "./suggest-modal/SuggestModalActionService
 import UpdateFrontmatterActionService from "./update-frontmatter/UpdateFrontmatterActionService";
 import WaitActionService from "./wait/WaitActionService";
 import WriteToClipboardActionService from "./write-to-clipboard/WriteToClipboardActionService";
+import MoveFileActionService from "./move-file/MoveFileActionService";
 import { hasConditions } from "./util/hasConditions";
 import { FilterService } from "../filter/FilterService";
 import { RunCommandActionService } from "./run-command/RunCommandActionService";
@@ -41,6 +42,7 @@ export class ActionChain {
         new GenerateFormActionService(),
         new WaitActionService(),
         new WriteToClipboardActionService(),
+        new MoveFileActionService(),
     ]
 
     constructor(actions: IFormAction[]) {

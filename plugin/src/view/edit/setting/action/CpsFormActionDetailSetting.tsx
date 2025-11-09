@@ -9,6 +9,7 @@ import { SuggestModalSetting } from "./suggest-modal/SuggestModalSetting";
 import { UpdateFrontmatterSetting } from "./update-frontmatter/UpdateFrontmatterSetting";
 import { WaitSetting } from "./wait/WaitSetting";
 import { WriteToClipboardSetting } from "./write-to-clipboard/WriteToClipboardSetting";
+import { MoveFileSetting } from "./move-file/MoveFileSetting";
 import { RemarkSetting } from "./common/RemarkSetting";
 import { RunCommandSetting } from "./run-command/RunCommandSetting";
 
@@ -30,6 +31,7 @@ export default function (props: {
 			<GenerateFormSetting value={value} onChange={onChange} />
 			<WaitSetting value={value} onChange={onChange} />
 			<WriteToClipboardSetting value={value} onChange={onChange} />
+			<MoveFileSetting value={value} onChange={onChange} />
 		</CpsForm>
 	);
 }

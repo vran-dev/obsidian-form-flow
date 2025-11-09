@@ -104,6 +104,7 @@ export class ZhTw implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文字";
 	internal_variables = "內建變數";
+	is_current_file = "是否目前檔案";
 	label = "名稱";
 	less_than = "小於";
 	less_than_or_equal = "小於等於";
@@ -111,6 +112,7 @@ export class ZhTw implements Local {
 	locate_position_in_file_list = "在檔案目錄中定位";
 	mode = "模式";
 	more = "更多";
+	move_file= "移動檔案";
 	multiple = "多選";
 	no_actions_configured = "沒有配置任何操作";
 	no_active_md_file = "目前沒有打開的 Markdown 檔案";
@@ -182,6 +184,7 @@ export class ZhTw implements Local {
 	suggest_modal = "列表視窗";
 	tag = "標籤";
 	target_file = "目標檔案";
+	target_folder= "目標目錄";
 	template_file_not_exists = "模板檔案不存在";
 	text_content = "文字內容";
 	title = "標題";

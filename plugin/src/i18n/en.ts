@@ -104,6 +104,7 @@ export class En implements Local {
 	insert_position = "Insert position";
 	insert_text = "Insert text";
 	internal_variables = "Internal variables";
+	is_current_file = "Is current file";
 	label = "Label";
 	less_than = "Less than";
 	less_than_or_equal = "Less than or equal";
@@ -111,6 +112,7 @@ export class En implements Local {
 	locate_position_in_file_list = "Locate position in file list";
 	mode = "Mode";
 	more = "More";
+	move_file = "Move file";
 	multiple = "Multiple select";
 	no_actions_configured = "No actions configured";
 	no_active_md_file = "No active Markdown file is open";
@@ -182,6 +184,7 @@ export class En implements Local {
 	suggest_modal = "Suggestion modal";
 	tag = "Tag";
 	target_file = "Target file";
+	target_folder = "Target folder";
 	template_file_not_exists = "Template file does not exist";
 	text_content = "Text content";
 	title = "Title";

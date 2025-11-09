@@ -104,6 +104,7 @@ export class Zh implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文本";
 	internal_variables = "内置变量";
+	is_current_file = "是否当前文件";
 	label = "名称";
 	less_than = "小于";
 	less_than_or_equal = "小于等于";
@@ -111,6 +112,7 @@ export class Zh implements Local {
 	locate_position_in_file_list = "在文件目录中定位";
 	mode = "模式";
 	more = "更多";
+	move_file = "移动文件";
 	multiple = "多选";
 	no_actions_configured = "没有配置任何操作";
 	no_active_md_file = "当前没有打开的 Markdown 文件";
@@ -182,6 +184,7 @@ export class Zh implements Local {
 	suggest_modal = "列表窗口";
 	tag = "标签";
 	target_file = "目标文件";
+	target_folder = "目标文件夹";
 	template_file_not_exists = "模板文件不存在";
 	text_content = "文本内容";
 	title = "标题";

@@ -98,6 +98,7 @@ export interface Local {
 	insert_position: string;
 	insert_text: string;
 	internal_variables: string;
+	is_current_file: string;
 	label: string;
 	less_than_or_equal: string;
 	less_than: string;
@@ -105,6 +106,7 @@ export interface Local {
 	locate_position_in_file_list: string;
 	mode: string;
 	more: string;
+	move_file: string;
 	multiple: string;
 	no_actions_configured: string;
 	no_active_md_file: string;
@@ -175,6 +177,7 @@ export interface Local {
 	target_file: string;
 	template_file_not_exists: string;
 	text_content: string;
+	target_folder: string;
 	title: string;
 	to_internal_link: string;
 	top_below_title: string;
