@@ -37,7 +37,7 @@ export class FormVisibilies {
             }
             if (isMatch) {
                 visibleFields.push(field);
-                visibleFormIdValues[field.id] = values[field.id] || getFieldDefaultValue(field);
+                visibleFormIdValues[field.id] = values[field.id] ?? getFieldDefaultValue(field);
             }
         }
         return visibleFields;
@@ -48,7 +48,7 @@ export class FormVisibilies {
         const formLabelValues: FormLabelValues = {};
         visibleFields.forEach((field) => {
             const defaultValue = getFieldDefaultValue(field);
-            formLabelValues[field.label] = values[field.id] || defaultValue;
+            formLabelValues[field.label] = values[field.id] ?? defaultValue;
         });
         return formLabelValues;
     }
