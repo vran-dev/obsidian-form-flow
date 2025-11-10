@@ -4,6 +4,10 @@ import { MoveFileFormAction } from "src/model/action/MoveFileFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
 import CpsFormItem from "src/view/shared/CpsFormItem";
 import { FilePathFormItem } from "../common/FilePathFormItem";
+import TargetFileTypeSelect from "../common/TargetFileTypeSelect";
+import { TargetFileType } from "src/model/enums/TargetFileType";
+import FolderSuggestInput from "src/component/combobox/FolderSuggestInput";
+
 export function MoveFileSetting(props: {
 	value: IFormAction;
 	onChange: (value: IFormAction) => void;
@@ -19,28 +23,36 @@ export function MoveFileSetting(props: {
 
 	return (
 		<>
-			<CpsFormItem label={localInstance.is_current_file}>
-				<input
-					type="checkbox"
-					checked={!!action.isCurrentFile}
-					onChange={(e) => set({ isCurrentFile: e.target.checked })}
+			<CpsFormItem label={localInstance.target_file}>
+				<TargetFileTypeSelect
+					value={action.targetFileType}
+					onChange={(value) => {
+						const newAction = { ...action, targetFileType: value };
+						props.onChange(newAction);
+					}}
 				/>
 			</CpsFormItem>
-
-			{!action.isCurrentFile && (
-				<CpsFormItem label="Source File">
+			{action.targetFileType === TargetFileType.CURRENT_FILE ? (
+				<></>
+			) : (
+				<>
 					<FilePathFormItem
-						label={localInstance.source_file}
-						value={action.file || ""}
-						onChange={(v: string) => set({ file: v })}
+						label={""}
+						value={action.filePath}
+						onChange={(value) => {
+							const newAction = {
+								...action,
+								filePath: value,
+							};
+							props.onChange(newAction);
+						}}
 					/>
-				</CpsFormItem>
+				</>
 			)}
 
-			<CpsFormItem label="Target Folder">
-				<FilePathFormItem
-					label={localInstance.target_folder}
-					value={action.targetFolder || ""}
+			<CpsFormItem label={localInstance.target_folder}>
+				<FolderSuggestInput
+					value={action.targetFolder}
 					onChange={(v: string) => set({ targetFolder: v })}
 				/>
 			</CpsFormItem>

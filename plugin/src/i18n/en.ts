@@ -104,7 +104,6 @@ export class En implements Local {
 	insert_position = "Insert position";
 	insert_text = "Insert text";
 	internal_variables = "Internal variables";
-	is_current_file = "Is current file";
 	label = "Label";
 	less_than = "Less than";
 	less_than_or_equal = "Less than or equal";
