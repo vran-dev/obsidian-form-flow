@@ -7,11 +7,10 @@ import { InsertTextFormAction } from "src/model/action/InsertTextFormAction";
 import { UpdateFrontmatterFormAction } from "src/model/action/UpdateFrontmatterFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
 import { TargetFileType } from "src/model/enums/TargetFileType";
-import { MoveFileFormAction } from "src/model/action/MoveFileFormAction";
 import { focusLatestEditor } from "src/utils/focusLatestEditor";
 import { getFilePathCompatible } from "src/utils/getFilePathCompatible";
 
-type Action = CreateFileFormAction | InsertTextFormAction | UpdateFrontmatterFormAction | MoveFileFormAction;
+type Action = CreateFileFormAction | InsertTextFormAction | UpdateFrontmatterFormAction;
 
 export async function getFilePathFromAction(formAction: Action, context: ActionContext) {
     const app = context.app;
@@ -34,7 +33,7 @@ export async function getFilePathFromAction(formAction: Action, context: ActionC
 
 }
 
-async function resolveFilePath(formAction: CreateFileFormAction | InsertTextFormAction | UpdateFrontmatterFormAction | MoveFileFormAction, context: ActionContext) {
+async function resolveFilePath(formAction: CreateFileFormAction | InsertTextFormAction | UpdateFrontmatterFormAction, context: ActionContext) {
     const engine = new FormTemplateProcessEngine();
     const path = getFilePathCompatible(formAction);
     let filePath = await engine.process(path, context.state, context.app);

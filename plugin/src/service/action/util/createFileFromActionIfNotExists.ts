@@ -4,23 +4,19 @@ import { ActionContext } from "../IActionService";
 import { localInstance } from "src/i18n/locals";
 import { InsertTextFormAction } from "src/model/action/InsertTextFormAction";
 import { UpdateFrontmatterFormAction } from "src/model/action/UpdateFrontmatterFormAction";
-import { MoveFileFormAction } from "src/model/action/MoveFileFormAction";
-import { FormActionType } from "src/model/enums/FormActionType";
 import { createFileByText } from "src/utils/createFileByText";
 import { Strings } from "src/utils/Strings";
 
 export async function createFileFromActionIfNotExists(
     filePath: string,
-    action: UpdateFrontmatterFormAction | InsertTextFormAction | MoveFileFormAction,
+    action: UpdateFrontmatterFormAction | InsertTextFormAction,
     context: ActionContext): Promise<TFile> {
     const app = context.app;
     const file = app.vault.getAbstractFileByPath(filePath);
     if (file instanceof TFile) {
         return file;
     }
-    if (action.type === FormActionType.MOVE_FILE) {
-        return createFileByText(app, filePath, "");
-    }
+
     const templateFilePath = action.newFileTemplate;
     let content = "";
     if (Strings.isNotBlank(templateFilePath)) {
