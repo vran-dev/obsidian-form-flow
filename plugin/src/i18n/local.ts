@@ -201,4 +201,5 @@ export interface Local {
 	wait_time: string;
 	milliseconds: string;
 	write_to_clipboard: string;
+	generate_fields_from_file: string;
 }
