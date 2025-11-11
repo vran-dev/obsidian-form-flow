@@ -104,6 +104,7 @@ export class Zh implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文本";
 	internal_variables = "内置变量";
+	is_current_file = "是否当前文件";
 	label = "名称";
 	less_than = "小于";
 	less_than_or_equal = "小于等于";

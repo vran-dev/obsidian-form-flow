@@ -104,6 +104,7 @@ export class ZhTw implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文字";
 	internal_variables = "內建變數";
+	is_current_file = "是否目前檔案";
 	label = "名稱";
 	less_than = "小於";
 	less_than_or_equal = "小於等於";

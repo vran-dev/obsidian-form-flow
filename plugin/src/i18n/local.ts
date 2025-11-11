@@ -98,6 +98,7 @@ export interface Local {
 	insert_position: string;
 	insert_text: string;
 	internal_variables: string;
+	is_current_file: string;
 	label: string;
 	less_than_or_equal: string;
 	less_than: string;
