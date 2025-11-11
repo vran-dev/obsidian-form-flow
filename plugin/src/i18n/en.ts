@@ -135,7 +135,10 @@ export class En implements Local {
 	open_page_in_split = "Split view";
 	open_page_in_tab = "New tab";
 	open_page_in_window = "New window";
+	operate_on_specified_file = "operate on specified file";
+	operate_on_current_file = "operate on current file";
 	operation_can_not_be_undone = "This operation cannot be undone. Please back up your data.";
+	operation_object = "Operation object";
 	operator_and = "And";
 	operator_condition = "Condition";
 	operator_or = "Or";

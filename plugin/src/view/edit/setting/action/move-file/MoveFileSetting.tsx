@@ -25,19 +25,20 @@ export function MoveFileSetting(props: {
 
 	return (
 		<>
-			<CpsFormItem label={localInstance.target_file}>
+			<CpsFormItem label={localInstance.operation_object}>
 				<TargetFileTypeSelect
 					value={action.targetFileType}
 					onChange={(value) => {
 						const newAction = { ...action, targetFileType: value };
 						props.onChange(newAction);
 					}}
+					operationOnFile={true}
 				/>
 			</CpsFormItem>
 
 			{action.targetFileType === TargetFileType.SPECIFIED_FILE && (
 				<FilePathFormItem
-					label={localInstance.source_file}
+					label= ''
 					value={targetFilePath}
 					onChange={(value) => {
 						const newAction = {

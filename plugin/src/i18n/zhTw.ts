@@ -135,7 +135,10 @@ export class ZhTw implements Local {
 	open_page_in_split = "分屏";
 	open_page_in_tab = "新標籤頁";
 	open_page_in_window = "新視窗";
+	operate_on_specified_file = "操作指定檔案";
+	operate_on_current_file = "操作目前檔案";
 	operation_can_not_be_undone = "該操作不可撤銷，請做好備份";
+	operation_object = "操作对象";
 	operator_and = "並且";
 	operator_condition = "條件";
 	operator_or = "或者";

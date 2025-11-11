@@ -128,7 +128,10 @@ export interface Local {
 	open_page_in_split: string;
 	open_page_in_tab: string;
 	open_page_in_window: string;
+	operate_on_specified_file: string;
+	operate_on_current_file: string;
 	operation_can_not_be_undone: string;
+	operation_object: string;
 	operator_and: string;
 	operator_condition: string;
 	operator_or: string;

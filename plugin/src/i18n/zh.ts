@@ -135,7 +135,10 @@ export class Zh implements Local {
 	open_page_in_split = "分屏";
 	open_page_in_tab = "新标签页";
 	open_page_in_window = "新窗口";
+	operate_on_specified_file = "操作指定文件";
+	operate_on_current_file = "操作当前文件";
 	operation_can_not_be_undone = "该操作不可撤销，请做好备份";
+	operation_object = "操作对象";
 	operator_and = "并且";
 	operator_condition = "条件";
 	operator_or = "或者";
