@@ -4,6 +4,7 @@ import { FormActionType } from "src/model/enums/FormActionType";
 import { ActionChain, ActionContext, IActionService } from "../IActionService";
 import { getFilePathFromAction } from "../util/getFilePathFromAction";
 import { normalizePath } from "obsidian";
+import { FormTemplateProcessEngine } from "src/service/engine/FormTemplateProcessEngine";
 
 export default class MoveFileActionService implements IActionService {
 
@@ -31,9 +32,10 @@ export default class MoveFileActionService implements IActionService {
             }
 
             // Build target path
+            const engine = new FormTemplateProcessEngine();
             const fileName = fileToMovePath.split('/').pop();
-            const targetPath = normalizePath(formAction.moveTargetFolder + '/' + fileName);
-            
+            const moveTargetFolder = await engine.process(formAction.moveTargetFolder, context.state, app);
+            const targetPath = normalizePath(moveTargetFolder + '/' + fileName);
             await app.fileManager.renameFile(sourceFile, targetPath);
             
         } catch (error) {
