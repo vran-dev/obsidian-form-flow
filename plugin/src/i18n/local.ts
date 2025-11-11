@@ -111,6 +111,7 @@ export interface Local {
 	no_actions_configured: string;
 	no_active_md_file: string;
 	no_fields_for_form: string;
+	no_file_to_move: string;
 	no_matches_found_for: string;
 	no_options: string;
 	no_script_find_in_folder: string;
@@ -170,6 +171,7 @@ export interface Local {
 	source_code: string;
 	source_extension: string;
 	source_file: string;
+	source_file_not_found: string;
 	source_text: string;
 	source: string;
 	specified_date_time: string;
@@ -181,6 +183,7 @@ export interface Local {
 	template_file_not_exists: string;
 	text_content: string;
 	target_folder: string;
+	target_path_exist: string;
 	title: string;
 	to_internal_link: string;
 	top_below_title: string;

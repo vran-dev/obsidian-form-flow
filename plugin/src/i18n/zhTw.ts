@@ -117,6 +117,7 @@ export class ZhTw implements Local {
 	no_actions_configured = "沒有配置任何操作";
 	no_active_md_file = "目前沒有打開的 Markdown 檔案";
 	no_fields_for_form = "表單沒有配置欄位";
+	no_file_to_move = "沒有要移動的檔案";
 	no_matches_found_for = "沒有找到匹配項 {0}";
 	no_options = "沒有選項";
 	no_script_find_in_folder = "腳本目錄下沒有合法的腳本檔案，請添加腳本到目錄 \"{0}\" 下";
@@ -179,6 +180,7 @@ export class ZhTw implements Local {
 	source_code = "代碼";
 	source_extension = "擴展";
 	source_file = "檔案";
+	source_file_not_found = "檔案未找到";
 	source_text = "文字";
 	specified_date_time = "具體時間";
 	submit = "提交";
@@ -188,6 +190,7 @@ export class ZhTw implements Local {
 	tag = "標籤";
 	target_file = "目標檔案";
 	target_folder= "目標目錄";
+	target_path_exist = "目標路徑已存在";
 	template_file_not_exists = "模板檔案不存在";
 	text_content = "文字內容";
 	title = "標題";

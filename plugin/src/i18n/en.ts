@@ -117,6 +117,7 @@ export class En implements Local {
 	no_actions_configured = "No actions configured";
 	no_active_md_file = "No active Markdown file is open";
 	no_fields_for_form = "Form has no fields configured";
+	no_file_to_move = "No file to move";
 	no_matches_found_for = "No matches found for {0}";
 	no_options = "No options available";
 	no_script_find_in_folder = "No valid script files found in the script folder. Please add scripts to the \"{0}\" directory";
@@ -179,6 +180,7 @@ export class En implements Local {
 	source_code = "Code";
 	source_extension = "Extension";
 	source_file = "File";
+	source_file_not_found = "Source file not found";
 	source_text = "Text";
 	specified_date_time = "Specific date/time";
 	submit = "Submit";
@@ -188,6 +190,7 @@ export class En implements Local {
 	tag = "Tag";
 	target_file = "Target file";
 	target_folder = "Target folder";
+	target_path_exist = "Target path already exists";
 	template_file_not_exists = "Template file does not exist";
 	text_content = "Text content";
 	title = "Title";
