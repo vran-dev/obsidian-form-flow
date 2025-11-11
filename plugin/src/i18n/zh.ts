@@ -213,5 +213,7 @@ export class Zh implements Local {
 	wait_time = "等待时间";
 	milliseconds = "毫秒";
 	write_to_clipboard = "写入剪贴板";
+	generate_fields_from_file = "或从文件属性中生成字段";
+
 }
 

@@ -2,11 +2,9 @@ import { CodeIcon } from "lucide-react";
 import { Command } from "obsidian";
 import { useCallback, useMemo } from "react";
 import {
-	Autocomplete,
-	AutocompleteOption,
+	Autocomplete
 } from "src/component/autocomplete/Autocomplete";
 import { useObsidianApp } from "src/context/obsidianAppContext";
-import { localInstance } from "src/i18n/locals";
 
 export class CommandInfo {
 	id: string;

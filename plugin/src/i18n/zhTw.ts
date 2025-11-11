@@ -213,4 +213,5 @@ export class ZhTw implements Local {
 	wait_time = "等待時間";
 	milliseconds = "毫秒";
 	write_to_clipboard = "寫入剪貼簿";
+	generate_fields_from_file = "或從文件屬性中生成欄位";
 }

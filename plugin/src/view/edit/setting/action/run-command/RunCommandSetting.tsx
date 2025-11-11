@@ -1,10 +1,10 @@
+import { localInstance } from "src/i18n/locals";
 import { IFormAction } from "src/model/action/IFormAction";
 import { RunCommandFormAction } from "src/model/action/RunCommandFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
 import CpsFormItem from "src/view/shared/CpsFormItem";
-import { ObsidianCommandAutocomplete } from "./ObsidianCommandAutocomplete";
+import { ObsidianCommandAutocomplete } from "../../../../shared/autocomplete/ObsidianCommandAutocomplete";
 import "./RunCommandSetting.css";
-import { localInstance } from "src/i18n/locals";
 
 export function RunCommandSetting(props: {
 	value: IFormAction;

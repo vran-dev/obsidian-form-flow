@@ -2,19 +2,23 @@ import { useCallback } from "react";
 import useSortable from "src/hooks/useSortable";
 import { localInstance } from "src/i18n/locals";
 import { FormFieldType } from "src/model/enums/FormFieldType";
-import { IFormField, FormField } from "src/model/field/IFormField";
+import { FormField, IFormField } from "src/model/field/IFormField";
 import { IOptionsField } from "src/model/field/ISelectField";
 import { Filter, FilterType } from "src/model/filter/Filter";
 import generateSequenceName from "src/utils/generateSequenceName";
 import { Strings } from "src/utils/Strings";
+import { FileAutocomplete } from "src/view/shared/autocomplete/FileAutocomplete";
 import { v4 } from "uuid";
 import { CpsFormFieldItemEditing } from "./CpsFormFieldItemEditing";
 import "./CpsFormFields.css";
+import { fieldGeneratorServiceInstance } from "src/service/field/FieldGeneratorService";
+import { useObsidianApp } from "src/context/obsidianAppContext";
 
 export default function (props: {
 	fields: IFormField[];
 	onSave: (fields: IFormField[], modified: IFormField[]) => void;
 }) {
+	const app = useObsidianApp();
 	const { fields } = props;
 	useSortable({
 		items: fields || [],
@@ -91,6 +95,20 @@ export default function (props: {
 			<button className="form--AddButton" onClick={onFieldAdd}>
 				+{localInstance.add_field}
 			</button>
+			<div className="form--GenerateFieldFromFileTips">
+				<FileAutocomplete
+					label={localInstance.generate_fields_from_file}
+					onChange={(file) => {
+						const fields =
+							fieldGeneratorServiceInstance.generateFromMarkdownFrontmatter(
+								app,
+								file
+							);
+						const newFields = [...props.fields, ...fields];
+						props.onSave(newFields, []);
+					}}
+				></FileAutocomplete>
+			</div>
 		</div>
 	);
 }

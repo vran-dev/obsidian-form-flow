@@ -1,6 +1,6 @@
+import { Popover } from "radix-ui";
 import React, { startTransition, useCallback, useMemo } from "react";
 import "./Autocomplete.css";
-import { Popover } from "radix-ui";
 import { AutocompleteContent } from "./AutocompleteContent";
 
 type Props = {

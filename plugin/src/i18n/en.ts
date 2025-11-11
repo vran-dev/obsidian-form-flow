@@ -213,4 +213,5 @@ export class En implements Local {
 	wait_time = "Wait time";
 	milliseconds = "Milliseconds";
 	write_to_clipboard = "Write to clipboard";
+	generate_fields_from_file = "Or generate fields from markdown's frontmatter";
 }

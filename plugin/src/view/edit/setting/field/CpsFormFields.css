@@ -68,3 +68,13 @@ input[type="text"].form--CpsFormFieldSettingLabelInlineInput:focus-visible {
 .form--CpsFormFieldSettingLabelRequired {
 	color: var(--text-error);
 }
+
+.form--GenerateFieldFromFileTips button.form--AutocompleteTrigger {
+	color: var(--text-faint);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.form--GenerateFieldFromFileTips button.form--AutocompleteTrigger:hover {
+	color: var(--text-accent);
+}
