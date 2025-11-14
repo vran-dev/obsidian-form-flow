@@ -21,7 +21,6 @@ export default class MoveFileActionService implements IActionService {
         try {
             // Use the unified file path resolution utility
             const fileToMovePath = await getFilePathFromAction(formAction, context);
-            
             if (!fileToMovePath) {
                 console.error('[MoveFileActionService] No file to move');
                 throw new Error(localInstance.no_file_to_move);
@@ -41,15 +40,13 @@ export default class MoveFileActionService implements IActionService {
             const file = app.vault.getAbstractFileByPath(targetPath);
             if (file) {
                 console.error('[MoveFileActionService] Target path exist:', targetPath);
-                throw new Error(localInstance.target_path_exist);
+                throw new Error(localInstance.move_failed_by_file_name_conflict);
             }
             await app.fileManager.renameFile(sourceFile, targetPath);
-            
         } catch (error) {
             console.error('[MoveFileActionService] Error moving file:', error);
             throw new Error(error);
         }
-            
         // do next
         await chain.next(context);
     }

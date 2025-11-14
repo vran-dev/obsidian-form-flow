@@ -190,7 +190,7 @@ export class ZhTw implements Local {
 	tag = "標籤";
 	target_file = "目標檔案";
 	target_folder= "目標目錄";
-	target_path_exist = "目標路徑已存在";
+	move_failed_by_file_name_conflict = "移動失敗，目標目錄已存在同名檔案";
 	template_file_not_exists = "模板檔案不存在";
 	text_content = "文字內容";
 	title = "標題";

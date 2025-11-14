@@ -190,7 +190,7 @@ export class Zh implements Local {
 	tag = "标签";
 	target_file = "目标文件";
 	target_folder = "目标文件夹";
-	target_path_exist = "目标路径已存在";
+	move_failed_by_file_name_conflict = "移动失败，目录下已存在同名文件";
 	template_file_not_exists = "模板文件不存在";
 	text_content = "文本内容";
 	title = "标题";

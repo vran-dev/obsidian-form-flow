@@ -183,7 +183,7 @@ export interface Local {
 	template_file_not_exists: string;
 	text_content: string;
 	target_folder: string;
-	target_path_exist: string;
+	move_failed_by_file_name_conflict: string;
 	title: string;
 	to_internal_link: string;
 	top_below_title: string;

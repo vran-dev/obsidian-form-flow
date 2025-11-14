@@ -190,7 +190,7 @@ export class En implements Local {
 	tag = "Tag";
 	target_file = "Target file";
 	target_folder = "Target folder";
-	target_path_exist = "Target path already exists";
+	move_failed_by_file_name_conflict = "Move failed, a file with the same name already exists in the target folder";
 	template_file_not_exists = "Template file does not exist";
 	text_content = "Text content";
 	title = "Title";
