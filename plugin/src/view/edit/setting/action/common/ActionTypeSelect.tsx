@@ -7,6 +7,7 @@ import {
 	Text,
 	ZapIcon,
 	Clipboard,
+	Forward
 } from "lucide-react";
 import { localInstance } from "src/i18n/locals";
 import { FormActionType } from "src/model/enums/FormActionType";
@@ -77,5 +78,10 @@ export const formActionTypeOptions = [
 		value: FormActionType.WRITE_TO_CLIPBOARD,
 		label: localInstance.write_to_clipboard,
 		icon: <Clipboard />,
+	},
+	{
+		value: FormActionType.MOVE_FILE,
+		label: localInstance.move_file,
+		icon: <Forward />,
 	},
 ];

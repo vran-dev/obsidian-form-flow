@@ -98,6 +98,7 @@ export interface Local {
 	insert_position: string;
 	insert_text: string;
 	internal_variables: string;
+	is_current_file: string;
 	label: string;
 	less_than_or_equal: string;
 	less_than: string;
@@ -105,10 +106,12 @@ export interface Local {
 	locate_position_in_file_list: string;
 	mode: string;
 	more: string;
+	move_file: string;
 	multiple: string;
 	no_actions_configured: string;
 	no_active_md_file: string;
 	no_fields_for_form: string;
+	no_file_to_move: string;
 	no_matches_found_for: string;
 	no_options: string;
 	no_script_find_in_folder: string;
@@ -126,7 +129,10 @@ export interface Local {
 	open_page_in_split: string;
 	open_page_in_tab: string;
 	open_page_in_window: string;
+	operate_on_specified_file: string;
+	operate_on_current_file: string;
 	operation_can_not_be_undone: string;
+	operation_object: string;
 	operator_and: string;
 	operator_condition: string;
 	operator_or: string;
@@ -165,6 +171,7 @@ export interface Local {
 	source_code: string;
 	source_extension: string;
 	source_file: string;
+	source_file_not_found: string;
 	source_text: string;
 	source: string;
 	specified_date_time: string;
@@ -175,6 +182,8 @@ export interface Local {
 	target_file: string;
 	template_file_not_exists: string;
 	text_content: string;
+	target_folder: string;
+	move_failed_by_file_name_conflict: string;
 	title: string;
 	to_internal_link: string;
 	top_below_title: string;

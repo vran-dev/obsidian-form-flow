@@ -104,6 +104,7 @@ export class Zh implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文本";
 	internal_variables = "内置变量";
+	is_current_file = "是否当前文件";
 	label = "名称";
 	less_than = "小于";
 	less_than_or_equal = "小于等于";
@@ -111,10 +112,12 @@ export class Zh implements Local {
 	locate_position_in_file_list = "在文件目录中定位";
 	mode = "模式";
 	more = "更多";
+	move_file = "移动文件";
 	multiple = "多选";
 	no_actions_configured = "没有配置任何操作";
 	no_active_md_file = "当前没有打开的 Markdown 文件";
 	no_fields_for_form = "表单没有配置字段";
+	no_file_to_move = "没有要移动的文件";
 	no_matches_found_for = "没有找到匹配项 {0}";
 	no_options = "没有选项";
 	no_script_find_in_folder = "脚本目录下没有合法的脚本文件，请添加脚本到目录 \"{0}\" 下";
@@ -133,7 +136,10 @@ export class Zh implements Local {
 	open_page_in_split = "分屏";
 	open_page_in_tab = "新标签页";
 	open_page_in_window = "新窗口";
+	operate_on_specified_file = "操作指定文件";
+	operate_on_current_file = "操作当前文件";
 	operation_can_not_be_undone = "该操作不可撤销，请做好备份";
+	operation_object = "操作对象";
 	operator_and = "并且";
 	operator_condition = "条件";
 	operator_or = "或者";
@@ -174,6 +180,7 @@ export class Zh implements Local {
 	source_code = "代码";
 	source_extension = "扩展";
 	source_file = "文件";
+	source_file_not_found = "文件未找到";
 	source_text = "文本";
 	specified_date_time = "具体时间";
 	submit = "提交";
@@ -182,6 +189,8 @@ export class Zh implements Local {
 	suggest_modal = "列表窗口";
 	tag = "标签";
 	target_file = "目标文件";
+	target_folder = "目标文件夹";
+	move_failed_by_file_name_conflict = "移动失败，目录下已存在同名文件";
 	template_file_not_exists = "模板文件不存在";
 	text_content = "文本内容";
 	title = "标题";

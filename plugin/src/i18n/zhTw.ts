@@ -104,6 +104,7 @@ export class ZhTw implements Local {
 	insert_position = "插入位置";
 	insert_text = "插入文字";
 	internal_variables = "內建變數";
+	is_current_file = "是否目前檔案";
 	label = "名稱";
 	less_than = "小於";
 	less_than_or_equal = "小於等於";
@@ -111,10 +112,12 @@ export class ZhTw implements Local {
 	locate_position_in_file_list = "在檔案目錄中定位";
 	mode = "模式";
 	more = "更多";
+	move_file= "移動檔案";
 	multiple = "多選";
 	no_actions_configured = "沒有配置任何操作";
 	no_active_md_file = "目前沒有打開的 Markdown 檔案";
 	no_fields_for_form = "表單沒有配置欄位";
+	no_file_to_move = "沒有要移動的檔案";
 	no_matches_found_for = "沒有找到匹配項 {0}";
 	no_options = "沒有選項";
 	no_script_find_in_folder = "腳本目錄下沒有合法的腳本檔案，請添加腳本到目錄 \"{0}\" 下";
@@ -133,7 +136,10 @@ export class ZhTw implements Local {
 	open_page_in_split = "分屏";
 	open_page_in_tab = "新標籤頁";
 	open_page_in_window = "新視窗";
+	operate_on_specified_file = "操作指定檔案";
+	operate_on_current_file = "操作目前檔案";
 	operation_can_not_be_undone = "該操作不可撤銷，請做好備份";
+	operation_object = "操作对象";
 	operator_and = "並且";
 	operator_condition = "條件";
 	operator_or = "或者";
@@ -174,6 +180,7 @@ export class ZhTw implements Local {
 	source_code = "代碼";
 	source_extension = "擴展";
 	source_file = "檔案";
+	source_file_not_found = "檔案未找到";
 	source_text = "文字";
 	specified_date_time = "具體時間";
 	submit = "提交";
@@ -182,6 +189,8 @@ export class ZhTw implements Local {
 	suggest_modal = "列表視窗";
 	tag = "標籤";
 	target_file = "目標檔案";
+	target_folder= "目標目錄";
+	move_failed_by_file_name_conflict = "移動失敗，目標目錄已存在同名檔案";
 	template_file_not_exists = "模板檔案不存在";
 	text_content = "文字內容";
 	title = "標題";

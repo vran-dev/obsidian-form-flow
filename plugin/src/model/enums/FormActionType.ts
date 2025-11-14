@@ -8,4 +8,5 @@ export enum FormActionType {
     RUN_COMMAND = "runCommand",
     WAIT = "wait",
     WRITE_TO_CLIPBOARD = "writeToClipboard",
+    MOVE_FILE = "moveFile",
 }

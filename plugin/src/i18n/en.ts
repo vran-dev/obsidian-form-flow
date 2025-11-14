@@ -104,6 +104,7 @@ export class En implements Local {
 	insert_position = "Insert position";
 	insert_text = "Insert text";
 	internal_variables = "Internal variables";
+	is_current_file = "Is current file";
 	label = "Label";
 	less_than = "Less than";
 	less_than_or_equal = "Less than or equal";
@@ -111,10 +112,12 @@ export class En implements Local {
 	locate_position_in_file_list = "Locate position in file list";
 	mode = "Mode";
 	more = "More";
+	move_file = "Move file";
 	multiple = "Multiple select";
 	no_actions_configured = "No actions configured";
 	no_active_md_file = "No active Markdown file is open";
 	no_fields_for_form = "Form has no fields configured";
+	no_file_to_move = "No file to move";
 	no_matches_found_for = "No matches found for {0}";
 	no_options = "No options available";
 	no_script_find_in_folder = "No valid script files found in the script folder. Please add scripts to the \"{0}\" directory";
@@ -133,7 +136,10 @@ export class En implements Local {
 	open_page_in_split = "Split view";
 	open_page_in_tab = "New tab";
 	open_page_in_window = "New window";
+	operate_on_specified_file = "operate on specified file";
+	operate_on_current_file = "operate on current file";
 	operation_can_not_be_undone = "This operation cannot be undone. Please back up your data.";
+	operation_object = "Operation object";
 	operator_and = "And";
 	operator_condition = "Condition";
 	operator_or = "Or";
@@ -174,6 +180,7 @@ export class En implements Local {
 	source_code = "Code";
 	source_extension = "Extension";
 	source_file = "File";
+	source_file_not_found = "Source file not found";
 	source_text = "Text";
 	specified_date_time = "Specific date/time";
 	submit = "Submit";
@@ -182,6 +189,8 @@ export class En implements Local {
 	suggest_modal = "Suggestion modal";
 	tag = "Tag";
 	target_file = "Target file";
+	target_folder = "Target folder";
+	move_failed_by_file_name_conflict = "Move failed, a file with the same name already exists in the target folder";
 	template_file_not_exists = "Template file does not exist";
 	text_content = "Text content";
 	title = "Title";
