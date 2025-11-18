@@ -15,6 +15,7 @@ import { formActionTypeOptions } from "../view/edit/setting/action/common/Action
 import { allFormInsertPositionOptions } from "../view/edit/setting/action/common/InsertPositionSelect";
 import { localInstance } from "src/i18n/locals";
 import { Strings } from "src/utils/Strings";
+import { processObTemplate } from "src/utils/templates";
 
 export function useActionTitle(value: IFormAction) {
 	const heading = useMemo(() => {
@@ -90,9 +91,10 @@ export function useActionTitle(value: IFormAction) {
 				localInstance.no_command_selected;
 		}
 
+		const normalizedTitle = processObTemplate(title)
 		return {
 			type: typeLabel,
-			title: title,
+			title: normalizedTitle,
 		};
 	}, [value]);
 	return heading;
