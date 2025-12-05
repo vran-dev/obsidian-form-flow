@@ -7,7 +7,7 @@ import { ISelectField } from "src/model/field/ISelectField";
 import { ITextAreaField } from "src/model/field/ITextAreaField";
 import { Strings } from "src/utils/Strings";
 import { FileListControl } from "./FileListControl";
-import { FolderPathControl } from "./FolderPathControl";
+import { FolderListControl } from "./FolderListControl";
 import RadioControl from "./RadioControl";
 import SelectControl from "./SelectControl";
 import ToggleControl from "./ToggleControl";
@@ -153,7 +153,13 @@ export function CpsFormFieldControl(props: {
 
 	if (field.type === FormFieldType.FOLDER_PATH) {
 		return (
-			<FolderPathControl
+			// <FolderPathControl
+			// 	field={field}
+			// 	value={actualValue}
+			// 	onValueChange={onValueChange}
+			// 	autoFocus={autoFocus}
+			// />
+			<FolderListControl
 				field={field}
 				value={actualValue}
 				onValueChange={onValueChange}
