@@ -1,88 +1,91 @@
-import { useEffect } from "react";
-import { monitorForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
 import {
-	type Edge,
-	extractClosestEdge,
-} from "@atlaskit/pragmatic-drag-and-drop-hitbox/closest-edge";
-import { getReorderDestinationIndex } from "@atlaskit/pragmatic-drag-and-drop-hitbox/util/get-reorder-destination-index";
-import { reorder } from "@atlaskit/pragmatic-drag-and-drop/reorder";
+	DndContext,
+	closestCenter,
+	KeyboardSensor,
+	PointerSensor,
+	useSensor,
+	useSensors,
+	DragEndEvent,
+	TouchSensor,
+	MouseSensor,
+} from "@dnd-kit/core";
+import {
+	arrayMove,
+	SortableContext,
+	sortableKeyboardCoordinates,
+	verticalListSortingStrategy,
+	horizontalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { ReactNode } from "react";
 
 export interface SortableContextProps<T> {
 	items: T[];
 	getId: (item: T) => string;
 	onChange?: (items: T[]) => void;
-	onNativeChange?: (
-		sourceId: string,
-		targetId: string,
-		closestEdgeOfTarget: Edge | null
-	) => void;
 	axis?: "vertical" | "horizontal";
+	children: ReactNode;
 }
 
-export default function <T>(props: SortableContextProps<T>) {
-	const onSort = (
-		items: T[],
-		sourceId: string,
-		targetId: string,
-		closestEdgeOfTarget: Edge | null
-	) => {
-		const getId = props.getId;
-		const startIndex = items.findIndex((i) => getId(i) == sourceId);
-		const indexOfTarget = items.findIndex((i) => getId(i) == targetId);
-		const finishIndex = getReorderDestinationIndex({
-			startIndex,
-			closestEdgeOfTarget,
-			indexOfTarget,
-			axis: props.axis || "vertical",
-		});
-		if (finishIndex == undefined || startIndex == finishIndex) {
+export function SortableProvider<T>(props: SortableContextProps<T>) {
+	const { items, getId, onChange, axis = "vertical", children } = props;
+
+	// 配置传感器，支持鼠标、触摸和键盘
+	const sensors = useSensors(
+		useSensor(MouseSensor, {
+			// 需要移动 5px 才触发拖拽，防止误触
+			activationConstraint: {
+				distance: 5,
+			},
+		}),
+		useSensor(TouchSensor, {
+			// 触摸设备上需要移动 5px 才触发拖拽
+			activationConstraint: {
+				distance: 5,
+			},
+		}),
+		useSensor(KeyboardSensor, {
+			coordinateGetter: sortableKeyboardCoordinates,
+		})
+	);
+
+	const handleDragEnd = (event: DragEndEvent) => {
+		const { active, over } = event;
+
+		if (!over || active.id === over.id) {
 			return;
 		}
-		const newItems = reorder({
-			list: items,
-			startIndex: startIndex,
-			finishIndex: finishIndex,
-		});
-		props.onChange?.(newItems);
+
+		const oldIndex = items.findIndex((item) => getId(item) === active.id);
+		const newIndex = items.findIndex((item) => getId(item) === over.id);
+
+		if (oldIndex !== -1 && newIndex !== -1) {
+			const newItems = arrayMove(items, oldIndex, newIndex);
+			onChange?.(newItems);
+		}
 	};
 
-	useEffect(() => {
-		return monitorForElements({
-			canMonitor: (args) => {
-				const source = args.source;
-				const itemId = source.data.itemId as string;
-				return props.items.some((item) => props.getId(item) === itemId);
-			},
-			onDrop: (args) => {
-				const { location, source } = args;
-				if (!location.current.dropTargets.length) {
-					return;
-				}
+	const itemIds = items.map(getId);
+	const strategy =
+		axis === "horizontal"
+			? horizontalListSortingStrategy
+			: verticalListSortingStrategy;
 
-				if (source.data.type == "sortable-item") {
-					const target = location.current.dropTargets.find(
-						(t) => t.data.type == "sortable-item"
-					);
-					if (!target) {
-						return;
-					}
-					const closestEdgeOfTarget = extractClosestEdge(target.data);
-					if (props.onNativeChange) {
-						props.onNativeChange(
-							source.data.itemId as string,
-							target.data.itemId as string,
-							closestEdgeOfTarget
-						);
-					} else {
-						onSort(
-							props.items,
-							source.data.itemId as string,
-							target.data.itemId as string,
-							closestEdgeOfTarget
-						);
-					}
-				}
-			},
-		});
-	}, [props.items, props.onChange]);
+	return (
+		<DndContext
+			sensors={sensors}
+			collisionDetection={closestCenter}
+			onDragEnd={handleDragEnd}
+		>
+			<SortableContext items={itemIds} strategy={strategy}>
+				{children}
+			</SortableContext>
+		</DndContext>
+	);
+}
+
+// 保持向下兼容的默认导出
+export default function <T>(props: Omit<SortableContextProps<T>, "children">) {
+	// 这个版本用于不需要 children 的场景
+	// 实际的拖拽功能由 SortableProvider 提供
+	return null;
 }

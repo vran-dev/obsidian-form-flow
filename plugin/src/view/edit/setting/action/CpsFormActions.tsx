@@ -1,4 +1,4 @@
-import useSortable from "src/hooks/useSortable";
+import { SortableProvider } from "src/hooks/useSortable";
 import { localInstance } from "src/i18n/locals";
 import { FormActionFactory } from "src/model/action/FormActionFactory";
 import { IFormAction } from "src/model/action/IFormAction";
@@ -20,13 +20,6 @@ export function CpsFormActions(props: {
 	};
 
 	const actions = getActionsCompatible(config);
-	useSortable({
-		items: actions || [],
-		getId: (item) => item.id,
-		onChange: (orders) => {
-			props.onChange(orders);
-		},
-	});
 
 	const addAction = (type: FormActionType) => {
 		const newAction = FormActionFactory.create(type);
@@ -37,37 +30,44 @@ export function CpsFormActions(props: {
 	return (
 		<div className="form--CpsFormActionsSetting">
 			<FormVariableQuotePanel formConfig={config} />
-			{actions.map((action, index) => {
-				return (
-					<CpsFormAction
-						key={action.id}
-						value={action}
-						defaultOpen={actions.length === 1}
-						onChange={(v) => {
-							const newActions = actions.map((a, i) => {
-								if (v.id === a.id) {
-									return v;
-								}
-								return a;
-							});
-							saveAction(newActions);
-						}}
-						onDelete={(v) => {
-							const newActions = actions.filter(
-								(a) => a.id !== v.id
-							);
-							saveAction(newActions);
-						}}
-						onDuplicate={(v) => {
-							const newAction = {
-								...v,
-								id: v4(),
-							};
-							const originIndex = actions.findIndex(
-								(a) => a.id === v.id
-							);
-							const newActions = [
-								...actions.slice(0, originIndex + 1),
+			<SortableProvider
+				items={actions || []}
+				getId={(item) => item.id}
+				onChange={(orders) => {
+					props.onChange(orders);
+				}}
+			>
+				{actions.map((action, index) => {
+					return (
+						<CpsFormAction
+							key={action.id}
+							value={action}
+							defaultOpen={actions.length === 1}
+							onChange={(v) => {
+								const newActions = actions.map((a, i) => {
+									if (v.id === a.id) {
+										return v;
+									}
+									return a;
+								});
+								saveAction(newActions);
+							}}
+							onDelete={(v) => {
+								const newActions = actions.filter(
+									(a) => a.id !== v.id
+								);
+								saveAction(newActions);
+							}}
+							onDuplicate={(v) => {
+								const newAction = {
+									...v,
+									id: v4(),
+								};
+								const originIndex = actions.findIndex(
+									(a) => a.id === v.id
+								);
+								const newActions = [
+									...actions.slice(0, originIndex + 1),
 								newAction,
 								...actions.slice(originIndex + 1),
 							];
@@ -76,6 +76,7 @@ export function CpsFormActions(props: {
 					/>
 				);
 			})}
+			</SortableProvider>
 			<NewActionGridPopover onSelect={addAction}>
 				<button className="form--AddButton">
 					+ {localInstance.add_action}

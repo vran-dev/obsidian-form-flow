@@ -1,4 +1,4 @@
-import { DropIndicator } from "@atlaskit/pragmatic-drag-and-drop-react-drop-indicator/box";
+import { DropIndicator } from "src/component/drop-indicator/DropIndicator";
 import {
 	CircleAlert,
 	ChevronDown,
@@ -35,8 +35,16 @@ export default function (props: {
 }) {
 	const [open, setOpen] = useState(props.defaultOpen === true);
 	const { value, onDelete, onDuplicate } = props;
-	const { closestEdge, dragging, draggedOver, setElRef, setDragHandleRef } =
-		useSortableItem(value.id);
+	const {
+		closestEdge,
+		dragging,
+		draggedOver,
+		setElRef,
+		setDragHandleRef,
+		attributes,
+		listeners,
+		style,
+	} = useSortableItem(value.id);
 	const saveAction = (action: IFormAction) => {
 		props.onChange(action);
 	};
@@ -69,6 +77,7 @@ export default function (props: {
 			className="form--CpsFormActionSetting"
 			data-is-valid={result.isValid}
 			ref={setElRef}
+			style={style}
 		>
 			{!result.isValid && (
 				<span className="form--CpsFormActionErrorTips">
@@ -85,6 +94,8 @@ export default function (props: {
 				onDelete={onDelete}
 				onDuplicate={onDuplicate}
 				setDragHandleRef={setDragHandleRef}
+				listeners={listeners}
+				attributes={attributes}
 			/>
 			<div className="form--CpsFormActionBottomSection">
 				<div className="form--CpsFormActionRemark">
@@ -139,7 +150,12 @@ export default function (props: {
 					);
 				}}
 			</Dialog2>
-			{closestEdge && <DropIndicator edge={closestEdge} gap="1px" />}
+			{closestEdge && (
+				<DropIndicator
+					edge={closestEdge as "top" | "bottom" | "left" | "right"}
+					gap="1px"
+				/>
+			)}
 		</div>
 	);
 }
@@ -153,8 +169,11 @@ function CpsFormActionHeader(props: {
 	onDelete: (action: IFormAction) => void;
 	onDuplicate: (action: IFormAction) => void;
 	setDragHandleRef: (ref: HTMLDivElement | null) => void;
+	listeners?: any;
+	attributes?: any;
 }) {
-	const { value, open, setDragHandleRef, title } = props;
+	const { value, open, setDragHandleRef, title, listeners, attributes } =
+		props;
 
 	const typeStyles = useActionTypeStyle(value.type);
 
@@ -170,6 +189,8 @@ function CpsFormActionHeader(props: {
 			<DragHandler
 				ref={setDragHandleRef}
 				aria-label={localInstance.drag_and_drop_to_reorder}
+				listeners={listeners}
+				attributes={attributes}
 			/>
 
 			<ActionTypeSelect

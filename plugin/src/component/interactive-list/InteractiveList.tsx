@@ -1,7 +1,7 @@
-import { DropIndicator } from "@atlaskit/pragmatic-drag-and-drop-react-drop-indicator/box";
+import { DropIndicator } from "src/component/drop-indicator/DropIndicator";
 import { useCallback } from "react";
 import { DragHandler } from "src/component/drag-handler/DragHandler";
-import useSortable from "src/hooks/useSortable";
+import { SortableProvider } from "src/hooks/useSortable";
 import useSortableItem from "src/hooks/useSortableItem";
 import { localInstance } from "src/i18n/locals";
 import "./InteractiveList.css";
@@ -34,12 +34,6 @@ export function InteractiveList<T extends WithId>({
 	className,
 	...rest
 }: InteractiveListProps<T>): React.ReactElement {
-	useSortable({
-		items,
-		getId: (item) => item.id,
-		onChange,
-	});
-
 	const removeItem = useCallback(
 		(item: T) => {
 			const newItems = items.filter((i) => i.id !== item.id);
@@ -56,9 +50,17 @@ export function InteractiveList<T extends WithId>({
 			{title && (
 				<div className="form--InteractiveListTitle">{title}</div>
 			)}
-			<div className="form--InteractiveListItems">
-				{items.map((item, index) => children(item, index, removeItem))}
-			</div>
+			<SortableProvider
+				items={items}
+				getId={(item) => item.id}
+				onChange={onChange}
+			>
+				<div className="form--InteractiveListItems">
+					{items.map((item, index) =>
+						children(item, index, removeItem)
+					)}
+				</div>
+			</SortableProvider>
 			{onAdd && (
 				<button
 					className="form--AddButton"
@@ -95,26 +97,43 @@ export function InteractiveListItem<T extends WithId>({
 		React.HTMLAttributes<HTMLDivElement>,
 		"children"
 	>): React.ReactElement {
-	const { closestEdge, setElRef, setDragHandleRef } = useSortableItem(
-		item.id,
-		["top", "bottom"],
-		() => true
-	);
+	const {
+		closestEdge,
+		setElRef,
+		setDragHandleRef,
+		attributes,
+		listeners,
+		style: sortableStyle,
+	} = useSortableItem(item.id, ["top", "bottom"], () => true);
+
+	const combinedStyle = {
+		...sortableStyle,
+		...style,
+	};
 
 	return (
 		<div
 			ref={setElRef}
 			className={`form--InteractiveListItem ${className || ""}`}
-			style={style}
+			style={combinedStyle}
 			{...rest}
 		>
 			<div className="form--InteractiveListItemDrag">
-				<DragHandler ref={setDragHandleRef} />
+				<DragHandler
+					ref={setDragHandleRef}
+					listeners={listeners}
+					attributes={attributes}
+				/>
 			</div>
 			<div className="form--InteractiveListItemContent">
 				{children}
 			</div>
-			{closestEdge && <DropIndicator edge={closestEdge} gap="1px" />}
+			{closestEdge && (
+				<DropIndicator
+					edge={closestEdge as "top" | "bottom" | "left" | "right"}
+					gap="1px"
+				/>
+			)}
 		</div>
 	);
 }
