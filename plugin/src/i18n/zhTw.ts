@@ -159,6 +159,10 @@ export class ZhTw implements Local {
 	property_name = "屬性名";
 	property_value = "屬性值";
 	property_value_suggestions = "屬性值列表";
+	property_operation_set = "覆蓋";
+	property_operation_add = "追加";
+	property_operation_remove = "刪除";
+	property_update_operation = "更新方式";
 	register_as_command = "註冊為命令";
 	register_as_command_description = "註冊為命令後可以設置快捷鍵打開表單";
 	remove_value = "刪除值";

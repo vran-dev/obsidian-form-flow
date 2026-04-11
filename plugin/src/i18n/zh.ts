@@ -159,6 +159,10 @@ export class Zh implements Local {
 	property_name = "属性名";
 	property_value = "属性值";
 	property_value_suggestions = "属性值列表";
+	property_operation_set = "覆盖";
+	property_operation_add = "追加";
+	property_operation_remove = "删除";
+	property_update_operation = "更新方式";
 	register_as_command = "注册为命令";
 	register_as_command_description = "注册为命令后可以设置快捷键打开表单";
 	remove_value = "删除值";
