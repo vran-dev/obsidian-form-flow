@@ -1,17 +1,10 @@
 .form--CpsFormFieldSettingDescription {
 	width: 100%;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 }
 
-@media (any-hover: hover) {
-	.form--CpsFormFieldSettingDescription:hover {
-		background-color: var(--background-modifier-hover);
-	}
-}
-
-.form--CpsFormFieldSettingDescription input[type="text"] {
-	all: unset;
+.form--CpsFormFieldSettingDescription textarea {
 	width: 100%;
 	color: var(--text-faint);
 	font-size: var(--font-ui-smaller);
@@ -19,9 +12,13 @@
 	padding: 4px 12px;
 	flex-grow: 1;
 	border-radius: var(--radius-m);
+	border: none;
+	background: transparent;
+	resize: vertical;
+	font-family: inherit;
 }
 
-.form--CpsFormFieldSettingDescription input[type="text"]:focus {
+.form--CpsFormFieldSettingDescription textarea:focus {
 	outline: none;
 	background-color: var(--color-base-10);
 }
