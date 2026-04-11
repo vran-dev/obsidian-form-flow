@@ -20,7 +20,8 @@
 
 @media (any-hover: hover) {
 	.form--CpsFormActionSetting:hover {
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	}
 }
@@ -111,11 +112,13 @@ button.form-CpsFormActinoCodeResetButton:hover {
 	flex-grow: 1;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
+	white-space: normal;
 	padding-inline-start: 8px;
 	font-size: var(--font-ui-small);
 	color: var(--text-muted);
 	font-style: italic;
+	word-break: break-all;
+	overflow-wrap: break-word;
 }
 
 .form--CpsFormActionBottomSection {
