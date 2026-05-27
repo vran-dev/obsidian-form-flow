@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import useSortable from "src/hooks/useSortable";
+import { SortableProvider } from "src/hooks/useSortable";
 import { localInstance } from "src/i18n/locals";
 import { FormFieldType } from "src/model/enums/FormFieldType";
 import { FormField, IFormField } from "src/model/field/IFormField";
@@ -20,13 +20,6 @@ export default function (props: {
 }) {
 	const app = useObsidianApp();
 	const { fields } = props;
-	useSortable({
-		items: fields || [],
-		getId: (item) => item.id,
-		onChange: (orders) => {
-			props.onSave(orders, []);
-		},
-	});
 
 	const onFieldSave = useCallback(
 		(field: IFormField) => {
@@ -80,18 +73,26 @@ export default function (props: {
 
 	return (
 		<div className="form--CpsFormFieldsSetting">
-			{fields.map((field, index) => {
-				return (
-					<CpsFormFieldItemEditing
-						key={field.id}
-						index={index}
-						field={field as FormField}
-						onDelete={onFieldDeleted}
-						onChange={onFieldSave}
-						onDuplicate={onDuplicate}
-					/>
-				);
-			})}
+			<SortableProvider
+				items={fields || []}
+				getId={(item) => item.id}
+				onChange={(orders) => {
+					props.onSave(orders, []);
+				}}
+			>
+				{fields.map((field, index) => {
+					return (
+						<CpsFormFieldItemEditing
+							key={field.id}
+							index={index}
+							field={field as FormField}
+							onDelete={onFieldDeleted}
+							onChange={onFieldSave}
+							onDuplicate={onDuplicate}
+						/>
+					);
+				})}
+			</SortableProvider>
 			<button className="form--AddButton" onClick={onFieldAdd}>
 				+{localInstance.add_field}
 			</button>

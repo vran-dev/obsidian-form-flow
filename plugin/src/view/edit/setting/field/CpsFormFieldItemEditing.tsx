@@ -1,4 +1,4 @@
-import { DropIndicator } from "@atlaskit/pragmatic-drag-and-drop-react-drop-indicator/box";
+import { DropIndicator } from "src/component/drop-indicator/DropIndicator";
 import { FormField, IFormField } from "../../../../model/field/IFormField";
 import { CpsFormFieldSettingContent } from "./setting-content/CpsFormFieldSettingContent";
 import { FormFieldSettingHeader } from "./setting-header/FormFieldSettingHeader";
@@ -13,8 +13,16 @@ export function CpsFormFieldItemEditing(props: {
 	onDuplicate: (field: IFormField) => void;
 }) {
 	const { field, onChange } = props;
-	const { closestEdge, dragging, draggedOver, setElRef, setDragHandleRef } =
-		useSortableItem(field.id);
+	const {
+		closestEdge,
+		dragging,
+		draggedOver,
+		setElRef,
+		setDragHandleRef,
+		attributes,
+		listeners,
+		style,
+	} = useSortableItem(field.id);
 
 	return (
 		<FormFieldContext.Provider
@@ -23,16 +31,27 @@ export function CpsFormFieldItemEditing(props: {
 				index: props.index,
 			}}
 		>
-			<div className="form--CpsFormFieldSetting" ref={setElRef}>
+			<div
+				className="form--CpsFormFieldSetting"
+				ref={setElRef}
+				style={style}
+			>
 				<FormFieldSettingHeader
 					field={field}
 					onChange={props.onChange}
 					onDelete={props.onDelete}
 					onDuplicate={props.onDuplicate}
 					setDragHandleRef={setDragHandleRef}
+					listeners={listeners}
+					attributes={attributes}
 				></FormFieldSettingHeader>
 				<CpsFormFieldSettingContent field={field} onChange={onChange} />
-				{closestEdge && <DropIndicator edge={closestEdge} gap="1px" />}
+				{closestEdge && (
+					<DropIndicator
+						edge={closestEdge as "top" | "bottom" | "left" | "right"}
+						gap="1px"
+					/>
+				)}
 			</div>
 		</FormFieldContext.Provider>
 	);

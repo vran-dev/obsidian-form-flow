@@ -2,21 +2,28 @@ import { GripVertical } from "lucide-react";
 import "./DragHandler.css";
 import { forwardRef } from "react";
 
-const DragHandler = forwardRef(function (
-	props: { size?: number } & React.HTMLAttributes<HTMLDivElement>,
-	ref: React.MutableRefObject<HTMLDivElement>
-) {
-	const { className, ...rest } = props;
+interface DragHandlerProps extends React.HTMLAttributes<HTMLDivElement> {
+	size?: number;
+	listeners?: any;
+	attributes?: any;
+}
 
-	return (
-		<div
-			className={`form--DragHandler ${className || ""}`}
-			ref={ref}
-			{...rest}
-		>
-			<GripVertical size={props.size || 14} />
-		</div>
-	);
-});
+const DragHandler = forwardRef<HTMLDivElement, DragHandlerProps>(
+	function DragHandler(props, ref) {
+		const { className, size, listeners, attributes, ...rest } = props;
+
+		return (
+			<div
+				className={`form--DragHandler ${className || ""}`}
+				ref={ref}
+				{...listeners}
+				{...attributes}
+				{...rest}
+			>
+				<GripVertical size={size || 14} />
+			</div>
+		);
+	}
+);
 
 export { DragHandler };

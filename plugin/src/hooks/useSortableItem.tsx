@@ -1,100 +1,48 @@
-import {
-	draggable,
-	dropTargetForElements,
-} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
-import { combine } from "@atlaskit/pragmatic-drag-and-drop/combine";
-import { useState, useEffect } from "react";
-import type { Edge } from "@atlaskit/pragmatic-drag-and-drop-hitbox/types";
-import {
-	attachClosestEdge,
-	extractClosestEdge,
-} from "@atlaskit/pragmatic-drag-and-drop-hitbox/closest-edge";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { CSSProperties } from "react";
 
 export default function (
 	id: string,
-	allowedEdges: Edge[] = ["top", "bottom"],
+	allowedEdges: string[] = ["top", "bottom"],
 	canSort?: () => boolean,
 	data?: any
 ) {
-	const [dragging, setDragging] = useState<boolean>(false);
-	const [draggedOver, setIsDraggedOver] = useState<boolean>(false);
-	const [closestEdge, setClosestEdge] = useState<Edge | null>(null);
-	const [elRef, setElRef] = useState<HTMLElement | null>(null);
-	const [dragHandleRef, setDragHandleRef] = useState<
-		HTMLElement | null | undefined
-	>();
+	const {
+		attributes,
+		listeners,
+		setNodeRef,
+		setActivatorNodeRef,
+		transform,
+		transition,
+		isDragging,
+		isOver,
+	} = useSortable({
+		id,
+		disabled: canSort ? !canSort() : false,
+		data,
+	});
 
-	useEffect(() => {
-		if (!elRef) {
-			return;
-		}
-		return combine(
-			draggable({
-				element: elRef,
-				dragHandle: dragHandleRef ? dragHandleRef : undefined,
-				getInitialData: () => {
-					return {
-						type: "sortable-item",
-						itemId: id,
-						...data,
-					};
-				},
-				canDrag: () => {
-					if (canSort) {
-						return canSort();
-					}
-					return true;
-				},
-				onDragStart: () => {
-					setDragging(true);
-				},
-				onDrop: () => setDragging(false),
-			}),
-			dropTargetForElements({
-				element: elRef,
-				getData: ({ input }) => {
-					return attachClosestEdge(
-						{
-							type: "sortable-item",
-							itemId: id,
-							...data,
-						},
-						{
-							element: elRef,
-							input,
-							allowedEdges: allowedEdges,
-						}
-					);
-				},
-				onDrag({ self, source }) {
-					const isSource = source.element === elRef;
-					if (isSource) {
-						setClosestEdge(null);
-						return;
-					}
-					const closestEdge = extractClosestEdge(self.data);
-					setClosestEdge(closestEdge);
-				},
-				onDragEnter: () => {
-					setIsDraggedOver(true);
-				},
-				onDragLeave: () => {
-					setClosestEdge(null);
-					setIsDraggedOver(false);
-				},
-				onDrop: ({ source }) => {
-					setClosestEdge(null);
-					setIsDraggedOver(false);
-				},
-			})
-		);
-	}, [id, elRef, dragHandleRef, canSort]);
+	// 计算样式，应用拖拽变换
+	const style: CSSProperties = {
+		transform: CSS.Transform.toString(transform),
+		transition,
+		opacity: isDragging ? 0.5 : 1,
+	};
+
+	// dnd-kit 不直接支持 closestEdge 的概念
+	// 我们简化为只返回是否被 hover（isOver）
+	// 如果需要更精确的边缘检测，可以在 DropIndicator 中实现
+	const closestEdge = isOver ? "bottom" : null;
 
 	return {
 		closestEdge,
-		dragging,
-		draggedOver,
-		setElRef,
-		setDragHandleRef,
+		dragging: isDragging,
+		draggedOver: isOver,
+		setElRef: setNodeRef,
+		setDragHandleRef: setActivatorNodeRef,
+		attributes,
+		listeners,
+		style,
 	};
 }
