@@ -151,6 +151,10 @@ export interface Local {
 	property_name: string;
 	property_value_suggestions: string;
 	property_value: string;
+	property_operation_set: string;
+	property_operation_add: string;
+	property_operation_remove: string;
+	property_update_operation: string;
 	property: string;
 	register_as_command_description: string;
 	register_as_command: string;

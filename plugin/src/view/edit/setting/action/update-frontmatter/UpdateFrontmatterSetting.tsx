@@ -6,6 +6,7 @@ import {
 	PropertyUpdate,
 } from "src/model/action/UpdateFrontmatterFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
+import { PropertyUpdateOperation } from "src/model/enums/PropertyUpdateOperation";
 import { TargetFileType } from "src/model/enums/TargetFileType";
 import { getFilePathCompatible } from "src/utils/getFilePathCompatible";
 import CpsFormItem from "src/view/shared/CpsFormItem";
@@ -16,6 +17,7 @@ import {
 import { v4 } from "uuid";
 import { FilePathFormItem } from "../common/FilePathFormItem";
 import TargetFileTypeSelect from "../common/TargetFileTypeSelect";
+import PropertyUpdateOperationSelect from "./PropertyUpdateOperationSelect";
 import { PropertyUpdateValueInput } from "./PropertyUpdateValueInput";
 import { PropertyNameSuggestInput } from "src/component/combobox/PropertyNameSuggestInput";
 
@@ -83,6 +85,7 @@ export function UpdateFrontmatterSetting(props: {
 						id: v4(),
 						name: "",
 						value: "",
+						operation: PropertyUpdateOperation.SET,
 					};
 					const newItems = [...items, newItem];
 					const newAction = {
@@ -130,9 +133,20 @@ export function UpdateFrontmatterSetting(props: {
 										};
 										saveItem(newItem);
 									}}
+									hidden={item.operation === PropertyUpdateOperation.REMOVE}
 								/>
 							</div>
 							<div className="form--InteractiveListItemActions">
+								<PropertyUpdateOperationSelect
+									value={item.operation || PropertyUpdateOperation.SET}
+									onChange={(value) => {
+										const newItem = {
+											...item,
+											operation: value,
+										};
+										saveItem(newItem);
+									}}
+								/>
 								<button
 									className="clickable-icon"
 									data-type="danger"

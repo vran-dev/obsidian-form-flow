@@ -159,6 +159,10 @@ export class En implements Local {
 	property_name = "Property name";
 	property_value = "Property value";
 	property_value_suggestions = "Property value suggestions";
+	property_operation_set = "Overwrite";
+	property_operation_add = "Append";
+	property_operation_remove = "Remove";
+	property_update_operation = "Update operation";
 	register_as_command = "Register as command";
 	register_as_command_description = "After registration, you can assign a shortcut to open the form";
 	remove_value = "Remove value";

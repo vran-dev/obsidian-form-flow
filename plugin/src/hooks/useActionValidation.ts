@@ -1,4 +1,5 @@
 import { getLanguage } from "obsidian";
+import { PropertyUpdateOperation } from "src/model/enums/PropertyUpdateOperation";
 import { UpdateFrontmatterFormAction } from "src/model/action/UpdateFrontmatterFormAction";
 import { CreateFileFormAction } from "../model/action/CreateFileFormAction";
 import { IFormAction } from "../model/action/IFormAction";
@@ -103,7 +104,11 @@ function validateAction(action: FormActionImp) {
                 messages.push(l.properties_must_not_be_empty);
             } else {
                 const hasInvalidUpdate = propertyUpdates.some(
-                    update => !update.name || update.value === undefined
+                    update => {
+                        if (!update.name) return true;
+                        if (update.operation === PropertyUpdateOperation.REMOVE) return false;
+                        return update.value === undefined;
+                    }
                 );
                 if (hasInvalidUpdate) {
                     messages.push(l.property_configure_incompleted);

@@ -3,6 +3,7 @@ import { CreateFileFormAction } from "../model/action/CreateFileFormAction";
 import { InsertTextFormAction } from "../model/action/InsertTextFormAction";
 import { UpdateFrontmatterFormAction } from "../model/action/UpdateFrontmatterFormAction";
 import { FormActionType } from "../model/enums/FormActionType";
+import { PropertyUpdateOperation } from "../model/enums/PropertyUpdateOperation";
 import { TargetFileType } from "../model/enums/TargetFileType";
 
 export function getActionSummary(action: CreateFileFormAction | InsertTextFormAction | UpdateFrontmatterFormAction): Array<{ label: string; value: string }> {
@@ -62,7 +63,16 @@ export function getActionSummary(action: CreateFileFormAction | InsertTextFormAc
 
             const propertyUpdates = action.propertyUpdates || [];
             if (propertyUpdates.length > 0) {
-                const propertiesList = propertyUpdates.map(update => update.name).join(', ');
+                const propertiesList = propertyUpdates.map(update => {
+                    const operation = update.operation || PropertyUpdateOperation.SET;
+                    if (operation === PropertyUpdateOperation.SET) {
+                        return update.name;
+                    }
+                    const opLabel = operation === PropertyUpdateOperation.ADD
+                        ? localInstance.property_operation_add
+                        : localInstance.property_operation_remove;
+                    return `${update.name}[${opLabel}]`;
+                }).join(', ');
                 summary.push({
                     label: localInstance.property,
                     value: propertiesList

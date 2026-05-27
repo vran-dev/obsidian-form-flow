@@ -12,10 +12,11 @@ type Props = {
 	value: any;
 	onChange: (value: any) => void;
 	placeholder?: string;
+	hidden?: boolean;
 };
 
 export function PropertyUpdateValueInput(props: Props) {
-	const { name, value, onChange, actionId } = props;
+	const { name, value, onChange, actionId, hidden } = props;
 	const formConfig = useFormConfig();
 	const variables = useVariables(actionId, formConfig);
 	const app = useObsidianApp();
@@ -27,6 +28,10 @@ export function PropertyUpdateValueInput(props: Props) {
 			description: v.info,
 		};
 	});
+
+	if (hidden) {
+		return null;
+	}
 
 	if (isMultiple) {
 		let arrayValue;

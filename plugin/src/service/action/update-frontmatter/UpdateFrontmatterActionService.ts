@@ -1,6 +1,7 @@
 import { IFormAction } from "src/model/action/IFormAction";
 import { UpdateFrontmatterFormAction } from "src/model/action/UpdateFrontmatterFormAction";
 import { FormActionType } from "src/model/enums/FormActionType";
+import { PropertyUpdateOperation } from "src/model/enums/PropertyUpdateOperation";
 import { FormTemplateProcessEngine } from "src/service/engine/FormTemplateProcessEngine";
 import { convertFrontmatterValue } from "src/utils/convertFrontmatterValue";
 import { IActionService, ActionContext, ActionChain } from "../IActionService";
@@ -23,6 +24,7 @@ export default class UpdateFrontmatterActionService implements IActionService {
         const formatted: {
             name: string;
             value: string | string[];
+            operation: PropertyUpdateOperation;
         }[] = []
         for (const property of action.propertyUpdates) {
             const name = await engien.process(property.name, context.state, app);
@@ -43,13 +45,33 @@ export default class UpdateFrontmatterActionService implements IActionService {
             formatted.push({
                 name: name,
                 value: value,
+                operation: property.operation || PropertyUpdateOperation.SET,
             })
         }
         const filePath = await getFilePathFromAction(action, context);
         const file = await createFileFromActionIfNotExists(filePath, action, context);
         await app.fileManager.processFrontMatter(file, (frontmatter) => {
             for (const property of formatted) {
-                frontmatter[property.name] = convertFrontmatterValue(app, property.name, property.value);
+                const convertedValue = convertFrontmatterValue(app, property.name, property.value);
+                switch (property.operation) {
+                    case PropertyUpdateOperation.ADD:
+                        if (Array.isArray(frontmatter[property.name])) {
+                            const existing = frontmatter[property.name] as any[];
+                            const toAdd = Array.isArray(convertedValue) ? convertedValue : [convertedValue];
+                            const merged = [...new Set([...existing, ...toAdd])];
+                            frontmatter[property.name] = convertFrontmatterValue(app, property.name, merged);
+                        } else if (frontmatter[property.name] === undefined || frontmatter[property.name] === null) {
+                            frontmatter[property.name] = convertedValue;
+                        }
+                        break;
+                    case PropertyUpdateOperation.REMOVE:
+                        delete frontmatter[property.name];
+                        break;
+                    case PropertyUpdateOperation.SET:
+                    default:
+                        frontmatter[property.name] = convertedValue;
+                        break;
+                }
             }
         });
         return await chain.next(context);
