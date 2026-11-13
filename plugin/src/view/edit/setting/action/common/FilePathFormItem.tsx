@@ -7,6 +7,7 @@ import { useObsidianApp } from "src/context/obsidianAppContext";
 import { localInstance } from "src/i18n/locals";
 import { openFilePathDirectly } from "src/utils/openFilePathDirectly";
 import { Strings } from "src/utils/Strings";
+import { getMarkdownFileOptions } from "src/utils/vaultOptions";
 import CpsFormItem from "src/view/shared/CpsFormItem";
 import { useTriggerSideOffset } from "src/hooks/useTriggerSideOffset";
 
@@ -76,27 +77,10 @@ function MarkdownFileList(props: {
 	const listRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLSpanElement>(null);
 	const app = useObsidianApp();
-	const items = useMemo(() => {
-		const files = app.vault.getMarkdownFiles();
-		const options = files
-			.filter((f) => {
-				if (value === "") {
-					return true;
-				}
-				const path = Strings.safeToLowerCaseString(f.path);
-				const searchValue = Strings.safeToLowerCaseString(value);
-				return path.includes(searchValue);
-			})
-			.slice(0, 100)
-			.map((f) => {
-				return {
-					id: f.path,
-					value: f.path,
-					label: f.path,
-				};
-			});
-		return options;
-	}, [value]);
+	const items = useMemo(
+		() => getMarkdownFileOptions(app, value),
+		[app, value]
+	);
 
 	// 滚动到活跃项
 	useEffect(() => {

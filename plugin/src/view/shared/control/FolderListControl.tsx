@@ -1,10 +1,7 @@
 import { useObsidianApp } from "src/context/obsidianAppContext";
 import { IFormField } from "src/model/field/IFormField";
-import { Strings } from "src/utils/Strings";
-import {
-	SelectList,
-	SelectOption,
-} from "src/component/select-list/SelectList";
+import { getFolderOptions } from "src/utils/vaultOptions";
+import { SelectList } from "src/component/select-list/SelectList";
 
 export function FolderListControl(props: {
 	field: IFormField;
@@ -16,24 +13,7 @@ export function FolderListControl(props: {
 	const app = useObsidianApp();
 
 	// 获取文件夹选项的函数
-	const getOptions = (searchText: string): SelectOption[] => {
-		const folders = app.vault.getAllFolders();
-		return folders
-			.filter((f) => {
-				if (Strings.isEmpty(searchText)) {
-					return true;
-				}
-				const folderPath = Strings.safeToLowerCaseString(f.path);
-				const searchValue = searchText.toLowerCase();
-				return folderPath.includes(searchValue);
-			})
-			.slice(0, 100)
-			.map((f) => ({
-				id: f.path,
-				value: f.path,
-				label: f.path,
-			}));
-	};
+	const getOptions = (searchText: string) => getFolderOptions(app, searchText);
 
 	return (
 		<SelectList

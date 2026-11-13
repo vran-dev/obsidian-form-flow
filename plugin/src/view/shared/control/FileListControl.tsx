@@ -1,11 +1,8 @@
 import { useObsidianApp } from "src/context/obsidianAppContext";
 import { IFileListField } from "src/model/field/IFileListField";
 import { IFormField } from "src/model/field/IFormField";
-import { Strings } from "src/utils/Strings";
-import {
-	SelectList,
-	SelectOption,
-} from "src/component/select-list/SelectList";
+import { getMarkdownFileOptions } from "src/utils/vaultOptions";
+import { SelectList } from "src/component/select-list/SelectList";
 
 export function FileListControl(props: {
 	field: IFormField;
@@ -18,24 +15,8 @@ export function FileListControl(props: {
 	const app = useObsidianApp();
 
 	// 获取文件选项的函数
-	const getOptions = (searchText: string): SelectOption[] => {
-		const files = app.vault.getMarkdownFiles();
-		return files
-			.filter((f) => {
-				if (Strings.isEmpty(searchText)) {
-					return true;
-				}
-				const filePath = Strings.safeToLowerCaseString(f.path);
-				const searchValue = searchText.toLowerCase();
-				return filePath.includes(searchValue);
-			})
-			.slice(0, 100)
-			.map((f) => ({
-				id: f.path,
-				value: f.path,
-				label: f.path,
-			}));
-	};
+	const getOptions = (searchText: string) =>
+		getMarkdownFileOptions(app, searchText);
 
 	// 格式化值的函数（处理内部链接）
 	const formatValue = (origin: string): string => {
