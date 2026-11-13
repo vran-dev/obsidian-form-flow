@@ -110,8 +110,6 @@ button.form-CpsFormActinoCodeResetButton:hover {
 
 .form--CpsFormActionRemarkText {
 	flex-grow: 1;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	white-space: normal;
 	padding-inline-start: 8px;
 	font-size: var(--font-ui-small);
