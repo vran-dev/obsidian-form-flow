@@ -15,8 +15,7 @@
 	margin-bottom: 0.5rem;
 	margin-top: 0.5rem;
 	white-space: pre-wrap;
-	word-break: break-all;
-	overflow-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 /* required * */

@@ -117,8 +117,7 @@ button.form-CpsFormActinoCodeResetButton:hover {
 	font-size: var(--font-ui-small);
 	color: var(--text-muted);
 	font-style: italic;
-	word-break: break-all;
-	overflow-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .form--CpsFormActionBottomSection {
