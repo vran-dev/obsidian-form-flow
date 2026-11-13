@@ -16,8 +16,8 @@ export default function (
 		transition,
 		isDragging,
 		isOver,
-		over,
-		active,
+		activeIndex,
+		index,
 	} = useSortable({
 		id,
 		disabled: canSort ? !canSort() : false,
@@ -31,15 +31,14 @@ export default function (
 		opacity: isDragging ? 0.5 : 1,
 	};
 
-	// 根据被拖拽元素与目标项中心点的相对位置判断插入边缘：
-	// 拖到目标项上半部分时显示上边缘（插入到目标之前），下半部分时显示下边缘（插入到目标之后），
-	// 使视觉指示与 arrayMove 的实际结果保持一致。
+	// arrayMove(items, oldIndex, newIndex) 的落点由索引关系唯一决定：
+	// 向下拖（activeIndex < index）落在目标之后，显示下边缘；向上拖落在目标之前，显示上边缘；
+	// 悬停原位（over 为自身）不显示指示器。
+	// 注意不能用中心点几何比较：over.rect 是原始布局位置，closestCenter 在拖拽中心
+	// 越过两项目边界线时就翻转 over，比越过目标中心早半个目标高度，会导致指示器方向相反。
 	let closestEdge: "top" | "bottom" | null = null;
-	const activeRect = active?.rect.current.translated;
-	if (isOver && over && activeRect) {
-		const activeCenter = activeRect.top + activeRect.height / 2;
-		const overCenter = over.rect.top + over.rect.height / 2;
-		closestEdge = activeCenter < overCenter ? "top" : "bottom";
+	if (isOver && activeIndex !== null && activeIndex !== index) {
+		closestEdge = activeIndex < index ? "bottom" : "top";
 	}
 
 	return {
