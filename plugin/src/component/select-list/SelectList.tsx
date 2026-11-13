@@ -1,5 +1,5 @@
 import { Popover as RadixPopover } from "radix-ui";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import "./SelectList.css";
 import { ChevronDown, XIcon } from "lucide-react";
 import { localInstance } from "src/i18n/locals";
@@ -52,15 +52,21 @@ export function SelectList(props: SelectListProps) {
 	const listRef = useRef<HTMLDivElement>(null);
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	// 获取过滤后的选项
-	const items = getOptions(searchText);
+	// 获取过滤后的选项（仅在搜索词变化时重新计算，避免每次渲染都全量扫描 vault）
+	const items = useMemo(() => getOptions(searchText), [searchText]);
 
 	// 转换为数组值
-	const values = Array.isArray(value)
-		? value.map((v) => v?.toString()).filter((v) => Strings.isNotBlank(v))
-		: value && Strings.isNotBlank(value?.toString())
-		? [value.toString()]
-		: [];
+	const values = useMemo(() => {
+		if (Array.isArray(value)) {
+			return value
+				.map((v) => v?.toString())
+				.filter((v) => Strings.isNotBlank(v));
+		}
+		if (value && Strings.isNotBlank(value?.toString())) {
+			return [value.toString()];
+		}
+		return [];
+	}, [value]);
 
 	const addValue = (newValue: string) => {
 		const formattedValue = formatValue ? formatValue(newValue) : newValue;
