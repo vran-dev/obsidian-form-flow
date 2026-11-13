@@ -6,10 +6,6 @@ import {
 	SelectOption,
 } from "src/component/select-list/SelectList";
 
-export interface IFolderListField extends IFormField {
-	multiple?: boolean;
-}
-
 export function FolderListControl(props: {
 	field: IFormField;
 	value: any;
@@ -17,7 +13,6 @@ export function FolderListControl(props: {
 	autoFocus?: boolean;
 }) {
 	const { value, field, onValueChange, autoFocus } = props;
-	const folderListField = field as IFolderListField;
 	const app = useObsidianApp();
 
 	// 获取文件夹选项的函数
@@ -44,7 +39,6 @@ export function FolderListControl(props: {
 		<SelectList
 			value={value}
 			onValueChange={onValueChange}
-			multiple={folderListField.multiple}
 			autoFocus={autoFocus}
 			getOptions={getOptions}
 			placeholder={field.placeholder}
