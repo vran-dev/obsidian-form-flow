@@ -152,6 +152,7 @@ export function SelectList(props: SelectListProps) {
 			<RadixPopover.Trigger asChild>
 				<button
 					className={`form--SelectListTrigger ${className || ""}`}
+					autoFocus={autoFocus}
 					onKeyDown={(e) => {
 						if (e.key === "ArrowDown") {
 							e.preventDefault();

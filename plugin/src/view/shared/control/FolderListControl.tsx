@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useObsidianApp } from "src/context/obsidianAppContext";
 import { IFormField } from "src/model/field/IFormField";
 import { Strings } from "src/utils/Strings";

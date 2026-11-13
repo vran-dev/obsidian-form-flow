@@ -153,12 +153,6 @@ export function CpsFormFieldControl(props: {
 
 	if (field.type === FormFieldType.FOLDER_PATH) {
 		return (
-			// <FolderPathControl
-			// 	field={field}
-			// 	value={actualValue}
-			// 	onValueChange={onValueChange}
-			// 	autoFocus={autoFocus}
-			// />
 			<FolderListControl
 				field={field}
 				value={actualValue}
