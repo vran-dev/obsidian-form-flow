@@ -4,6 +4,12 @@
 	align-items: flex-start;
 }
 
+@media (any-hover: hover) {
+	.form--CpsFormFieldSettingDescription:hover {
+		background-color: var(--background-modifier-hover);
+	}
+}
+
 .form--CpsFormFieldSettingDescription textarea {
 	width: 100%;
 	color: var(--text-faint);
@@ -20,5 +26,6 @@
 
 .form--CpsFormFieldSettingDescription textarea:focus {
 	outline: none;
+	box-shadow: none;
 	background-color: var(--color-base-10);
 }
