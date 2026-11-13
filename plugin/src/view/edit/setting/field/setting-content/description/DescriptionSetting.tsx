@@ -10,7 +10,7 @@ export function DescriptionSetting(props: {
 	return (
 		<div className="form--CpsFormFieldSettingDescription">
 			<textarea
-				rows={4}
+				rows={2}
 				value={field.description || ""}
 				placeholder={localInstance.input_description_here}
 				onChange={(e) => {
