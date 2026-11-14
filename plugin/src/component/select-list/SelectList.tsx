@@ -48,7 +48,6 @@ export function SelectList(props: SelectListProps) {
 	const [open, setOpen] = useState(false);
 	const [activeIndex, setActiveIndex] = useState(-1);
 	const [searchText, setSearchText] = useState("");
-	const contentRef = useRef<HTMLDivElement>(null);
 	const listRef = useRef<HTMLDivElement>(null);
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -87,16 +86,13 @@ export function SelectList(props: SelectListProps) {
 	};
 
 	const removeValue = (v: string) => {
-		if (values.length === 1) {
-			onValueChange("");
-			return;
-		}
 		const newValue = values.filter((item) => item !== v);
 		if (newValue.length === 0) {
-			onValueChange("");
-		} else {
-			onValueChange(newValue);
+			// 多选字段清空后保持数组落盘形态，与旧实现一致
+			onValueChange(multiple ? [] : "");
+			return;
 		}
+		onValueChange(newValue);
 	};
 
 	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -189,7 +185,6 @@ export function SelectList(props: SelectListProps) {
 						bottom: 8,
 					}}
 					sideOffset={8}
-					ref={contentRef}
 				>
 					<input
 						ref={inputRef}
