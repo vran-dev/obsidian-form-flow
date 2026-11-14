@@ -3,7 +3,6 @@ import {
 	InteractiveList,
 	InteractiveListItem,
 } from "src/component/interactive-list/InteractiveList";
-import useSortable from "src/hooks/useSortable";
 import { localInstance } from "src/i18n/locals";
 import { IOptionsField } from "src/model/field/ISelectField";
 import { v4 } from "uuid";
@@ -13,19 +12,8 @@ export default function (props: {
 	field: IOptionsField;
 	onFieldChange: (field: IOptionsField) => void;
 }) {
-	const onFieldChange = props.onFieldChange;
 	const enableCustomValue = props.field.enableCustomValue === true;
 	const items = props.field.options || [];
-	useSortable({
-		items: items || [],
-		getId: (item) => item.id,
-		onChange: (orders) => {
-			onFieldChange({
-				...props.field,
-				options: orders,
-			});
-		},
-	});
 	const addOption = () => {
 		const newOption = {
 			id: v4(),

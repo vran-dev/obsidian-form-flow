@@ -7,6 +7,14 @@
 	border-radius: var(--size-2-2);
 	white-space: nowrap;
 	cursor: grab;
+	/* 支持触摸事件 */
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.form--DragHandler:active {
+	cursor: grabbing;
 }
 
 @media (any-hover: hover) {

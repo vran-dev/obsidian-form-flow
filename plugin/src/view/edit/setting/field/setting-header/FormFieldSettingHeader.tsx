@@ -17,8 +17,10 @@ export function FormFieldSettingHeader(props: {
 	onDelete: (field: IFormField) => void;
 	onDuplicate: (field: IFormField) => void;
 	setDragHandleRef: (ref: HTMLDivElement | null) => void;
+	listeners?: any;
+	attributes?: any;
 }) {
-	const { field, setDragHandleRef, onChange, onDuplicate } = props;
+	const { field, setDragHandleRef, onChange, onDuplicate, listeners, attributes } = props;
 	return (
 		<div
 			className="form--CpsFormFieldSettingHeader"
@@ -27,6 +29,8 @@ export function FormFieldSettingHeader(props: {
 			<DragHandler
 				ref={setDragHandleRef}
 				aria-label={localInstance.drag_and_drop_to_reorder}
+				listeners={listeners}
+				attributes={attributes}
 			/>
 
 			{field.required && (
