@@ -51,6 +51,7 @@ export function CreateFileSetting(props: {
 			<FilePathFormItem
 				label={localInstance.file_path}
 				value={targetFilePath}
+				suggestFolder={true}
 				onChange={(value) => {
 					const newAction = {
 						...action,

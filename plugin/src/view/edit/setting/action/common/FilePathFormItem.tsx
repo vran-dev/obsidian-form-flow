@@ -7,6 +7,7 @@ import { useObsidianApp } from "src/context/obsidianAppContext";
 import { localInstance } from "src/i18n/locals";
 import { openFilePathDirectly } from "src/utils/openFilePathDirectly";
 import { Strings } from "src/utils/Strings";
+import { getMarkdownFileOptions, getFolderOptions } from "src/utils/vaultOptions";
 import CpsFormItem from "src/view/shared/CpsFormItem";
 import { useTriggerSideOffset } from "src/hooks/useTriggerSideOffset";
 
@@ -14,6 +15,8 @@ export function FilePathFormItem(props: {
 	label: string;
 	value: string;
 	placeholder?: string;
+	/** 下拉候选使用文件夹而非文件（如新建文件动作的目标路径） */
+	suggestFolder?: boolean;
 	onChange: (value: string) => void;
 }) {
 	const { value, onChange } = props;
@@ -47,6 +50,8 @@ export function FilePathFormItem(props: {
 		<CpsFormItem label={props.label}>
 			<MarkdownFileList
 				value={value}
+				placeholder={props.placeholder}
+				suggestFolder={props.suggestFolder}
 				onChange={(value) => {
 					onChange(value);
 				}}
@@ -68,6 +73,7 @@ function MarkdownFileList(props: {
 	value: string;
 	onChange: (value: string) => void;
 	placeholder?: string;
+	suggestFolder?: boolean;
 }) {
 	const { value, onChange } = props;
 	const [open, setOpen] = useState(false);
@@ -76,27 +82,13 @@ function MarkdownFileList(props: {
 	const listRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLSpanElement>(null);
 	const app = useObsidianApp();
-	const items = useMemo(() => {
-		const files = app.vault.getMarkdownFiles();
-		const options = files
-			.filter((f) => {
-				if (value === "") {
-					return true;
-				}
-				const path = Strings.safeToLowerCaseString(f.path);
-				const searchValue = Strings.safeToLowerCaseString(value);
-				return path.includes(searchValue);
-			})
-			.slice(0, 100)
-			.map((f) => {
-				return {
-					id: f.path,
-					value: f.path,
-					label: f.path,
-				};
-			});
-		return options;
-	}, [value]);
+	const items = useMemo(
+		() =>
+			props.suggestFolder
+				? getFolderOptions(app, value)
+				: getMarkdownFileOptions(app, value),
+		[app, value, props.suggestFolder]
+	);
 
 	// 滚动到活跃项
 	useEffect(() => {
